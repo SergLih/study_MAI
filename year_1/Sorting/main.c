@@ -63,7 +63,7 @@ void queue_merge_sort(Queue *q)
     q_left  = queue_create(QUEUE_DEFAULT_SIZE);
     q_right = queue_create(QUEUE_DEFAULT_SIZE);
 
-    int k = 0;      //razmer ocheredi
+    int k = 0;      //размер очереди
     while (!queue_is_empty(*q)) {
         queue_put(q_right, queue_get(*q));
         k++;
@@ -104,27 +104,31 @@ int main(void)
     printf("Для того, чтобы работать с программой, необходимо сначала создать очередь, для этого обратитесь к помощи команды `help`.\n\n");
     while (1) {
     	scanf("%6s", s);
-		if (!strcmp(s, "put") || !strcmp(s, "p")) {
-    		while(scanf("%d", &val))
-    			if(queue_put(q1, val))
-                    fprintf(stderr, "\nНевозможно добавить цифру %d в очередь, т.к. она переполнена.\n\n", val);
-    	} else if (!strcmp(s, "get") || !strcmp(s, "g")) {
-    		printf("Из очереди выведен элемент %d\n\n", queue_get(q1));
-    	} else if (!strcmp(s, "print") || !strcmp(s, "pr")) {
-    		if(queue_is_empty(q1)) {
-                fprintf(stderr, "\nОчередь пуста.\n\n");
-                continue;
-            }
-            queue_print(q1);
-            queue_reverse(q1);
-            printf("\n\n");
-    	} else if (!strcmp(s, "create") || !strcmp(s, "c")) {
+    	if (!strcmp(s, "create") || !strcmp(s, "c")) {
     		if (q1 != NULL) {
     			queue_destroy(&q1);
     			q1 = NULL;
     		}
     		scanf("%d", &cap);
     		q1 = queue_create(cap);
+    	} else if (!strcmp(s, "get") || !strcmp(s, "g")) {
+    		if (queue_is_empty(q1)) {
+    			fprintf(stderr, "\nОчередь пуста.\n\n");
+    		} else {
+    			printf("Из очереди выведен элемент %d\n\n", queue_get(q1));
+    		}
+    	} else if (!strcmp(s, "print") || !strcmp(s, "pr")) {
+    		if(queue_is_empty(q1)) {
+                fprintf(stderr, "\nОчередь пуста.\n\n");
+                continue;
+            }
+            queue_print_r(q1);
+            queue_reverse(q1);
+            printf("\n\n");
+      	} else if (!strcmp(s, "put") || !strcmp(s, "p")) {
+    		while(q1 > 0 && scanf("%d", &val))
+    			if(queue_put(q1, val))
+                    fprintf(stderr, "\nНевозможно добавить цифру %d в очередь, т.к. она переполнена.\n\n", val);
     	} else if (!strcmp(s, "sort") || !strcmp(s, "s")) {
             queue_merge_sort(&q1);
     	} else if (!strcmp(s, "help")) {
@@ -140,7 +144,7 @@ int main(void)
     			q1 = NULL;
     		}
     		break;
-    	} else {
+	   	} else {
             printf("\n\nВведены некорректные данные. Воспользуйтесь командой `help`, чтобы подробнее узнать команды.\n\n");
         }
     }
