@@ -8,12 +8,13 @@
 
 void instructions(void)
 {
-    printf("Please,enter your choice:\n"
+    printf("For assistance in using the program, write 'h':\n"
            "p                  print the list.\n"
            "a <item>           append <item> to the list\n"
            "i <index> <item>   insert <item> into the list at position <index>.\n"
            "r <index>          remove element at <index> from the list.\n"
            "d <item>           delete element <item> from the list.\n"
+           "l                  сounting the length of the list.\n"
            "e                  exchange 1st and 2nd halves\n");
 }
 
@@ -71,7 +72,10 @@ int main()
                 } else {
                     printf("Input error\n");
                 }
-                break;   
+                break;
+            case 'l':
+            	printf("List length:%d\n", ListLength(l));
+            	break;
             case 'e':
                 ListExchange(l);
                 break;               
