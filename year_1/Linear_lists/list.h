@@ -13,14 +13,15 @@ typedef struct LIST {
     int size;
 } List;
 
-void ListPrint(List *a_list);
+void ListPrint(List *list);
 
 Node *NodeCreate(char * string_value);
 void NodeDestroy(Node **node);
 List *ListCreate();
 void ListDestroy(List **list);
-void ListAddNode(List *a_list, char * a_value);
-void ListInsert(List *a_list, int index, char * a_value);
-void ListExchange(List *a_list);
+void ListAddNode(List *list, char * value);
+void ListInsert(List *list, int index, char * value);
+void ListExchange(List *list);
+int  ListLength(List *list);
 
 #endif
