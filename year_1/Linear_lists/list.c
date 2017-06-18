@@ -12,7 +12,8 @@ Node *NodeCreate(char * string_value)
     if (string_value != NULL) {
 		size_t len = strlen(string_value);
 		res->value = (char *)malloc(sizeof(char) * (len+1));
-		strcpy(res->value, string_value);
+        strncpy(res->value, string_value, len);
+        res->value[len] = '\0';
 		res->next = NULL;
 	} else {//если был передан NULL, то передается пустая строка
 		res->value = (char *)malloc(sizeof(char));
@@ -115,8 +116,10 @@ bool ListDeleteNode(List *list, Node *node_to_delete)
     if (list->size == 0 || node_to_delete == NULL) {
         return false;
     }
+
     if (list->size == 1) {                //Если удаляем единственный элемент
-        list->head = list->barrier;
+        list->head = list->barrier;             //обновляем указ-ль на начало
+        list->barrier->next = list->barrier;    //замыкаем барьерный элемент на себя
     } else if (node_to_delete == list->head) {  //Если удаляем первый элемент
         list->head = list->head->next;			//обновляем указ-ль на начало
     } else {	//Во всех остальных случаях нужно получить указ-ль на предыдущий
@@ -127,8 +130,12 @@ bool ListDeleteNode(List *list, Node *node_to_delete)
     		if(IteratorNext(&iter) == false)//предыд. по отношению к удаляемому элементу
    				return false;		//(если нет такого узла в списке,сразу ошибка)
    		}
-   		iter.node->next = node_to_delete->next;
+        if(node_to_delete == list->barrier->next) {   //Если удаляем последний элемент
+            list->barrier->next = iter.node;			//то нужно еще обновить барьерный -- поставить 
+        }										//указатель на новый последний
+   		iter.node->next = node_to_delete->next;	
     }
+
     NodeDestroy(&node_to_delete);
     list->size--;
     return true;
@@ -189,4 +196,9 @@ void ListExchange(List *list)
     
     last.node->next = first.node;
     list->barrier->next = med.node;
+}
+
+int ListLength(List *list)
+{
+    return list->size;
 }
