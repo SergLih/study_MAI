@@ -14,7 +14,7 @@ Node *NodeCreate(char * string_value)
 		res->value = (char *)malloc(sizeof(char) * (len+1));
         strncpy(res->value, string_value, len);
         res->value[len] = '\0';
-		res->next = NULL;
+        res->next = NULL;
 	} else {//если был передан NULL, то передается пустая строка
 		res->value = (char *)malloc(sizeof(char));
 		*(res->value) = '\0';
@@ -51,7 +51,7 @@ void ListDestroy(List **list)
 		iter2.node = iter.node;
 	}
 	
-	NodeDestroy(&((*list)->barrier));
+    NodeDestroy(&((*list)->barrier));
     free(*list);
     *list = NULL;
     
@@ -64,8 +64,8 @@ void ListAddNode(List *list, char * string_value)  //вставка в коне�
 	list->barrier->next = newNode;	// из барьера ставим указатель на новый последний
 	newNode->next = list->barrier;  // ставим у последнего next на барьер
 	if(list->size == 0)
-		list->head = newNode;
-	list->size++;
+        list->head = newNode;
+    list->size++;
 }
 
 void ListPrint(List *list)
@@ -77,7 +77,7 @@ void ListPrint(List *list)
     	IteratorStart(&iter, *list);
         printf("List:\n");
         do
-        	printf("%s ", IteratorFetch(&iter));	
+            printf("%s ", IteratorFetch(&iter));	
         while (IteratorNext(&iter));
         printf("\n");
     }
