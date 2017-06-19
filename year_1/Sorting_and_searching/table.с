@@ -1,0 +1,293 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "table.h"
+#include "key.h"
+
+/*typedef struct _value{
+	char * vdata;
+	size_t vsize;
+} _value;
+*/
+
+typedef struct _table {
+    Key   *keys;
+    Value *values;
+    size_t size;
+    bool sorted;
+} _table;
+
+Table table_create (void)
+{
+	Table table   = (Table) malloc(sizeof(_table));
+    table->keys   = NULL;
+    table->values = NULL;
+    table->size   = 0;
+    table->sorted = false;
+    return table;
+}
+
+void table_destroy(Table *table)
+{
+    if(*table==NULL)
+        return;
+
+	if((*table)->size > 0) {
+		for(size_t i = 0; i < (*table)->size; i++) {
+			key_destroy(&((*table)->keys[i]));
+			value_destroy(&((*table)->values[i]));
+		}
+		free((*table)->values);
+		free((*table)->keys);
+    }
+    free((*table));
+    *table = NULL;
+}
+
+void table_push(Table table, Key k, Value v)		//не проверяет уникальность ключа
+{    
+    table->size++;
+    table->sorted = false;
+    table->keys = (Key *) realloc(table->keys, table->size * sizeof(Key));
+    table->values = (Value *) realloc(table->values, table->size * sizeof(Value));
+    table->values[table->size - 1] = NULL;
+    key_copy(&(table->keys[table->size - 1]), &k);
+    value_copy(&(table->values[table->size - 1]), &v);
+    key_destroy(&k);
+    value_destroy(&v);
+}
+
+void  table_delete (Table table, Key key)
+{
+	size_t pos;
+    Value v = table_search(table, key, &pos);
+    if (v != NULL) {		//если элемент с таким ключом уже есть
+		key_destroy(&(table->keys[pos]));
+		value_destroy(&(table->values[pos]));
+		for (size_t i = pos; i < table->size - 1; i++) {
+		    key_copy(&(table->keys[i]), &(table->keys[i + 1]));
+		    value_copy(&(table->values[i]), &(table->values[i + 1]));
+		}
+		key_destroy(&(table->keys[table->size-1]));
+		value_destroy(&(table->values[table->size-1]));
+		table->size--;
+		
+		table->keys = (Key *) realloc(table->keys, table->size * sizeof(Key));
+		table->values = (Value *) realloc(table->values, table->size * sizeof(Value));
+	} else {
+		printf("Ошибка! Элемент с таким ключом уже есть в таблице. \\_('O_o)_/ ");
+		key_destroy(&key); 
+	}
+
+}
+
+Value table_search(Table table, Key key, size_t *pos)	//последний параметр -- выходной -- номер элемента в таблице
+{
+    if (table->size == 0) {
+        return NULL;
+    }
+    
+
+    if (table->sorted == false) {
+        //printf("Table has not been sorted. Sorting... ");
+        table_sort(table);
+        //printf("done.\n");
+    }
+    size_t start = 0;
+    size_t end = table->size;
+    size_t mid = (start + end) / 2;
+    
+    int lg;					// less or greater: <0 less, 0 equal, >0 greater
+    size_t mid_old = -1;
+    
+    while ((lg = key_compare(key, table->keys[mid])) != 0) {
+        if (lg > 0) {
+            start = mid;
+        } else {
+            end = mid;
+        }
+        mid_old = mid;
+        mid = (start + end) / 2;
+        if (mid == mid_old) {
+            return NULL;
+        }
+    }
+    
+    
+    *pos = mid;
+    return table->values[mid];
+}
+
+//void  table_clear  (Table table);
+
+/////////////////////////////////////////////////////////////////////////
+
+void row_print(Table table, size_t pos)
+{
+	printf("%9.6f|%s\n", table->keys[pos], table->values[pos]);
+}
+
+void  table_print  (Table table)		//реализация для float и char *
+{
+    if (table->size == 0) {
+        printf("Таблица пуста ~(T_T)~ \n");
+        return;
+    }
+    for (int i = 0; i < 80; i++) 
+        printf("=");
+    printf("\n");
+    for (size_t i = 0; i < table->size; i++) 
+        row_print(table, i);
+    for (int i = 0; i < 80; i++) 
+        printf("=");
+    printf("\n");
+}
+
+
+void table_input_and_push(Table table)
+{
+	size_t pos;
+	Key k;
+	Value v;
+	do {
+		k = key_input(true);
+        v = table_search(table, k, &pos);
+        if (v != NULL) {		//если элемент с таким ключом уже есть
+			printf("Ошибка! Элемент с таким ключом уже есть в таблице. \\_('O_o)_/ ");
+			key_destroy(&k);
+			
+		}
+    } while(v != NULL);
+	v = value_input();
+	table_push(table, k, v);
+}
+
+void table_swap_rows(Table table, size_t i, size_t j)
+{
+	if(table==NULL || i==j)
+		return;
+
+	Key k;
+	Value v = NULL;
+	
+	key_copy(&k, &(table->keys[i]));
+	key_copy(&(table->keys[i]), &(table->keys[j]));
+	key_copy(&(table->keys[j]), &k);
+	
+	value_copy(&v, &(table->values[i]));
+	value_copy(&(table->values[i]), &(table->values[j]));
+	value_copy(&(table->values[j]), &v);
+	
+	key_destroy(&k);
+	value_destroy(&v);
+}
+
+
+void table_sort(Table table)
+{
+    table_recursive_sort(table, 0, table->size - 1);
+    table->sorted = true;
+}
+
+void table_recursive_sort(Table table, size_t first, size_t last)
+{
+    size_t i = first, j = last;
+    Key kpivot;
+    key_copy(&kpivot, &(table->keys[(first + last) / 2]));
+
+    do {
+        while (key_compare(table->keys[i], kpivot) < 0) { //table->keys[i] < kpivot
+            i++;
+        }
+        while (key_compare(table->keys[j], kpivot) > 0) { //table->keys[j] > kpivot
+            j--;
+        }
+        
+        if (i <= j) {
+            if (key_compare(table->keys[i], table->keys[j]) > 0) {
+				table_swap_rows(table, i, j);
+            }
+            i++;
+            if(j > 0)     //защита от отрицательных для size_t
+                j--;
+            else
+                break;
+        }
+    } while (i <= j);
+    
+    if (i < last) {
+        table_recursive_sort(table, i, last);
+    }
+    if (first < j) {
+        table_recursive_sort(table, first, j);
+    }
+}
+
+void clean_stdin()
+{
+    int c;
+    do {
+        c = getchar();
+    } while (c != '\n' && c != EOF);
+}
+
+void table_reverse(Table table)
+{
+    if(table->size == 0)
+        return;
+
+    for(size_t i = 0; i < (table->size) / 2; i++) {
+        table_swap_rows(table, i, table->size - 1 - i);
+    }
+    table->sorted = false;
+}
+
+/* Random integer in [0, limit), https://stackoverflow.com/a/7622902 */
+size_t random_uint(size_t a, size_t b) {
+    size_t x = rand() & 0xff;
+	x |= (rand() & 0xff) << 8;
+	x |= (rand() & 0xff) << 16;
+	x |= (rand() & 0xff) << 24;
+	return x % (b-a) + a;
+}
+
+/* Random float in [0.0, a], https://stackoverflow.com/a/13409133 */
+float random_float() {
+    return (float)rand()/(float)(RAND_MAX);
+}
+
+void table_shuffle(Table table)
+{
+    if(table->size == 0)
+        return;
+
+    for(size_t i = 0; i < table->size - 1; ++i) {
+        size_t j = random_uint(0, table->size);
+        size_t k = random_uint(0, table->size);
+        table_swap_rows(table, j, k);
+    }
+}
+
+void generate_row(size_t k, size_t len, Table table)
+{
+    Key key;
+    Value v;
+    size_t pos;
+    do {
+        key = random_float() + k;
+        v = table_search(table, key, &pos);
+    }
+    while(v != NULL);
+
+    char * row = (char*) malloc(sizeof(char)*(len+1));
+    for(size_t i = 0; i<len; i++) {
+        if(rand() % len < k) {
+            row[i] = '|';
+        } else {
+            row[i] = ' ';
+        }
+    }
+    row[len] = '\0';
+    table_push(table, key, (Value)row);
+}
