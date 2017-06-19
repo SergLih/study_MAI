@@ -23,5 +23,6 @@ void ListAddNode(List *list, char * value);
 void ListInsert(List *list, int index, char * value);
 void ListExchange(List *list);
 int  ListLength(List *list);
+bool ListDeleteNode(List *list, Node *node_to_delete);
 
 #endif
