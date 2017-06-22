@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "api.h"
+#include "class.h"
+#include "student.h"
 
 int randint(int a, int b)
 {
