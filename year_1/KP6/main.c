@@ -3,8 +3,7 @@
 #include <string.h>
 #include <time.h>
 
-#include "class.h"
-#include "student.h"
+#include "api.h"
 
 void help()
 {
