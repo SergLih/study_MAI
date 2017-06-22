@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include "api.h"
+
+#include "class.h"
+#include "student.h"
 
 void help()
 {
