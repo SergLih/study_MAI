@@ -9,7 +9,13 @@ class TBinaryTreeIterator {
 public:
 	TBinaryTreeIterator(TreeNodePtr<T> n) {
 		treeNodePtr = n;
+		if (!treeNodePtr)
+			return;
+
+		while (treeNodePtr->left)
+			treeNodePtr = treeNodePtr->left;
 	}
+
 	std::shared_ptr<T> operator * () {
 		return treeNodePtr->GetPtr();
 	}
@@ -17,8 +23,29 @@ public:
 		return treeNodePtr->GetPtr();
 	}
 	void operator ++ () {
-		treeNodePtr = treeNodePtr->GetNext();
+		TreeNodePtr<T> res = treeNodePtr;
+		if (res->right) {
+			res = res->right;
+			while (res->left)
+				res = res->left;
+		}
+		else
+		{
+			while (true) {
+				if (!res->parent) {
+					res = nullptr;
+					break;
+				}
+				if (res->parent->left == res) {
+					res = res->parent;
+					break;
+				}
+				res = res->parent;
+			}
+		}
+		treeNodePtr = res;
 	}
+
 	TBinaryTreeIterator operator ++ (int) {
 		TBinaryTreeIterator iter(*this);
 		++(*this);
