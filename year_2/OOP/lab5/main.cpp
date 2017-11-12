@@ -104,7 +104,6 @@ int main(int argc, char** argv) {
 			std::cout << "\nf[ind]                 find figure in binary tree";
 			std::cout << "\np[rint]                print binary tree";
 			std::cout << "\nit[erate]              print iterator of binary tree";
-			std::cout << "it[erate]                print binary tree via iterator";
 			std::cout << "\ndel[ete]               delete in a binary tree a figure with the size <side>";
 			std::cout << "\nq[uit]                 exit the program\n\n";
 		}
