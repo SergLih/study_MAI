@@ -5,6 +5,9 @@
 #include "tlist_item.h"
 
 template<class T>
+class TList;
+
+template<class T>
 class TListItem;
 
 template <class T>
@@ -42,7 +45,9 @@ public:
 		return !(*this == i);
 	}
 
+	friend class TList<T>;
+
 private:
 	TListItem<T> *ptr;
 };
-#endif
+#endif 
