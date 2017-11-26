@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+#include <typeinfo>
 
 #include "pentagon.h"
 #include "octagon.h"
@@ -11,6 +12,7 @@ int main(int argc, char** argv) {
 	std::cout << "Use 'help' or 'h' to get help." << std::endl;
 	const int size = 16;
 	char s[size];
+
 
 	TStorage<Figure> storage;
 
@@ -45,56 +47,48 @@ int main(int argc, char** argv) {
 				continue;
 			}
 		}
-		/*else if (strcmp(s, "delete") == 0 || strcmp(s, "del") == 0) {
-			std::cout << "Which figure do you want to delete? (pent/hex/oct[agon]): ";
+		else if (strcmp(s, "delete") == 0 || strcmp(s, "del") == 0) {
+			std::cout << "Which criterion do you want to use? (a[rea]/t[ype]): ";
 			std::cin.getline(s, size);
 			std::cin.clear();
 			std::cin.sync();
 
-			if (strcmp(s, "pentagon") == 0 || strcmp(s, "pent") == 0) {
-				ptr_fig = std::shared_ptr<Pentagon>(new Pentagon(std::cin));
+			if (strcmp(s, "area") == 0 || strcmp(s, "a") == 0) {
+				double maxSq;
+				std::cout << "Enter the square threshold under which figures will be deleted: ";
+				std::cin >> maxSq;
+				RemoveCriteriaByMaxSquare critMaxSq(maxSq);
+				storage.DeleteByCriteria(critMaxSq);
 			}
-			else if (strcmp(s, "hexagon") == 0 || strcmp(s, "hex") == 0) {
-				ptr_fig = std::shared_ptr<Hexagon>(new Hexagon(std::cin));
-			}
-			else if (strcmp(s, "octagon") == 0 || strcmp(s, "oct") == 0) {
-				ptr_fig = std::shared_ptr<Octagon>(new Octagon(std::cin));
-			}
-			else {
-				std::cout << "Invalid choice. The figure has not been created! " << std::endl;
-				continue;
-			}
-			tree.Delete(ptr_fig);
-		}*/
-		/*else if (strcmp(s, "find") == 0 || strcmp(s, "f") == 0) {
-			std::cout << "Which figure do you want to find? (pent/hex/oct[agon]): ";
-			std::cin.getline(s, size);
-			std::cin.clear();
-			std::cin.sync();
+			else if (strcmp(s, "type") == 0 || strcmp(s, "t") == 0) 
+			{
+				std::cout << "Which type of figure do you want to delete? (pent/hex/oct[agon]): ";
+				std::cin.getline(s, size);
+				std::cin.clear();
+				std::cin.sync();
 
-			if (strcmp(s, "pentagon") == 0 || strcmp(s, "pent") == 0) {
-				ptr_fig = std::shared_ptr<Pentagon>(new Pentagon(std::cin));
+				if (strcmp(s, "pentagon") == 0 || strcmp(s, "pent") == 0) {
+					RemoveCriteriaByFigureType critFigType("Pentagon");
+					storage.DeleteByCriteria(critFigType);
+				}
+				else if (strcmp(s, "hexagon") == 0 || strcmp(s, "hex") == 0) {
+					RemoveCriteriaByFigureType critFigType("Hexagon");
+					storage.DeleteByCriteria(critFigType);
+				}
+				else if (strcmp(s, "octagon") == 0 || strcmp(s, "oct") == 0) {
+					RemoveCriteriaByFigureType critFigType("Octagon");
+					storage.DeleteByCriteria(critFigType);
+				}
+				else {
+					std::cout << "Invalid choice. The figure has not been created! " << std::endl;
+					continue;
+				}
 			}
-			else if (strcmp(s, "hexagon") == 0 || strcmp(s, "hex") == 0) {
-				ptr_fig = std::shared_ptr<Hexagon>(new Hexagon(std::cin));
-			}
-			else if (strcmp(s, "octagon") == 0 || strcmp(s, "oct") == 0) {
-				ptr_fig = std::shared_ptr<Octagon>(new Octagon(std::cin));
-			}
-			else {
-				std::cout << "Invalid choice. The figure has not been created! " << std::endl;
-				continue;
-			}
-			if (tree.Find(ptr_fig) != nullptr)
-				std::cout << "The figure was FOUND in the binary tree\n";
-			else
-				std::cout << "The figure was NOT FOUND in the binary tree\n";
-		}*/
+		}
 		else if (strcmp(s, "help") == 0 || strcmp(s, "h") == 0) {
-			std::cout << "\n\nappend or add        insert figure in binary tree";
-			std::cout << "\np[rint]                print binary tree";
-			std::cout << "\ndel[ete]               delete in a binary tree a figure with the size <side>";
-			std::cout << "\nq[uit]                 exit the program\n\n";
+			std::cout<<"\n\nadd                    insert figure into the storage";
+			std::cout << "\np[rint]                print contents of the storage";
+			std::cout << "\ndel[ete]               delete figures from the storage based on criteria\n";
 		}
 	}
 
