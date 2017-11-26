@@ -3,11 +3,19 @@
 
 #include <cstdint>
 #include "tlist_item.h"
+#include "tlist_iterator.h"
+
+//template <class T>
+//class TListItem;
+
+template <class T>
+class TListIterator;
 
 template <class T>
 class TList
 {
 public:
+
 	TList()
 	{
 		head = nullptr;
@@ -38,6 +46,28 @@ public:
 		}
 	}
 
+	void Delete(TListIterator<T> it)
+	{
+		TListItem<T> * node = it.ptr;
+		if (node == nullptr)
+			return;
+
+		if (node == head)
+		{
+			Pop();
+		}
+		else
+		{
+			TListItem<T> * tmp = head, *tmp2;
+			while (&tmp->GetNext() != node)
+				tmp = &tmp->GetNext();
+			tmp2 = &tmp->GetNext();
+			tmp->SetNext(&tmp2->GetNext());
+			delete tmp2;
+			count--;
+		}
+	}
+
 	T &Top()
 	{
 		return head->Pop();	//см. ListItem
@@ -52,6 +82,8 @@ public:
 		return count;
 	}
 
+	//template <class A> friend std::ostream& operator<<(std::ostream &os, const TList<A> &stack);
+
 	TListIterator<T> begin()
 	{
 		return TListIterator<T>(head);
@@ -62,15 +94,10 @@ public:
 		return TListIterator<T>(nullptr);
 	}
 
+	
+
 private:
 	TListItem<T> *head;
 	size_t count;
 };
-
 #endif
-
-//template<class A>
-//std::ostream & operator<<(std::ostream & os, const TList<A>& list)
-//{
-//	return os;
-//}
