@@ -53,7 +53,7 @@ Octagon::Octagon(const Octagon& orig) {
 }
 
 double Octagon::Square() {
-	return double((5.0 * side * side) / (4.0 * tan(M_PI / 5.0)));
+	return double((8.0 * side * side) / (4.0 * tan(M_PI / 8.0)));
 }
 
 void Octagon::print(std::ostream & os) const
