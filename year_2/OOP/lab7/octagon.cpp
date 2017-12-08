@@ -52,7 +52,7 @@ Octagon::Octagon(const Octagon& orig) {
     side = orig.side;
 }
 
-double Octagon::Square() {
+double Octagon::Square() const {
 	return double((8.0 * side * side) / (4.0 * tan(M_PI / 8.0)));
 }
 
@@ -82,7 +82,9 @@ Octagon::~Octagon() {
 }
 
 std::ostream& operator<<(std::ostream& os, const Octagon& obj) {
-    os << "Octagon, side = " << obj.side << std::endl;
+	os.precision(2);
+	os.setf(std::ios::fixed);
+	os << "Octagon \tside = " << obj.side << "\tsquare = " << obj.Square() << std::endl;
     return os;
 }
 
