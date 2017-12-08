@@ -14,7 +14,7 @@ public:
   
   friend std::ostream& operator<<(std::ostream& os, const Octagon& obj);
 	friend std::istream& operator>>(std::istream& is, Octagon& obj);
-	void print(std::ostream& os) const;
+	void print(std::ostream& os) const override;
 	Octagon& operator=(const Octagon& right);
 
 	virtual ~Octagon();
