@@ -51,7 +51,7 @@ Pentagon::Pentagon(const Pentagon& orig) {
     side = orig.side;
 }
 
-double Pentagon::Square() {
+double Pentagon::Square() const {
 	return double((5.0 * side * side) / (4.0 * tan(M_PI / 5.0)));
 }
 
@@ -82,7 +82,9 @@ Pentagon::~Pentagon() {
 
 
 std::ostream& operator<<(std::ostream& os, const Pentagon& obj) {
-    os << "Pentagon, side = " << obj.side << std::endl;
+	os.precision(2);
+	os.setf(std::ios::fixed);
+    os << "Pentagon \tside = " << obj.side << "\tsquare = " << obj.Square() << std::endl;
     return os;
 }
 
