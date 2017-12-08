@@ -51,8 +51,8 @@ Hexagon::Hexagon(const Hexagon& orig) {
     side = orig.side;
 }
 
-double Hexagon::Square() {
-	return double((5.0 * side * side) / (4.0 * tan(M_PI / 5.0)));
+double Hexagon::Square() const {
+	return double((6.0 * side * side) / (4.0 * tan(M_PI / 6.0)));
 }
 
 void Hexagon::print(std::ostream & os) const
@@ -81,7 +81,9 @@ Hexagon::~Hexagon() {
 }
 
 std::ostream& operator<<(std::ostream& os, const Hexagon& obj) {
-    os << "Hexagon, side = " << obj.side << std::endl;
+	os.precision(2);
+	os.setf(std::ios::fixed);
+	os << "Hexagon \tside = " << obj.side << "\tsquare = " << obj.Square() << std::endl;
     return os;
 }
 
