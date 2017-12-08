@@ -14,7 +14,7 @@ public:
   
   friend std::ostream& operator<<(std::ostream& os, const Hexagon& obj);
 	friend std::istream& operator>>(std::istream& is, Hexagon& obj);
-	void print(std::ostream& os) const;
+	void print(std::ostream& os) const override;
 	Hexagon& operator=(const Hexagon& right);
 
 	virtual ~Hexagon();
