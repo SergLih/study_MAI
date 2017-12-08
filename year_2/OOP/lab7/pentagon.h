@@ -14,7 +14,7 @@ class Pentagon : public Figure {
     
     friend std::ostream& operator<<(std::ostream& os, const Pentagon& obj);
     friend std::istream& operator>>(std::istream& is,  Pentagon& obj);
-		void print(std::ostream& os) const;
+    void print(std::ostream& os) const override;
     Pentagon& operator=(const Pentagon& right);
 		
 		virtual ~Pentagon();
