@@ -1,0 +1,10 @@
+C:\Users\Sergey\Desktop\Лихарев Сергей\МАИ\Информатика\CG\KP\kp_work\kp_work\obj\Debug\kp_work.csprojResolveAssemblyReference.cache
+C:\Users\Sergey\Desktop\Лихарев Сергей\МАИ\Информатика\CG\KP\kp_work\kp_work\obj\Debug\kp_work.Form1.resources
+C:\Users\Sergey\Desktop\Лихарев Сергей\МАИ\Информатика\CG\KP\kp_work\kp_work\obj\Debug\kp_work.Properties.Resources.resources
+C:\Users\Sergey\Desktop\Лихарев Сергей\МАИ\Информатика\CG\KP\kp_work\kp_work\obj\Debug\kp_work.csproj.GenerateResource.Cache
+C:\Users\Sergey\Desktop\Лихарев Сергей\МАИ\Информатика\CG\KP\kp_work\kp_work\obj\Debug\kp_work.csproj.CoreCompileInputs.cache
+C:\Users\Sergey\Desktop\Лихарев Сергей\МАИ\Информатика\CG\KP\kp_work\kp_work\bin\Debug\kp_work.exe.config
+C:\Users\Sergey\Desktop\Лихарев Сергей\МАИ\Информатика\CG\KP\kp_work\kp_work\bin\Debug\kp_work.exe
+C:\Users\Sergey\Desktop\Лихарев Сергей\МАИ\Информатика\CG\KP\kp_work\kp_work\bin\Debug\kp_work.pdb
+C:\Users\Sergey\Desktop\Лихарев Сергей\МАИ\Информатика\CG\KP\kp_work\kp_work\obj\Debug\kp_work.exe
+C:\Users\Sergey\Desktop\Лихарев Сергей\МАИ\Информатика\CG\KP\kp_work\kp_work\obj\Debug\kp_work.pdb
