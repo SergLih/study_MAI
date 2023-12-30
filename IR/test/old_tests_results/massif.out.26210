@@ -1,0 +1,1129 @@
+desc: (none)
+cmd: ./expat_test build /home/sergey/MAI/maga/Inf_search/test/res100k.xml test_new.ht
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=1787232304
+mem_heap_B=1370921
+mem_heap_extra_B=278711
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=3185364881
+mem_heap_B=1875117
+mem_heap_extra_B=418795
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=4470309099
+mem_heap_B=1944766
+mem_heap_extra_B=420282
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=6617565401
+mem_heap_B=2793716
+mem_heap_extra_B=625628
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=8250220957
+mem_heap_B=2890224
+mem_heap_extra_B=628104
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=9388745009
+mem_heap_B=2979630
+mem_heap_extra_B=629354
+mem_stacks_B=0
+heap_tree=detailed
+n8: 2979630 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1255240 0x112B12: THashTable::expandIfNeeded() (hashtable.hpp:45)
+  n1: 1255240 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+   n1: 1255240 0x110B5F: process_char_data_buffer() (main.cpp:66)
+    n1: 1255240 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+     n1: 1255240 0x4E3DD43: doContent (xmlparse.c:2864)
+      n1: 1255240 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+       n1: 1255240 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 1255240 0x111316: main (main.cpp:136)
+ n1: 627624 0x112B7E: THashTable::expandIfNeeded() (hashtable.hpp:46)
+  n1: 627624 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+   n1: 627624 0x110B5F: process_char_data_buffer() (main.cpp:66)
+    n1: 627624 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+     n1: 627624 0x4E3DD43: doContent (xmlparse.c:2864)
+      n1: 627624 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+       n1: 627624 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 627624 0x111316: main (main.cpp:136)
+ n1: 445124 0x1126E5: TVector::expand() (vector.hpp:29)
+  n1: 445124 0x1128AB: TVector::push(unsigned int) (vector.hpp:61)
+   n1: 445124 0x11332E: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:101)
+    n1: 445124 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n2: 445124 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 445124 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 445124 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 445124 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 445124 0x111316: main (main.cpp:136)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 228402 0x117018: __gnu_cxx::new_allocator<char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n2: 228402 0x1156A4: std::allocator_traits<std::allocator<char> >::allocate(std::allocator<char>&, unsigned long) (alloc_traits.h:436)
+   n3: 228402 0x1188EA: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long) (basic_string.tcc:153)
+    n1: 131073 0x518A07B: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+     n1: 131073 0x517DCA6: std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::overflow(int) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+      n1: 131073 0x51884A9: std::basic_streambuf<char, std::char_traits<char> >::xsputn(char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+       n1: 131073 0x5178B82: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+        n1: 131073 0x1108DB: char_data(void*, char const*, int) (main.cpp:46)
+         n1: 131073 0x4E3DC51: doContent (xmlparse.c:2985)
+          n2: 131073 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+           n1: 131073 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 131073 0x111316: main (main.cpp:136)
+           n0: 0 in 1 place, below massif's threshold (1.00%)
+    n1: 67003 0x116C47: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long) (basic_string.tcc:317)
+     n1: 67003 0x518A949: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+      n1: 67003 0x51828F5: std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::str() const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+       n1: 67003 0x11098C: process_char_data_buffer() (main.cpp:51)
+        n2: 67003 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+         n1: 67003 0x4E3DD43: doContent (xmlparse.c:2864)
+          n1: 67003 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+           n1: 67003 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 67003 0x111316: main (main.cpp:136)
+         n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 30326 in 4 places, all below massif's threshold (1.00%)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 164848 0x1127F4: TVector::operator=(TVector const&) (vector.hpp:49)
+  n1: 164848 0x112CF6: THashTable::expandIfNeeded() (hashtable.hpp:54)
+   n1: 164848 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+    n1: 164848 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n1: 164848 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 164848 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 164848 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 164848 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 164848 0x111316: main (main.cpp:136)
+ n2: 154368 0x112752: TVector::TVector() (vector.hpp:38)
+  n1: 154368 0x112BA0: THashTable::expandIfNeeded() (hashtable.hpp:46)
+   n1: 154368 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+    n1: 154368 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n1: 154368 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 154368 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 154368 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 154368 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 154368 0x111316: main (main.cpp:136)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x50F4424: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010781: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x2: ???
+     n1: 72704 0x1FFEFFFEA9: ???
+      n1: 72704 0x1FFEFFFEB6: ???
+       n1: 72704 0x1FFEFFFEBC: ???
+        n0: 72704 0x1FFEFFFEEE: ???
+ n0: 31320 in 27 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=7
+#-----------
+time=10935866438
+mem_heap_B=3024318
+mem_heap_extra_B=630610
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=12799708112
+mem_heap_B=3139407
+mem_heap_extra_B=632321
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=14213567781
+mem_heap_B=3215436
+mem_heap_extra_B=633244
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=15874047365
+mem_heap_B=3302202
+mem_heap_extra_B=634014
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=16962891986
+mem_heap_B=7528231
+mem_heap_extra_B=1577281
+mem_stacks_B=0
+heap_tree=detailed
+n7: 7528231 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 3138096 0x112B12: THashTable::expandIfNeeded() (hashtable.hpp:45)
+  n1: 3138096 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+   n1: 3138096 0x110B5F: process_char_data_buffer() (main.cpp:66)
+    n1: 3138096 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+     n1: 3138096 0x4E3DD43: doContent (xmlparse.c:2864)
+      n1: 3138096 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+       n1: 3138096 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 3138096 0x111316: main (main.cpp:136)
+ n1: 1569056 0x112B7E: THashTable::expandIfNeeded() (hashtable.hpp:46)
+  n1: 1569056 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+   n1: 1569056 0x110B5F: process_char_data_buffer() (main.cpp:66)
+    n1: 1569056 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+     n1: 1569056 0x4E3DD43: doContent (xmlparse.c:2864)
+      n1: 1569056 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+       n1: 1569056 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 1569056 0x111316: main (main.cpp:136)
+ n1: 1151656 0x1127F4: TVector::operator=(TVector const&) (vector.hpp:49)
+  n1: 1151656 0x112CF6: THashTable::expandIfNeeded() (hashtable.hpp:54)
+   n1: 1151656 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+    n1: 1151656 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n1: 1151656 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 1151656 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 1151656 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 1151656 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 1151656 0x111316: main (main.cpp:136)
+ n1: 920184 0x1126E5: TVector::expand() (vector.hpp:29)
+  n1: 920184 0x1128AB: TVector::push(unsigned int) (vector.hpp:61)
+   n1: 920184 0x11332E: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:101)
+    n1: 920184 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n2: 920184 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 920184 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 920184 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 920184 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 920184 0x111316: main (main.cpp:136)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+ n2: 385120 0x112752: TVector::TVector() (vector.hpp:38)
+  n1: 385120 0x112BA0: THashTable::expandIfNeeded() (hashtable.hpp:46)
+   n1: 385120 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+    n1: 385120 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n1: 385120 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 385120 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 385120 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 385120 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 385120 0x111316: main (main.cpp:136)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 259195 0x117018: __gnu_cxx::new_allocator<char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n2: 259195 0x1156A4: std::allocator_traits<std::allocator<char> >::allocate(std::allocator<char>&, unsigned long) (alloc_traits.h:436)
+   n2: 259193 0x1188EA: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long) (basic_string.tcc:153)
+    n1: 131073 0x518A07B: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+     n1: 131073 0x517DCA6: std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::overflow(int) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+      n1: 131073 0x51884A9: std::basic_streambuf<char, std::char_traits<char> >::xsputn(char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+       n1: 131073 0x5178B82: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+        n1: 131073 0x1108DB: char_data(void*, char const*, int) (main.cpp:46)
+         n1: 131073 0x4E3DC51: doContent (xmlparse.c:2985)
+          n2: 131073 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+           n1: 131073 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 131073 0x111316: main (main.cpp:136)
+           n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 128120 in 5 places, all below massif's threshold (1.00%)
+   n0: 2 in 1 place, below massif's threshold (1.00%)
+ n0: 104924 in 28 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=12
+#-----------
+time=18774325085
+mem_heap_B=4574018
+mem_heap_extra_B=945438
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=21102636295
+mem_heap_B=4732091
+mem_heap_extra_B=947653
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=22521095447
+mem_heap_B=4803512
+mem_heap_extra_B=949976
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=24142190203
+mem_heap_B=4883650
+mem_heap_extra_B=951542
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=25358016445
+mem_heap_B=4952118
+mem_heap_extra_B=952266
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=26778998680
+mem_heap_B=5041942
+mem_heap_extra_B=953546
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=28805500159
+mem_heap_B=5158998
+mem_heap_extra_B=955114
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=30723262226
+mem_heap_B=5302894
+mem_heap_extra_B=958218
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=33054967065
+mem_heap_B=12161465
+mem_heap_extra_B=2375815
+mem_stacks_B=0
+heap_tree=detailed
+n7: 12161465 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4707120 0x112B12: THashTable::expandIfNeeded() (hashtable.hpp:45)
+  n1: 4707120 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+   n1: 4707120 0x110B5F: process_char_data_buffer() (main.cpp:66)
+    n1: 4707120 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+     n1: 4707120 0x4E3DD43: doContent (xmlparse.c:2864)
+      n1: 4707120 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+       n1: 4707120 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 4707120 0x111316: main (main.cpp:136)
+ n1: 2353568 0x112B7E: THashTable::expandIfNeeded() (hashtable.hpp:46)
+  n1: 2353568 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+   n1: 2353568 0x110B5F: process_char_data_buffer() (main.cpp:66)
+    n1: 2353568 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+     n1: 2353568 0x4E3DD43: doContent (xmlparse.c:2864)
+      n1: 2353568 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+       n1: 2353568 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 2353568 0x111316: main (main.cpp:136)
+ n1: 2169588 0x1127F4: TVector::operator=(TVector const&) (vector.hpp:49)
+  n1: 2169588 0x112CF6: THashTable::expandIfNeeded() (hashtable.hpp:54)
+   n1: 2169588 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+    n1: 2169588 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n1: 2169588 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 2169588 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 2169588 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 2169588 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 2169588 0x111316: main (main.cpp:136)
+ n1: 1901900 0x1126E5: TVector::expand() (vector.hpp:29)
+  n1: 1901900 0x1128AB: TVector::push(unsigned int) (vector.hpp:61)
+   n1: 1901900 0x11332E: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:101)
+    n1: 1901900 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n2: 1901900 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 1897404 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 1897404 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 1897404 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 1897404 0x111316: main (main.cpp:136)
+      n0: 4496 in 1 place, below massif's threshold (1.00%)
+ n2: 594816 0x112752: TVector::TVector() (vector.hpp:38)
+  n1: 594816 0x112BA0: THashTable::expandIfNeeded() (hashtable.hpp:46)
+   n1: 594816 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+    n1: 594816 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n1: 594816 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 594816 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 594816 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 594816 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 594816 0x111316: main (main.cpp:136)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 329549 0x117018: __gnu_cxx::new_allocator<char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n2: 329549 0x1156A4: std::allocator_traits<std::allocator<char> >::allocate(std::allocator<char>&, unsigned long) (alloc_traits.h:436)
+   n2: 329547 0x1188EA: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long) (basic_string.tcc:153)
+    n0: 166804 in 5 places, all below massif's threshold (1.00%)
+    n1: 162743 0x116E01: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (basic_string.tcc:265)
+     n1: 162743 0x1154A1: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (basic_string.h:1356)
+      n1: 162743 0x114236: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator=(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (basic_string.h:685)
+       n0: 162743 in 2 places, all below massif's threshold (1.00%)
+   n0: 2 in 1 place, below massif's threshold (1.00%)
+ n0: 104924 in 28 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=21
+#-----------
+time=34262623938
+mem_heap_B=7182631
+mem_heap_extra_B=1419241
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=36074110865
+mem_heap_B=7286668
+mem_heap_extra_B=1420340
+mem_stacks_B=0
+heap_tree=detailed
+n7: 7286668 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2824264 0x112B12: THashTable::expandIfNeeded() (hashtable.hpp:45)
+  n1: 2824264 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+   n1: 2824264 0x110B5F: process_char_data_buffer() (main.cpp:66)
+    n1: 2824264 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+     n1: 2824264 0x4E3DD43: doContent (xmlparse.c:2864)
+      n1: 2824264 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+       n1: 2824264 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 2824264 0x111316: main (main.cpp:136)
+ n1: 1802160 0x1127F4: TVector::operator=(TVector const&) (vector.hpp:49)
+  n1: 1802160 0x112CF6: THashTable::expandIfNeeded() (hashtable.hpp:54)
+   n1: 1802160 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+    n1: 1802160 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n1: 1802160 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 1802160 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 1802160 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 1802160 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 1802160 0x111316: main (main.cpp:136)
+ n1: 1412136 0x112B7E: THashTable::expandIfNeeded() (hashtable.hpp:46)
+  n1: 1412136 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+   n1: 1412136 0x110B5F: process_char_data_buffer() (main.cpp:66)
+    n1: 1412136 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+     n1: 1412136 0x4E3DD43: doContent (xmlparse.c:2864)
+      n1: 1412136 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+       n1: 1412136 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 1412136 0x111316: main (main.cpp:136)
+ n1: 530144 0x1126E5: TVector::expand() (vector.hpp:29)
+  n1: 530144 0x1128AB: TVector::push(unsigned int) (vector.hpp:61)
+   n1: 530144 0x11332E: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:101)
+    n1: 530144 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n2: 530144 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 527808 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 527808 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 527808 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 527808 0x111316: main (main.cpp:136)
+      n0: 2336 in 1 place, below massif's threshold (1.00%)
+ n2: 350824 0x112752: TVector::TVector() (vector.hpp:38)
+  n1: 350824 0x112BA0: THashTable::expandIfNeeded() (hashtable.hpp:46)
+   n1: 350824 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+    n1: 350824 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n1: 350824 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 350824 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 350824 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 350824 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 350824 0x111316: main (main.cpp:136)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 262008 0x117018: __gnu_cxx::new_allocator<char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n2: 262008 0x1156A4: std::allocator_traits<std::allocator<char> >::allocate(std::allocator<char>&, unsigned long) (alloc_traits.h:436)
+   n3: 262006 0x1188EA: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long) (basic_string.tcc:153)
+    n1: 131073 0x518A07B: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+     n1: 131073 0x517DCA6: std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::overflow(int) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+      n1: 131073 0x51884A9: std::basic_streambuf<char, std::char_traits<char> >::xsputn(char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+       n1: 131073 0x5178B82: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+        n1: 131073 0x1108DB: char_data(void*, char const*, int) (main.cpp:46)
+         n1: 131073 0x4E3DC51: doContent (xmlparse.c:2985)
+          n2: 131073 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+           n1: 131073 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 131073 0x111316: main (main.cpp:136)
+           n0: 0 in 1 place, below massif's threshold (1.00%)
+    n1: 94681 0x116E01: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (basic_string.tcc:265)
+     n1: 94681 0x1154A1: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (basic_string.h:1356)
+      n1: 94681 0x114236: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator=(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (basic_string.h:685)
+       n0: 94681 in 2 places, all below massif's threshold (1.00%)
+    n0: 36252 in 4 places, all below massif's threshold (1.00%)
+   n0: 2 in 1 place, below massif's threshold (1.00%)
+ n0: 105132 in 28 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=23
+#-----------
+time=37585252862
+mem_heap_B=7377596
+mem_heap_extra_B=1422420
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=38792911033
+mem_heap_B=7442406
+mem_heap_extra_B=1423610
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=40710083570
+mem_heap_B=7551902
+mem_heap_extra_B=1426546
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=42331219889
+mem_heap_B=7654999
+mem_heap_extra_B=1426921
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=43547943431
+mem_heap_B=7758093
+mem_heap_extra_B=1426907
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=45169144449
+mem_heap_B=7854713
+mem_heap_extra_B=1427935
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=46385188008
+mem_heap_B=7904557
+mem_heap_extra_B=1428587
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=48411695686
+mem_heap_B=8033017
+mem_heap_extra_B=1430295
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=50033510901
+mem_heap_B=8124465
+mem_heap_extra_B=1430911
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=52062103540
+mem_heap_B=8255763
+mem_heap_extra_B=1431797
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=53286353728
+mem_heap_B=8364785
+mem_heap_extra_B=1432391
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=54907486345
+mem_heap_B=8444973
+mem_heap_extra_B=1432507
+mem_stacks_B=0
+heap_tree=detailed
+n7: 8444973 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2990384 0x1126E5: TVector::expand() (vector.hpp:29)
+  n1: 2990384 0x1128AB: TVector::push(unsigned int) (vector.hpp:61)
+   n1: 2990384 0x11332E: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:101)
+    n1: 2990384 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n2: 2990384 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 2961776 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 2961776 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 2961776 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 2961776 0x111316: main (main.cpp:136)
+      n0: 28608 in 1 place, below massif's threshold (1.00%)
+ n1: 2824264 0x112B12: THashTable::expandIfNeeded() (hashtable.hpp:45)
+  n1: 2824264 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+   n1: 2824264 0x110B5F: process_char_data_buffer() (main.cpp:66)
+    n1: 2824264 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+     n1: 2824264 0x4E3DD43: doContent (xmlparse.c:2864)
+      n1: 2824264 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+       n1: 2824264 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 2824264 0x111316: main (main.cpp:136)
+ n1: 1412136 0x112B7E: THashTable::expandIfNeeded() (hashtable.hpp:46)
+  n1: 1412136 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+   n1: 1412136 0x110B5F: process_char_data_buffer() (main.cpp:66)
+    n1: 1412136 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+     n1: 1412136 0x4E3DD43: doContent (xmlparse.c:2864)
+      n1: 1412136 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+       n1: 1412136 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 1412136 0x111316: main (main.cpp:136)
+ n1: 511372 0x1127F4: TVector::operator=(TVector const&) (vector.hpp:49)
+  n1: 511372 0x112CF6: THashTable::expandIfNeeded() (hashtable.hpp:54)
+   n1: 511372 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+    n1: 511372 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n1: 511372 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 511372 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 511372 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 511372 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 511372 0x111316: main (main.cpp:136)
+ n2: 334000 0x112752: TVector::TVector() (vector.hpp:38)
+  n1: 334000 0x112BA0: THashTable::expandIfNeeded() (hashtable.hpp:46)
+   n1: 334000 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+    n1: 334000 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n1: 334000 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 334000 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 334000 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 334000 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 334000 0x111316: main (main.cpp:136)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 267685 0x117018: __gnu_cxx::new_allocator<char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n2: 267685 0x1156A4: std::allocator_traits<std::allocator<char> >::allocate(std::allocator<char>&, unsigned long) (alloc_traits.h:436)
+   n3: 267683 0x1188EA: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long) (basic_string.tcc:153)
+    n1: 131073 0x518A07B: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+     n1: 131073 0x517DCA6: std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::overflow(int) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+      n1: 131073 0x51884A9: std::basic_streambuf<char, std::char_traits<char> >::xsputn(char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+       n1: 131073 0x5178B82: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+        n1: 131073 0x1108DB: char_data(void*, char const*, int) (main.cpp:46)
+         n1: 131073 0x4E3DC51: doContent (xmlparse.c:2985)
+          n2: 131073 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+           n1: 131073 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 131073 0x111316: main (main.cpp:136)
+           n0: 0 in 1 place, below massif's threshold (1.00%)
+    n1: 114659 0x116E01: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (basic_string.tcc:265)
+     n1: 114659 0x1154A1: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (basic_string.h:1356)
+      n1: 114659 0x114236: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator=(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (basic_string.h:685)
+       n0: 114659 in 2 places, all below massif's threshold (1.00%)
+    n0: 21951 in 4 places, all below massif's threshold (1.00%)
+   n0: 2 in 1 place, below massif's threshold (1.00%)
+ n0: 105132 in 28 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=35
+#-----------
+time=55722964905
+mem_heap_B=8501881
+mem_heap_extra_B=1432855
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=57749389263
+mem_heap_B=8643574
+mem_heap_extra_B=1434186
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=58965240212
+mem_heap_B=8725370
+mem_heap_extra_B=1434630
+mem_stacks_B=0
+heap_tree=detailed
+n7: 8725370 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 3316600 0x1126E5: TVector::expand() (vector.hpp:29)
+  n1: 3316600 0x1128AB: TVector::push(unsigned int) (vector.hpp:61)
+   n1: 3316600 0x11332E: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:101)
+    n1: 3316600 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n2: 3316600 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 3290264 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 3290264 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 3290264 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 3290264 0x111316: main (main.cpp:136)
+      n0: 26336 in 1 place, below massif's threshold (1.00%)
+ n1: 2824264 0x112B12: THashTable::expandIfNeeded() (hashtable.hpp:45)
+  n1: 2824264 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+   n1: 2824264 0x110B5F: process_char_data_buffer() (main.cpp:66)
+    n1: 2824264 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+     n1: 2824264 0x4E3DD43: doContent (xmlparse.c:2864)
+      n1: 2824264 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+       n1: 2824264 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 2824264 0x111316: main (main.cpp:136)
+ n1: 1412136 0x112B7E: THashTable::expandIfNeeded() (hashtable.hpp:46)
+  n1: 1412136 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+   n1: 1412136 0x110B5F: process_char_data_buffer() (main.cpp:66)
+    n1: 1412136 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+     n1: 1412136 0x4E3DD43: doContent (xmlparse.c:2864)
+      n1: 1412136 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+       n1: 1412136 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 1412136 0x111316: main (main.cpp:136)
+ n1: 457108 0x1127F4: TVector::operator=(TVector const&) (vector.hpp:49)
+  n1: 457108 0x112CF6: THashTable::expandIfNeeded() (hashtable.hpp:54)
+   n1: 457108 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+    n1: 457108 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n1: 457108 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 457108 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 457108 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 457108 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 457108 0x111316: main (main.cpp:136)
+ n2: 330216 0x112752: TVector::TVector() (vector.hpp:38)
+  n1: 330216 0x112BA0: THashTable::expandIfNeeded() (hashtable.hpp:46)
+   n1: 330216 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+    n1: 330216 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n1: 330216 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 330216 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 330216 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 330216 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 330216 0x111316: main (main.cpp:136)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 279930 0x117018: __gnu_cxx::new_allocator<char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n2: 279930 0x1156A4: std::allocator_traits<std::allocator<char> >::allocate(std::allocator<char>&, unsigned long) (alloc_traits.h:436)
+   n3: 279928 0x1188EA: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long) (basic_string.tcc:153)
+    n1: 131073 0x518A07B: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+     n1: 131073 0x517DCA6: std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::overflow(int) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+      n1: 131073 0x51884A9: std::basic_streambuf<char, std::char_traits<char> >::xsputn(char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+       n1: 131073 0x5178B82: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+        n1: 131073 0x1108DB: char_data(void*, char const*, int) (main.cpp:46)
+         n1: 131073 0x4E3DC51: doContent (xmlparse.c:2985)
+          n2: 131073 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+           n1: 131073 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 131073 0x111316: main (main.cpp:136)
+           n0: 0 in 1 place, below massif's threshold (1.00%)
+    n1: 123269 0x116E01: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (basic_string.tcc:265)
+     n1: 123269 0x1154A1: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (basic_string.h:1356)
+      n1: 123269 0x114236: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator=(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (basic_string.h:685)
+       n0: 123269 in 2 places, all below massif's threshold (1.00%)
+    n0: 25586 in 4 places, all below massif's threshold (1.00%)
+   n0: 2 in 1 place, below massif's threshold (1.00%)
+ n0: 105116 in 28 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=38
+#-----------
+time=60586379020
+mem_heap_B=8829432
+mem_heap_extra_B=1435608
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=62410324932
+mem_heap_B=8947461
+mem_heap_extra_B=1436851
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=64234112015
+mem_heap_B=9083392
+mem_heap_extra_B=1437912
+mem_stacks_B=0
+heap_tree=detailed
+n7: 9083392 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 3712576 0x1126E5: TVector::expand() (vector.hpp:29)
+  n1: 3712576 0x1128AB: TVector::push(unsigned int) (vector.hpp:61)
+   n1: 3712576 0x11332E: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:101)
+    n1: 3712576 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n2: 3712576 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 3685180 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 3685180 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 3685180 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 3685180 0x111316: main (main.cpp:136)
+      n0: 27396 in 1 place, below massif's threshold (1.00%)
+ n1: 2824264 0x112B12: THashTable::expandIfNeeded() (hashtable.hpp:45)
+  n1: 2824264 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+   n1: 2824264 0x110B5F: process_char_data_buffer() (main.cpp:66)
+    n1: 2824264 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+     n1: 2824264 0x4E3DD43: doContent (xmlparse.c:2864)
+      n1: 2824264 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+       n1: 2824264 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 2824264 0x111316: main (main.cpp:136)
+ n1: 1412136 0x112B7E: THashTable::expandIfNeeded() (hashtable.hpp:46)
+  n1: 1412136 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+   n1: 1412136 0x110B5F: process_char_data_buffer() (main.cpp:66)
+    n1: 1412136 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+     n1: 1412136 0x4E3DD43: doContent (xmlparse.c:2864)
+      n1: 1412136 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+       n1: 1412136 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 1412136 0x111316: main (main.cpp:136)
+ n1: 416940 0x1127F4: TVector::operator=(TVector const&) (vector.hpp:49)
+  n1: 416940 0x112CF6: THashTable::expandIfNeeded() (hashtable.hpp:54)
+   n1: 416940 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+    n1: 416940 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n1: 416940 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 416940 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 416940 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 416940 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 416940 0x111316: main (main.cpp:136)
+ n2: 325032 0x112752: TVector::TVector() (vector.hpp:38)
+  n1: 325032 0x112BA0: THashTable::expandIfNeeded() (hashtable.hpp:46)
+   n1: 325032 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+    n1: 325032 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n1: 325032 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 325032 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 325032 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 325032 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 325032 0x111316: main (main.cpp:136)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 287328 0x117018: __gnu_cxx::new_allocator<char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n2: 287328 0x1156A4: std::allocator_traits<std::allocator<char> >::allocate(std::allocator<char>&, unsigned long) (alloc_traits.h:436)
+   n3: 287326 0x1188EA: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long) (basic_string.tcc:153)
+    n1: 134033 0x116E01: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (basic_string.tcc:265)
+     n1: 134033 0x1154A1: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (basic_string.h:1356)
+      n1: 134033 0x114236: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator=(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (basic_string.h:685)
+       n0: 134033 in 2 places, all below massif's threshold (1.00%)
+    n1: 131073 0x518A07B: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+     n1: 131073 0x517DCA6: std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::overflow(int) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+      n1: 131073 0x51884A9: std::basic_streambuf<char, std::char_traits<char> >::xsputn(char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+       n1: 131073 0x5178B82: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+        n1: 131073 0x1108DB: char_data(void*, char const*, int) (main.cpp:46)
+         n1: 131073 0x4E3DC51: doContent (xmlparse.c:2985)
+          n2: 131073 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+           n1: 131073 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 131073 0x111316: main (main.cpp:136)
+           n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 22220 in 4 places, all below massif's threshold (1.00%)
+   n0: 2 in 1 place, below massif's threshold (1.00%)
+ n0: 105116 in 28 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=41
+#-----------
+time=65449964586
+mem_heap_B=9169047
+mem_heap_extra_B=1438329
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=67274113020
+mem_heap_B=9264774
+mem_heap_extra_B=1439722
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=69105976542
+mem_heap_B=20773448
+mem_heap_extra_B=3575920
+mem_stacks_B=0
+heap_tree=peak
+n7: 20773448 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 7060656 0x112B12: THashTable::expandIfNeeded() (hashtable.hpp:45)
+  n1: 7060656 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+   n1: 7060656 0x110B5F: process_char_data_buffer() (main.cpp:66)
+    n1: 7060656 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+     n1: 7060656 0x4E3DD43: doContent (xmlparse.c:2864)
+      n1: 7060656 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+       n1: 7060656 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 7060656 0x111316: main (main.cpp:136)
+ n1: 4730836 0x1127F4: TVector::operator=(TVector const&) (vector.hpp:49)
+  n1: 4730836 0x112CF6: THashTable::expandIfNeeded() (hashtable.hpp:54)
+   n1: 4730836 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+    n1: 4730836 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n1: 4730836 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 4730836 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 4730836 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 4730836 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 4730836 0x111316: main (main.cpp:136)
+ n1: 4035520 0x1126E5: TVector::expand() (vector.hpp:29)
+  n1: 4035520 0x1128AB: TVector::push(unsigned int) (vector.hpp:61)
+   n1: 4035520 0x11332E: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:101)
+    n1: 4035520 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n2: 4035520 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 4011836 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 4011836 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 4011836 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 4011836 0x111316: main (main.cpp:136)
+      n0: 23684 in 1 place, below massif's threshold (1.00%)
+ n1: 3530336 0x112B7E: THashTable::expandIfNeeded() (hashtable.hpp:46)
+  n1: 3530336 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+   n1: 3530336 0x110B5F: process_char_data_buffer() (main.cpp:66)
+    n1: 3530336 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+     n1: 3530336 0x4E3DD43: doContent (xmlparse.c:2864)
+      n1: 3530336 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+       n1: 3530336 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 3530336 0x111316: main (main.cpp:136)
+ n2: 871864 0x112752: TVector::TVector() (vector.hpp:38)
+  n1: 871864 0x112BA0: THashTable::expandIfNeeded() (hashtable.hpp:46)
+   n1: 871864 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+    n1: 871864 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n1: 871864 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 871864 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 871864 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 871864 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 871864 0x111316: main (main.cpp:136)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 439312 0x117018: __gnu_cxx::new_allocator<char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n2: 439312 0x1156A4: std::allocator_traits<std::allocator<char> >::allocate(std::allocator<char>&, unsigned long) (alloc_traits.h:436)
+   n2: 439310 0x1188EA: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long) (basic_string.tcc:153)
+    n1: 284467 0x116E01: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (basic_string.tcc:265)
+     n1: 284467 0x1154A1: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (basic_string.h:1356)
+      n1: 284467 0x114236: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator=(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (basic_string.h:685)
+       n0: 284467 in 2 places, all below massif's threshold (1.00%)
+    n0: 154843 in 5 places, all below massif's threshold (1.00%)
+   n0: 2 in 1 place, below massif's threshold (1.00%)
+ n0: 104924 in 28 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=44
+#-----------
+time=70929756090
+mem_heap_B=12007612
+mem_heap_extra_B=2144524
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=72753538605
+mem_heap_B=12085456
+mem_heap_extra_B=2148392
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=73969395763
+mem_heap_B=12167729
+mem_heap_extra_B=2151215
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=75793177764
+mem_heap_B=12302131
+mem_heap_extra_B=2155677
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=78225637363
+mem_heap_B=12487646
+mem_heap_extra_B=2160618
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=80054464136
+mem_heap_B=12548484
+mem_heap_extra_B=2163332
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=80869943368
+mem_heap_B=12601216
+mem_heap_extra_B=2163992
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=81685422514
+mem_heap_B=12626704
+mem_heap_extra_B=2165400
+mem_stacks_B=0
+heap_tree=detailed
+n7: 12626704 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4236392 0x112B12: THashTable::expandIfNeeded() (hashtable.hpp:45)
+  n1: 4236392 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+   n1: 4236392 0x110B5F: process_char_data_buffer() (main.cpp:66)
+    n1: 4236392 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+     n1: 4236392 0x4E3DD43: doContent (xmlparse.c:2864)
+      n1: 4236392 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+       n1: 4236392 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 4236392 0x111316: main (main.cpp:136)
+ n1: 3336464 0x1127F4: TVector::operator=(TVector const&) (vector.hpp:49)
+  n1: 3336464 0x112CF6: THashTable::expandIfNeeded() (hashtable.hpp:54)
+   n1: 3336464 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+    n1: 3336464 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n1: 3336464 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 3336464 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 3336464 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 3336464 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 3336464 0x111316: main (main.cpp:136)
+ n1: 2118200 0x112B7E: THashTable::expandIfNeeded() (hashtable.hpp:46)
+  n1: 2118200 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+   n1: 2118200 0x110B5F: process_char_data_buffer() (main.cpp:66)
+    n1: 2118200 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+     n1: 2118200 0x4E3DD43: doContent (xmlparse.c:2864)
+      n1: 2118200 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+       n1: 2118200 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 2118200 0x111316: main (main.cpp:136)
+ n1: 1947216 0x1126E5: TVector::expand() (vector.hpp:29)
+  n1: 1947216 0x1128AB: TVector::push(unsigned int) (vector.hpp:61)
+   n1: 1947216 0x11332E: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:101)
+    n1: 1947216 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n2: 1947216 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 1945476 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 1945476 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 1945476 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 1945476 0x111316: main (main.cpp:136)
+      n0: 1740 in 1 place, below massif's threshold (1.00%)
+ n2: 501616 0x112752: TVector::TVector() (vector.hpp:38)
+  n1: 501616 0x112BA0: THashTable::expandIfNeeded() (hashtable.hpp:46)
+   n1: 501616 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+    n1: 501616 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n1: 501616 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 501616 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 501616 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 501616 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 501616 0x111316: main (main.cpp:136)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 381588 0x117018: __gnu_cxx::new_allocator<char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n2: 381588 0x1156A4: std::allocator_traits<std::allocator<char> >::allocate(std::allocator<char>&, unsigned long) (alloc_traits.h:436)
+   n2: 381586 0x1188EA: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long) (basic_string.tcc:153)
+    n1: 222663 0x116E01: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (basic_string.tcc:265)
+     n1: 222663 0x1154A1: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (basic_string.h:1356)
+      n1: 222663 0x114236: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator=(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (basic_string.h:685)
+       n0: 222663 in 2 places, all below massif's threshold (1.00%)
+    n0: 158923 in 5 places, all below massif's threshold (1.00%)
+   n0: 2 in 1 place, below massif's threshold (1.00%)
+ n0: 105228 in 28 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=52
+#-----------
+time=82500904565
+mem_heap_B=12674281
+mem_heap_extra_B=2166567
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=83316385029
+mem_heap_B=12716075
+mem_heap_extra_B=2167429
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=84131865343
+mem_heap_B=12782473
+mem_heap_extra_B=2168735
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=84947344863
+mem_heap_B=12848721
+mem_heap_extra_B=2169983
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=85762832652
+mem_heap_B=12914189
+mem_heap_extra_B=2171339
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=86578315935
+mem_heap_B=12953144
+mem_heap_extra_B=2172448
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=87393799244
+mem_heap_B=13012887
+mem_heap_extra_B=2173393
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=88209277866
+mem_heap_B=13044851
+mem_heap_extra_B=2174245
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=89024761463
+mem_heap_B=13101024
+mem_heap_extra_B=2175240
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=90063738256
+mem_heap_B=13096921
+mem_heap_extra_B=2175743
+mem_stacks_B=0
+heap_tree=detailed
+n7: 13096921 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4236392 0x112B12: THashTable::expandIfNeeded() (hashtable.hpp:45)
+  n1: 4236392 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+   n1: 4236392 0x110B5F: process_char_data_buffer() (main.cpp:66)
+    n1: 4236392 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+     n1: 4236392 0x4E3DD43: doContent (xmlparse.c:2864)
+      n1: 4236392 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+       n1: 4236392 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 4236392 0x111316: main (main.cpp:136)
+ n1: 3232856 0x1126E5: TVector::expand() (vector.hpp:29)
+  n1: 3232856 0x1128AB: TVector::push(unsigned int) (vector.hpp:61)
+   n1: 3232856 0x11332E: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:101)
+    n1: 3232856 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n2: 3232856 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 3231128 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 3231128 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 3231128 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 3231128 0x111316: main (main.cpp:136)
+      n0: 1728 in 1 place, below massif's threshold (1.00%)
+ n1: 2557976 0x1127F4: TVector::operator=(TVector const&) (vector.hpp:49)
+  n1: 2557976 0x112CF6: THashTable::expandIfNeeded() (hashtable.hpp:54)
+   n1: 2557976 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+    n1: 2557976 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n1: 2557976 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 2557976 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 2557976 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 2557976 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 2557976 0x111316: main (main.cpp:136)
+ n1: 2118200 0x112B7E: THashTable::expandIfNeeded() (hashtable.hpp:46)
+  n1: 2118200 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+   n1: 2118200 0x110B5F: process_char_data_buffer() (main.cpp:66)
+    n1: 2118200 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+     n1: 2118200 0x4E3DD43: doContent (xmlparse.c:2864)
+      n1: 2118200 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+       n1: 2118200 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 2118200 0x111316: main (main.cpp:136)
+ n2: 493936 0x112752: TVector::TVector() (vector.hpp:38)
+  n1: 493936 0x112BA0: THashTable::expandIfNeeded() (hashtable.hpp:46)
+   n1: 493936 0x113257: THashTable::insert(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long) (hashtable.hpp:92)
+    n1: 493936 0x110B5F: process_char_data_buffer() (main.cpp:66)
+     n1: 493936 0x110DD0: endElement(void*, char const*) (main.cpp:83)
+      n1: 493936 0x4E3DD43: doContent (xmlparse.c:2864)
+       n1: 493936 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+        n1: 493936 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 493936 0x111316: main (main.cpp:136)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 383281 0x117018: __gnu_cxx::new_allocator<char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n2: 383281 0x1156A4: std::allocator_traits<std::allocator<char> >::allocate(std::allocator<char>&, unsigned long) (alloc_traits.h:436)
+   n2: 383281 0x1188EA: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long) (basic_string.tcc:153)
+    n1: 252158 0x116E01: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (basic_string.tcc:265)
+     n1: 252158 0x1154A1: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (basic_string.h:1356)
+      n1: 252158 0x114236: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator=(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (basic_string.h:685)
+       n0: 252158 in 2 places, all below massif's threshold (1.00%)
+    n0: 131123 in 5 places, all below massif's threshold (1.00%)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+ n0: 74280 in 29 places, all below massif's threshold (1.00%)

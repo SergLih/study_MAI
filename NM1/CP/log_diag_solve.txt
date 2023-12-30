@@ -1,0 +1,3 @@
+
+Precond BiCGStab: 
+Iter:      1 ||x-x_prev|| =    10.00000000	 ||r||=    1.41421356

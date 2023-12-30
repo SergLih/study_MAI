@@ -1,0 +1,6 @@
+/home/sergey/MAI/maga/network_progr/lab8/res_lab8/lab8np/lab8np/bin/Debug/lab8np.dll
+/home/sergey/MAI/maga/network_progr/lab8/res_lab8/lab8np/lab8np/bin/Debug/lab8np.pdb
+/home/sergey/MAI/maga/network_progr/lab8/res_lab8/lab8np/lab8np/obj/Debug/lab8np.csprojAssemblyReference.cache
+/home/sergey/MAI/maga/network_progr/lab8/res_lab8/lab8np/lab8np/obj/Debug/lab8np.csproj.CoreCompileInputs.cache
+/home/sergey/MAI/maga/network_progr/lab8/res_lab8/lab8np/lab8np/obj/Debug/lab8np.dll
+/home/sergey/MAI/maga/network_progr/lab8/res_lab8/lab8np/lab8np/obj/Debug/lab8np.pdb

@@ -1,0 +1,61 @@
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:output method="xml" indent="yes" omit-xml-declaration="yes"
+              cdata-section-elements="Availability"/>
+<xsl:template match="geoData">
+    <Coordinates>
+        <xsl:attribute name="N">
+             <xsl:value-of select="coordinates/array[1]"/>
+        </xsl:attribute>
+        <xsl:attribute name="E">
+            <xsl:value-of select="coordinates/array[2]"/>
+        </xsl:attribute>
+    </Coordinates>
+  </xsl:template>
+  
+  <xsl:template match="/catalog">
+    <SportsComplexes>
+      <xsl:for-each select="/catalog/array">
+         <SportsComplex>
+            <WorkingHours>
+              <xsl:apply-templates select="WorkingHours" />
+            </WorkingHours>
+            <!--<Availability>-->
+            <!--    <xsl:apply-templates select="ObjectAddress/Availability" />-->
+            <!--</Availability>-->
+              <xsl:apply-templates select="*[not(name() = 'WorkingHours')]"/> 
+              <!--or name() = 'Availability')]" />-->
+         </SportsComplex>
+      </xsl:for-each>
+     </SportsComplexes>
+  </xsl:template>
+  
+  <xsl:template match="WorkingHours">
+      <Day>
+      <xsl:attribute name="name">
+         <xsl:value-of select="DayWeek"/>
+      </xsl:attribute>
+      <xsl:attribute name="open">  
+        <xsl:value-of select="substring-before(WorkHours, '-')" />
+      </xsl:attribute>
+      <xsl:attribute name="close">  
+        <xsl:value-of select="substring-after(WorkHours, '-')" />
+      </xsl:attribute>
+      </Day>
+  </xsl:template>
+  
+  
+  <xsl:template match="Availability">
+    <Availability>
+    <xsl:for-each select="available_element">
+        <xsl:value-of select="Group_mgn"/> :  <xsl:value-of select="Element_mgn"/>|
+        
+    </xsl:for-each>
+      </Availability>
+  </xsl:template>
+  
+    <xsl:template match="@*|node()">
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()"/>
+        </xsl:copy>
+    </xsl:template>
+  </xsl:stylesheet>

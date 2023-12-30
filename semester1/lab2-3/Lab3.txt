@@ -1,0 +1,122 @@
+﻿a@ubuntu-16:~$ ssh sergey@192.168.2.133
+sergey@192.168.2.133's password: 
+Welcome to Ubuntu 16.04.1 LTS (GNU/Linux 4.4.0-31-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+171 packages can be updated.
+65 updates are security updates.
+
+Last login: Fri Sep 23 18:55:25 2016 from 192.168.2.47
+sergey@svb:~$ exit
+выход
+Connection to 192.168.2.133 closed.
+a@ubuntu-16:~$ scp 7 sergey@svb:/home/sergey
+sergey@svb's password: 
+7                                             100%    0     0.0KB/s   00:00    
+a@ubuntu-16:~$ scp sergey@svb:/home/sergey/2.txt  20
+sergey@svb's password: 
+2.txt                                         100%    4     0.0KB/s   00:00    
+a@ubuntu-16:~$ ls 20
+10  2.txt
+a@ubuntu-16:~$ scp -r 20 sergey@svb:/home/sergey
+sergey@svb's password: 
+10                                            100%    9     0.0KB/s   00:00    
+2.txt                                         100%    4     0.0KB/s   00:00    
+a@ubuntu-16:~$ ssh sergey@192.168.2.133
+sergey@192.168.2.133's password: 
+Welcome to Ubuntu 16.04.1 LTS (GNU/Linux 4.4.0-31-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+171 packages can be updated.
+65 updates are security updates.
+
+Last login: Fri Sep 23 18:57:11 2016 from 192.168.2.47
+sergey@svb:~$ ls
+12.txt  ab.c      end               ps.logfile          Загрузки
+1.txt   answers?  examples.desktop  qweert.txt          Изображения
+2       ch1       file1             start               Музыка
+20      ch2       file2             TargetFile          Общедоступные
+2.txt   ch3       fun               tempfile            Рабочий стол
+3       ch3.a     LabWorks          trenirovka 1        Шаблоны
+33.doc  ch4       middle            Udalennaya mashina
+7       dir1      myfile            Видео
+abc     dir2      posterty          Документы
+sergey@svb:~$ ls 20
+10  2.txt
+sergey@svb:~$ exit
+выход
+Connection to 192.168.2.133 closed.
+a@ubuntu-16:~$ scp -r sergey@svb:/home/sergey/dir1 .
+sergey@svb's password: 
+2                                             100%    8     0.0KB/s   00:00    
+a@ubuntu-16:~$ ls
+20    examples.desktop  Видео      Изображения    Рабочий стол
+7     scp               Документы  Музыка         Шаблоны
+dir1  SourceFile        Загрузки   Общедоступные
+a@ubuntu-16:~$ cd 20
+a@ubuntu-16:~/20$ ls
+10  2.txt
+a@ubuntu-16:~/20$ cd -
+/home/a
+a@ubuntu-16:~$ tar -cf - dir1 | ssh sergey@192.168.2.133 'tar -C /home/sergey -xf -'
+sergey@192.168.2.133's password: 
+a@ubuntu-16:~$ ssh sergey@192.168.2.133
+sergey@192.168.2.133's password: 
+Welcome to Ubuntu 16.04.1 LTS (GNU/Linux 4.4.0-31-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+171 packages can be updated.
+65 updates are security updates.
+
+Last login: Fri Sep 23 19:11:43 2016 from 192.168.2.47
+sergey@svb:~$ ls
+12.txt  answers?  examples.desktop  qweert.txt          Изображения
+1.txt   ch1       file1             start               Музыка
+20      ch2       file2             TargetFile          Общедоступные
+2.txt   ch3       fun               tempfile            Рабочий стол
+30      ch3.a     LabWorks          trenirovka 1        Шаблоны
+33.doc  ch4       middle            Udalennaya mashina
+7       dir1      myfile            Видео
+abc     dir2      posterty          Документы
+ab.c    end       ps.logfile        Загрузки
+sergey@svb:~$ ls dir1
+2  7
+sergey@svb:~$ ftp 192.168.2.47
+Connected to 192.168.2.47.
+220 (vsFTPd 3.0.3)
+Name (192.168.2.47:sergey): a
+331 Please specify the password.
+Password:
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> put abc
+local: abc remote: abc
+200 PORT command successful. Consider using PASV.
+150 Ok to send data.
+226 Transfer complete.
+ftp> get 7
+local: 7 remote: 7
+200 PORT command successful. Consider using PASV.
+150 Opening BINARY mode data connection for 7 (0 bytes).
+226 Transfer complete.
+ftp> exit
+221 Goodbye.
+sergey@svb:~$ tar -cf ser.tar 30
+sergey@svb:~$ tar -xf ser.tar
+sergey@svb:~$ tar -cf der.tar 30
+sergey@svb:~$ rm -r 30
+sergey@svb:~$ tar -xf der.tar
+sergey@svb:~$ exit
+выход
+Connection to 192.168.2.133 closed.
+

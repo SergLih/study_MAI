@@ -1,0 +1,10 @@
+<article xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+  <Article>
+    <Journal>Advances in Bioinformatics</Journal>
+    <Title>In Silico Analysis of SNPs in PARK2 and PINK1 Genes That Potentially Cause Autosomal Recessive Parkinson Disease</Title>
+    <Doi>10.1155/2016/9313746</Doi>
+    <Authors>Bakhit Yousuf Hasan Yousuf, Ibrahim Mohamed Osama Mirghani, Amin Mutaz, Mirghani Yousra Abdelazim, Hassan Mohamed Ahmed Salih</Authors>
+    <Abstact>
+Introduction. Parkinson's disease (PD) is a common neurodegenerative disorder. Mutations in PINK1 are the second most common agents causing autosomal recessive, early onset PD. We aimed to identify the pathogenic SNPs in PARK2 and PINK1 using in silico prediction software and their effect on the structure, function, and regulation of the proteins. Materials and Methods. We carried out in silico prediction of structural effect of each SNP using different bioinformatics tools to predict substitution influence on protein structure and function. Result. Twenty-one SNPs in PARK2 gene were found to affect transcription factor binding activity. 185 SNPs were found to affect splicing. Ten SNPs were found to affect the miRNA binding site. Two SNPs rs55961220 and rs56092260 affected the structure, function, and stability of Parkin protein. In PINK1 gene only one SNP (rs7349186) was found to affect the structure, function, and stability of the PINK1 protein. Ten SNPs were found to affect the microRNA binding site. Conclusion. Better understanding of Parkinson's disease caused by mutations in PARK2 and PINK1 genes was achieved using in silico prediction. Further studies should be conducted with a special consideration of the ethnic diversity of the different populations.</Abstact>
+  </Article>
+</article>

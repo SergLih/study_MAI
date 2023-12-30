@@ -1,0 +1,8 @@
+Points:  [-0.4, -0.1, 0.2, 0.5]
+Lagrange's polynom:  1.4707404487843843
+Newton's polynom:  1.4707404487843843
+
+
+Points:  [-0.4, 0.0, 0.2, 0.5]
+Lagrange's polynom:  1.470702680154511
+Newton's polynom:  1.470702680154511

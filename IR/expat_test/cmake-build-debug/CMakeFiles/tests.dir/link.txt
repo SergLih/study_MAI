@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/tests.dir/test.cpp.o CMakeFiles/tests.dir/tstring.cpp.o CMakeFiles/tests.dir/index.cpp.o CMakeFiles/tests.dir/exprtree.cpp.o  -o tests /usr/local/lib/libCatch2.a 

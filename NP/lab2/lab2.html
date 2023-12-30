@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Лабораторная 2 (Лихарев С. С. вариант 10)</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  </head>
+
+  <body>
+    <div class="text-center">
+      <h2>Лабораторная #2</h2>
+      <h3>Автор - Лихарев Сергей Сергеевич</h3>
+      <p>
+        Вариант 10<br />
+        В HTML-документе определены 2 формы.
+        На первой управляющие кнопки и поля ввода, вторая - пустая.
+        При нажатии на кнопки первой формы на второй форме генерируются элементы (а): <b>Нумерованный список, несколько кнопок</b>
+        Параметры и количество элементов определяются в элементах 1-й формы(б): <b> В&nbsp;элементе INPUT указать длину списка. </b>
+        а также заданы в виде массивов на JavaScript.
+        После построения элементов на второй форме по некоторым кнопкам/элементам
+        можно произвести некоторые действия (в), результаты которых отображаются на 2-форме: <b> При нажатии на одну кнопку другие становятся недоступными </b>
+        Для генерации элементов и вывода результатов использовать свойство innerHTML.
+        Значения элементов списков и кнопок заданы в массиве
+     </p>
+   </div>
+   <form id="form1">
+     <label for="numberOfItems">Число пунктов:&nbsp;</label><input id="numberOfItems" type="number" name="get_list" value="3" min="1" max="20"/> <br /> 
+     <input type="button" name="get_numeric" value="generate!" onclick="getList()"/> <br />
+ 
+   </form>
+ 
+   <br />
+   <ol id="list"></ol>
+   <form id="form2">
+   </form>
+   <div id="buttons"></div>
+   <!-- <div onload="getList();"></div>-->
+   <script>
+     var i;
+     var fruits = ["Orange", "Red", "Blue", ];
+     let listOfFruits = [];
+     let listBrand = ['Or', 'R', 'Bl', ];
+ 
+    function onlyActiveButton(index) {
+      var elements = document.forms.form2.elements;
+      for (var i = 0; i < elements.length; i++) {
+        var element = elements[i];
+        if (element.type === "button") {
+          element.disabled = ! (i == index);
+        }       
+      }
+    }
+ 
+    function getList() {
+      var n = parseInt(document.forms.form1.elements.numberOfItems.value);
+      var s1 = "", s2="";
+      for (i = 0; i < n; i++) {
+        s1 += `<li>${fruits[i%3]}</li>`;
+        s2 += `<input type="button" id="button${i}" value="${listBrand[i%3] + " " + (i+1).toString()}" onclick="onlyActiveButton(${i})"/>`;
+      }
+      document.getElementById("list").innerHTML = s1;
+      document.forms.form2.innerHTML = s2;
+    }
+ 
+        /* btn = document.createElement("input");
+        btn.setAttribute('type', 'button');
+        btn.setAttribute('id', "button" + (i+1).toString());
+        btn.setAttribute('value', listBrand[i%3] + " " + (i+1).toString());
+        btn.addEventListener('click', function(){
+            onlyActiveButton(i);
+        });
+        form2.appendChild(btn); */
+         //document.body.appendChild(btn);
+ 
+   </script>
+ </body>
+ 
+</html>
+ 

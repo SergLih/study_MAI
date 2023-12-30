@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AJAX API Tutorial</title>
+</head>
+<body>
+    <h2>Лабораторная #5</h2>
+    <h3>Автор - Лихарев Сергей Сергеевич</h3>
+    <p>
+        Переделать пример из задания 3, чтобы данные хранились на web-сервере. <br>
+        Использовать AJAX.  <br>
+        Реализовать загрузку справочника из файла на локальном компьютере. <br>
+    </p>
+
+   <button id="get-button">Загрузить информацию</button>
+        <form id="create-form">
+          <input type="text" id="key" placeholder="Имя" value="A" style="width: 40px;"/>
+          <input type="number" id="x" placeholder="Х" value="1" style="width: 40px;"/>
+          <input type="number" id="y" placeholder="Y" value="2" style="width: 40px;"/>
+          <input type="number" id="z" placeholder="Z" value="3" style="width: 40px;"/>
+          <input type="submit" value="Добавить"/>
+        </form>
+        <hr>
+        <table>
+            <thead>
+                <tr>
+                    <th>Key</th>
+                    <th>X</th>
+                    <th>Y</th>
+                    <th>Z</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div><br />
+
+    <script src="jquery.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

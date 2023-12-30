@@ -1,0 +1,66 @@
+﻿sergey@svb:~$ date
+Вс сен 11 16:07:32 MSK 2016
+sergey@svb:~$ who
+sergey   tty7         2016-09-11 16:06 (:0)
+sergey@svb:~$ pwd
+/home/sergey
+sergey@svb:~$ ls
+examples.desktop  Документы  Изображения  Общедоступные  Шаблоны
+Видео             Загрузки   Музыка       Рабочий стол
+sergey@svb:~$ ps
+  PID TTY          TIME CMD
+ 3105 pts/17   00:00:00 bash
+ 3432 pts/17   00:00:00 ps
+sergey@svb:~$ ls -a
+.              .dmrc             .sudo_as_admin_successful  Изображения
+..             examples.desktop  .Xauthority                Музыка
+.bash_history  .gconf            .xsession-errors           Общедоступные
+.bash_logout   .gnupg            .xsession-errors.old       Рабочий стол
+.bashrc        .ICEauthority     Видео                      Шаблоны
+.cache         .local            Документы
+.config        .profile          Загрузки
+sergey@svb:~$ ruptime
+svb           up       0:04,     1 user,   load 0.77, 0.86, 0.39
+sergey@svb:~$ rwho
+sergey   svb:tty7 Sep 11 16:06 :03
+sergey@svb:~$ cat > f1.txt
+sam
+sergey@svb:~$ cat f1.txt
+sam
+sergey@svb:~$ cat > f2.txt
+sergey@svb:~$ cp f1.txt f2.txt
+sergey@svb:~$ cat f2.txt
+sam
+sergey@svb:~$ mkdir x
+sergey@svb:~$ mkdir y
+sergey@svb:~$ mv f1.txt x
+sergey@svb:~$ cd x
+sergey@svb:~/x$ ls
+f1.txt
+sergey@svb:~/x$ ls ../y
+sergey@svb:~/x$ cat > x.txt
+it's in x
+sergey@svb:~/x$ cd ../y
+sergey@svb:~/y$ cat ~/x/x.txt
+it's in x
+sergey@svb:~/y$ cat ../x/x.txt
+it's in x
+sergey@svb:~/y$ cd
+sergey@svb:~$ mkdir z
+sergey@svb:~$ cd x
+sergey@svb:~/x$ ls ../z
+sergey@svb:~/x$ cd ../y
+sergey@svb:~/y$ ls ../z
+sergey@svb:~/y$ cd
+sergey@svb:~$ mv z y
+sergey@svb:~$ cd y
+sergey@svb:~/y$ cd z
+sergey@svb:~/y/z$ cat ~/x/x.txt
+it's in x
+sergey@svb:~/y/z$ cd
+sergey@svb:~$ cd y
+sergey@svb:~/y$ rmdir z
+sergey@svb:~/y$ rm -r ../x
+sergey@svb:~/y$ cd
+sergey@svb:~$ rmdir y
+sergey@svb:~$ rm f2.txt

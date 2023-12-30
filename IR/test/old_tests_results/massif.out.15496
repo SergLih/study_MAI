@@ -1,0 +1,984 @@
+desc: (none)
+cmd: ./expat_test build /home/sergey/MAI/maga/Inf_search/test/res100k.xml test_new.ht
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=422971036
+mem_heap_B=351736
+mem_heap_extra_B=664
+mem_stacks_B=0
+heap_tree=peak
+n5: 351736 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 246620 0x11649E: __gnu_cxx::new_allocator<char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n2: 246620 0x114B2A: std::allocator_traits<std::allocator<char> >::allocate(std::allocator<char>&, unsigned long) (alloc_traits.h:436)
+   n3: 246619 0x117D70: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long) (basic_string.tcc:153)
+    n1: 131073 0x518A07B: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+     n1: 131073 0x517DCA6: std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::overflow(int) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+      n1: 131073 0x51884A9: std::basic_streambuf<char, std::char_traits<char> >::xsputn(char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+       n1: 131073 0x5178B82: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+        n1: 131073 0x11085B: char_data(void*, char const*, int) (main.cpp:46)
+         n1: 131073 0x4E3DC51: doContent (xmlparse.c:2985)
+          n2: 131073 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+           n1: 131073 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 131073 0x111230: main (main.cpp:136)
+           n0: 0 in 1 place, below massif's threshold (1.00%)
+    n1: 115496 0x1160CD: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long) (basic_string.tcc:317)
+     n1: 115496 0x518A949: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+      n1: 115496 0x51828F5: std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::str() const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+       n1: 115496 0x11090C: process_char_data_buffer() (main.cpp:51)
+        n1: 115496 0x110CEA: endElement(void*, char const*) (main.cpp:83)
+         n1: 115496 0x4E3DD43: doContent (xmlparse.c:2864)
+          n1: 115496 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+           n1: 115496 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 115496 0x111230: main (main.cpp:136)
+    n0: 50 in 1 place, below massif's threshold (1.00%)
+   n0: 1 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x50F4424: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010781: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x2: ???
+     n1: 72704 0x1FFEFFFEA9: ???
+      n1: 72704 0x1FFEFFFEB6: ???
+       n1: 72704 0x1FFEFFFEBC: ???
+        n0: 72704 0x1FFEFFFEEE: ???
+ n1: 16384 0x4E412EC: XML_GetBuffer (xmlparse.c:2010)
+  n1: 16384 0x4E415D8: XML_Parse (xmlparse.c:1861)
+   n0: 16384 0x111230: main (main.cpp:136)
+ n1: 8192 0x5154FE6: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 8192 0x51590F0: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 8192 0x515A0DC: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+    n0: 8192 0x110EDF: main (main.cpp:99)
+ n0: 7836 in 26 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=2
+#-----------
+time=1233078738
+mem_heap_B=349037
+mem_heap_extra_B=771
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=2266585588
+mem_heap_B=286294
+mem_heap_extra_B=738
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=3719603193
+mem_heap_B=262425
+mem_heap_extra_B=743
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=4893838083
+mem_heap_B=241562
+mem_heap_extra_B=742
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=5721969537
+mem_heap_B=259774
+mem_heap_extra_B=738
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=7204960298
+mem_heap_B=283256
+mem_heap_extra_B=744
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=8424800534
+mem_heap_B=303708
+mem_heap_extra_B=740
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=9730418215
+mem_heap_B=271453
+mem_heap_extra_B=739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=10803928411
+mem_heap_B=261568
+mem_heap_extra_B=736
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=11966511851
+mem_heap_B=276137
+mem_heap_extra_B=743
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=12981938961
+mem_heap_B=285049
+mem_heap_extra_B=743
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=14142425542
+mem_heap_B=277148
+mem_heap_extra_B=636
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=15447994374
+mem_heap_B=270517
+mem_heap_extra_B=755
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=17043665903
+mem_heap_B=264055
+mem_heap_extra_B=745
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=18259985725
+mem_heap_B=269135
+mem_heap_extra_B=553
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=19234243390
+mem_heap_B=242268
+mem_heap_extra_B=740
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=20209493737
+mem_heap_B=270919
+mem_heap_extra_B=745
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=21427290645
+mem_heap_B=251105
+mem_heap_extra_B=735
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=22157969201
+mem_heap_B=265489
+mem_heap_extra_B=735
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=23136069914
+mem_heap_B=266997
+mem_heap_extra_B=747
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=24357422652
+mem_heap_B=266596
+mem_heap_extra_B=548
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=25088105832
+mem_heap_B=268637
+mem_heap_extra_B=723
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=26062353225
+mem_heap_B=290040
+mem_heap_extra_B=744
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=26793046142
+mem_heap_B=266192
+mem_heap_extra_B=736
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=28497969590
+mem_heap_B=264561
+mem_heap_extra_B=735
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=29472217914
+mem_heap_B=245534
+mem_heap_extra_B=738
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=30829708379
+mem_heap_B=309412
+mem_heap_extra_B=748
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=31700069530
+mem_heap_B=246887
+mem_heap_extra_B=745
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=32570430691
+mem_heap_B=250615
+mem_heap_extra_B=745
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=33875968460
+mem_heap_B=266241
+mem_heap_extra_B=735
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=35181517323
+mem_heap_B=271245
+mem_heap_extra_B=739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=36051877228
+mem_heap_B=262924
+mem_heap_extra_B=724
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=36922245818
+mem_heap_B=269467
+mem_heap_extra_B=741
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=37792603216
+mem_heap_B=235589
+mem_heap_extra_B=539
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=38662970701
+mem_heap_B=257268
+mem_heap_extra_B=748
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=39970440507
+mem_heap_B=244727
+mem_heap_extra_B=745
+mem_stacks_B=0
+heap_tree=detailed
+n5: 244727 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 139147 0x11649E: __gnu_cxx::new_allocator<char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n2: 139147 0x114B2A: std::allocator_traits<std::allocator<char> >::allocate(std::allocator<char>&, unsigned long) (alloc_traits.h:436)
+   n3: 139145 0x117D70: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long) (basic_string.tcc:153)
+    n1: 131073 0x518A07B: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+     n1: 131073 0x517DCA6: std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::overflow(int) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+      n1: 131073 0x51884A9: std::basic_streambuf<char, std::char_traits<char> >::xsputn(char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+       n1: 131073 0x5178B82: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+        n1: 131073 0x11085B: char_data(void*, char const*, int) (main.cpp:46)
+         n1: 131073 0x4E3DC51: doContent (xmlparse.c:2985)
+          n2: 131073 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+           n1: 131073 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 131073 0x111230: main (main.cpp:136)
+           n0: 0 in 1 place, below massif's threshold (1.00%)
+    n1: 8022 0x1160CD: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long) (basic_string.tcc:317)
+     n1: 8022 0x518A949: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+      n1: 8022 0x51828F5: std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::str() const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+       n1: 8022 0x11090C: process_char_data_buffer() (main.cpp:51)
+        n2: 8022 0x110CEA: endElement(void*, char const*) (main.cpp:83)
+         n1: 8022 0x4E3DD43: doContent (xmlparse.c:2864)
+          n1: 8022 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+           n1: 8022 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 8022 0x111230: main (main.cpp:136)
+         n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 50 in 1 place, below massif's threshold (1.00%)
+   n0: 2 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x50F4424: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010781: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x2: ???
+     n1: 72704 0x1FFEFFFEA9: ???
+      n1: 72704 0x1FFEFFFEB6: ???
+       n1: 72704 0x1FFEFFFEBC: ???
+        n0: 72704 0x1FFEFFFEEE: ???
+ n1: 16384 0x4E412EC: XML_GetBuffer (xmlparse.c:2010)
+  n1: 16384 0x4E415D8: XML_Parse (xmlparse.c:1861)
+   n0: 16384 0x111230: main (main.cpp:136)
+ n0: 8300 in 26 places, all below massif's threshold (1.00%)
+ n1: 8192 0x5154FE6: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 8192 0x51590F0: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 8192 0x515A0DC: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+    n0: 8192 0x110EDF: main (main.cpp:99)
+#-----------
+snapshot=38
+#-----------
+time=40840802530
+mem_heap_B=266411
+mem_heap_extra_B=741
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=41711164735
+mem_heap_B=264645
+mem_heap_extra_B=747
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=43016702101
+mem_heap_B=262911
+mem_heap_extra_B=737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=43887059531
+mem_heap_B=254276
+mem_heap_extra_B=772
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=44757417762
+mem_heap_B=294541
+mem_heap_extra_B=739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=45629280372
+mem_heap_B=272373
+mem_heap_extra_B=547
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=46499646036
+mem_heap_B=268240
+mem_heap_extra_B=736
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=47805190639
+mem_heap_B=264187
+mem_heap_extra_B=741
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=48675561799
+mem_heap_B=266266
+mem_heap_extra_B=742
+mem_stacks_B=0
+heap_tree=detailed
+n5: 266266 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 160686 0x11649E: __gnu_cxx::new_allocator<char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n2: 160686 0x114B2A: std::allocator_traits<std::allocator<char> >::allocate(std::allocator<char>&, unsigned long) (alloc_traits.h:436)
+   n3: 160684 0x117D70: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long) (basic_string.tcc:153)
+    n1: 131073 0x518A07B: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+     n1: 131073 0x517DCA6: std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::overflow(int) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+      n1: 131073 0x51884A9: std::basic_streambuf<char, std::char_traits<char> >::xsputn(char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+       n1: 131073 0x5178B82: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+        n1: 131073 0x11085B: char_data(void*, char const*, int) (main.cpp:46)
+         n1: 131073 0x4E3DC51: doContent (xmlparse.c:2985)
+          n2: 131073 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+           n1: 131073 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 131073 0x111230: main (main.cpp:136)
+           n0: 0 in 1 place, below massif's threshold (1.00%)
+    n1: 29561 0x1160CD: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long) (basic_string.tcc:317)
+     n1: 29561 0x518A949: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+      n1: 29561 0x51828F5: std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::str() const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+       n1: 29561 0x11090C: process_char_data_buffer() (main.cpp:51)
+        n2: 29561 0x110CEA: endElement(void*, char const*) (main.cpp:83)
+         n1: 29561 0x4E3DD43: doContent (xmlparse.c:2864)
+          n1: 29561 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+           n1: 29561 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 29561 0x111230: main (main.cpp:136)
+         n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 50 in 1 place, below massif's threshold (1.00%)
+   n0: 2 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x50F4424: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010781: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x2: ???
+     n1: 72704 0x1FFEFFFEA9: ???
+      n1: 72704 0x1FFEFFFEB6: ???
+       n1: 72704 0x1FFEFFFEBC: ???
+        n0: 72704 0x1FFEFFFEEE: ???
+ n1: 16384 0x4E412EC: XML_GetBuffer (xmlparse.c:2010)
+  n1: 16384 0x4E415D8: XML_Parse (xmlparse.c:1861)
+   n0: 16384 0x111230: main (main.cpp:136)
+ n0: 8300 in 26 places, all below massif's threshold (1.00%)
+ n1: 8192 0x5154FE6: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 8192 0x51590F0: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 8192 0x515A0DC: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+    n0: 8192 0x110EDF: main (main.cpp:99)
+#-----------
+snapshot=47
+#-----------
+time=49545919114
+mem_heap_B=257591
+mem_heap_extra_B=729
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=50854013870
+mem_heap_B=257896
+mem_heap_extra_B=544
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=51724490143
+mem_heap_B=293835
+mem_heap_extra_B=725
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=52455174431
+mem_heap_B=266451
+mem_heap_extra_B=749
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=53185853485
+mem_heap_B=266072
+mem_heap_extra_B=744
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=53916532783
+mem_heap_B=256104
+mem_heap_extra_B=728
+mem_stacks_B=0
+heap_tree=detailed
+n5: 256104 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 150716 0x11649E: __gnu_cxx::new_allocator<char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n2: 150716 0x114B2A: std::allocator_traits<std::allocator<char> >::allocate(std::allocator<char>&, unsigned long) (alloc_traits.h:436)
+   n3: 150714 0x117D70: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long) (basic_string.tcc:153)
+    n1: 131073 0x518A07B: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+     n1: 131073 0x517DCA6: std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::overflow(int) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+      n1: 131073 0x51884A9: std::basic_streambuf<char, std::char_traits<char> >::xsputn(char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+       n1: 131073 0x5178B82: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+        n1: 131073 0x11085B: char_data(void*, char const*, int) (main.cpp:46)
+         n1: 131073 0x4E3DC51: doContent (xmlparse.c:2985)
+          n2: 131073 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+           n1: 131073 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 131073 0x111230: main (main.cpp:136)
+           n0: 0 in 1 place, below massif's threshold (1.00%)
+    n1: 19591 0x1160CD: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long) (basic_string.tcc:317)
+     n1: 19591 0x518A949: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+      n1: 19591 0x51828F5: std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::str() const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+       n1: 19591 0x11090C: process_char_data_buffer() (main.cpp:51)
+        n2: 19591 0x110CEA: endElement(void*, char const*) (main.cpp:83)
+         n1: 19591 0x4E3DD43: doContent (xmlparse.c:2864)
+          n1: 19591 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+           n1: 19591 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 19591 0x111230: main (main.cpp:136)
+         n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 50 in 1 place, below massif's threshold (1.00%)
+   n0: 2 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x50F4424: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010781: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x2: ???
+     n1: 72704 0x1FFEFFFEA9: ???
+      n1: 72704 0x1FFEFFFEB6: ???
+       n1: 72704 0x1FFEFFFEBC: ???
+        n0: 72704 0x1FFEFFFEEE: ???
+ n1: 16384 0x4E412EC: XML_GetBuffer (xmlparse.c:2010)
+  n1: 16384 0x4E415D8: XML_Parse (xmlparse.c:1861)
+   n0: 16384 0x111230: main (main.cpp:136)
+ n1: 8192 0x5154FE6: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 8192 0x51590F0: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 8192 0x515A0DC: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+    n0: 8192 0x110EDF: main (main.cpp:99)
+ n0: 8108 in 26 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=53
+#-----------
+time=54647213677
+mem_heap_B=261522
+mem_heap_extra_B=750
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=55377892353
+mem_heap_B=260051
+mem_heap_extra_B=733
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=56108573078
+mem_heap_B=253440
+mem_heap_extra_B=768
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=56839426994
+mem_heap_B=243700
+mem_heap_extra_B=540
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=57570124744
+mem_heap_B=269228
+mem_heap_extra_B=740
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=58300804551
+mem_heap_B=280799
+mem_heap_extra_B=737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=59031484442
+mem_heap_B=241087
+mem_heap_extra_B=737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=59762183787
+mem_heap_B=312492
+mem_heap_extra_B=740
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=60492866330
+mem_heap_B=324456
+mem_heap_extra_B=744
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=61223545733
+mem_heap_B=261253
+mem_heap_extra_B=747
+mem_stacks_B=0
+heap_tree=detailed
+n5: 261253 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 155673 0x11649E: __gnu_cxx::new_allocator<char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n2: 155673 0x114B2A: std::allocator_traits<std::allocator<char> >::allocate(std::allocator<char>&, unsigned long) (alloc_traits.h:436)
+   n3: 155671 0x117D70: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long) (basic_string.tcc:153)
+    n1: 131073 0x518A07B: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+     n1: 131073 0x517DCA6: std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::overflow(int) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+      n1: 131073 0x51884A9: std::basic_streambuf<char, std::char_traits<char> >::xsputn(char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+       n1: 131073 0x5178B82: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+        n1: 131073 0x11085B: char_data(void*, char const*, int) (main.cpp:46)
+         n1: 131073 0x4E3DC51: doContent (xmlparse.c:2985)
+          n2: 131073 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+           n1: 131073 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 131073 0x111230: main (main.cpp:136)
+           n0: 0 in 1 place, below massif's threshold (1.00%)
+    n1: 24548 0x1160CD: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long) (basic_string.tcc:317)
+     n1: 24548 0x518A949: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+      n1: 24548 0x51828F5: std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::str() const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+       n1: 24548 0x11090C: process_char_data_buffer() (main.cpp:51)
+        n2: 24548 0x110CEA: endElement(void*, char const*) (main.cpp:83)
+         n1: 24548 0x4E3DD43: doContent (xmlparse.c:2864)
+          n1: 24548 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+           n1: 24548 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 24548 0x111230: main (main.cpp:136)
+         n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 50 in 1 place, below massif's threshold (1.00%)
+   n0: 2 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x50F4424: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010781: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x2: ???
+     n1: 72704 0x1FFEFFFEA9: ???
+      n1: 72704 0x1FFEFFFEB6: ???
+       n1: 72704 0x1FFEFFFEBC: ???
+        n0: 72704 0x1FFEFFFEEE: ???
+ n1: 16384 0x4E412EC: XML_GetBuffer (xmlparse.c:2010)
+  n1: 16384 0x4E415D8: XML_Parse (xmlparse.c:1861)
+   n0: 16384 0x111230: main (main.cpp:136)
+ n0: 8300 in 26 places, all below massif's threshold (1.00%)
+ n1: 8192 0x5154FE6: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 8192 0x51590F0: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 8192 0x515A0DC: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+    n0: 8192 0x110EDF: main (main.cpp:99)
+#-----------
+snapshot=63
+#-----------
+time=61954231064
+mem_heap_B=236822
+mem_heap_extra_B=538
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=62684911318
+mem_heap_B=269351
+mem_heap_extra_B=745
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=63415590683
+mem_heap_B=275557
+mem_heap_extra_B=747
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=64146275693
+mem_heap_B=277543
+mem_heap_extra_B=745
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=64876955818
+mem_heap_B=259943
+mem_heap_extra_B=745
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=65607635917
+mem_heap_B=287486
+mem_heap_extra_B=738
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=66338326383
+mem_heap_B=267210
+mem_heap_extra_B=742
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=67069007420
+mem_heap_B=268207
+mem_heap_extra_B=737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=67799686954
+mem_heap_B=288208
+mem_heap_extra_B=736
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=68530365622
+mem_heap_B=321057
+mem_heap_extra_B=735
+mem_stacks_B=0
+heap_tree=detailed
+n5: 321057 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 215461 0x11649E: __gnu_cxx::new_allocator<char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n2: 215461 0x114B2A: std::allocator_traits<std::allocator<char> >::allocate(std::allocator<char>&, unsigned long) (alloc_traits.h:436)
+   n3: 215459 0x117D70: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long) (basic_string.tcc:153)
+    n1: 131073 0x518A07B: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+     n1: 131073 0x517DCA6: std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::overflow(int) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+      n1: 131073 0x51884A9: std::basic_streambuf<char, std::char_traits<char> >::xsputn(char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+       n1: 131073 0x5178B82: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+        n1: 131073 0x11085B: char_data(void*, char const*, int) (main.cpp:46)
+         n1: 131073 0x4E3DC51: doContent (xmlparse.c:2985)
+          n2: 131073 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+           n1: 131073 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 131073 0x111230: main (main.cpp:136)
+           n0: 0 in 1 place, below massif's threshold (1.00%)
+    n1: 84336 0x1160CD: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long) (basic_string.tcc:317)
+     n1: 84336 0x518A949: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+      n1: 84336 0x51828F5: std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::str() const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+       n1: 84336 0x11090C: process_char_data_buffer() (main.cpp:51)
+        n2: 84336 0x110CEA: endElement(void*, char const*) (main.cpp:83)
+         n1: 84336 0x4E3DD43: doContent (xmlparse.c:2864)
+          n1: 84336 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+           n1: 84336 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 84336 0x111230: main (main.cpp:136)
+         n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 50 in 1 place, below massif's threshold (1.00%)
+   n0: 2 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x50F4424: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010781: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x2: ???
+     n1: 72704 0x1FFEFFFEA9: ???
+      n1: 72704 0x1FFEFFFEB6: ???
+       n1: 72704 0x1FFEFFFEBC: ???
+        n0: 72704 0x1FFEFFFEEE: ???
+ n1: 16384 0x4E412EC: XML_GetBuffer (xmlparse.c:2010)
+  n1: 16384 0x4E415D8: XML_Parse (xmlparse.c:1861)
+   n0: 16384 0x111230: main (main.cpp:136)
+ n0: 8316 in 26 places, all below massif's threshold (1.00%)
+ n1: 8192 0x5154FE6: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 8192 0x51590F0: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 8192 0x515A0DC: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+    n0: 8192 0x110EDF: main (main.cpp:99)
+#-----------
+snapshot=73
+#-----------
+time=69261045381
+mem_heap_B=279951
+mem_heap_extra_B=737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=74
+#-----------
+time=69991725495
+mem_heap_B=319646
+mem_heap_extra_B=722
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=70722421396
+mem_heap_B=290762
+mem_heap_extra_B=742
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=76
+#-----------
+time=71453102409
+mem_heap_B=264521
+mem_heap_extra_B=743
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=77
+#-----------
+time=72183781137
+mem_heap_B=255992
+mem_heap_extra_B=744
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=78
+#-----------
+time=72914467180
+mem_heap_B=262142
+mem_heap_extra_B=738
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=79
+#-----------
+time=73645145746
+mem_heap_B=256381
+mem_heap_extra_B=739
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=80
+#-----------
+time=74375825109
+mem_heap_B=263100
+mem_heap_extra_B=724
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=81
+#-----------
+time=75106511830
+mem_heap_B=251990
+mem_heap_extra_B=746
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=82
+#-----------
+time=75837191413
+mem_heap_B=263713
+mem_heap_extra_B=735
+mem_stacks_B=0
+heap_tree=detailed
+n5: 263713 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 158133 0x11649E: __gnu_cxx::new_allocator<char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+  n2: 158133 0x114B2A: std::allocator_traits<std::allocator<char> >::allocate(std::allocator<char>&, unsigned long) (alloc_traits.h:436)
+   n3: 158131 0x117D70: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long) (basic_string.tcc:153)
+    n1: 131073 0x518A07B: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+     n1: 131073 0x517DCA6: std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::overflow(int) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+      n1: 131073 0x51884A9: std::basic_streambuf<char, std::char_traits<char> >::xsputn(char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+       n1: 131073 0x5178B82: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+        n1: 131073 0x11085B: char_data(void*, char const*, int) (main.cpp:46)
+         n1: 131073 0x4E3DC51: doContent (xmlparse.c:2985)
+          n2: 131073 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+           n1: 131073 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 131073 0x111230: main (main.cpp:136)
+           n0: 0 in 1 place, below massif's threshold (1.00%)
+    n1: 27008 0x1160CD: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long) (basic_string.tcc:317)
+     n1: 27008 0x518A949: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+      n1: 27008 0x51828F5: std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::str() const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+       n1: 27008 0x11090C: process_char_data_buffer() (main.cpp:51)
+        n2: 27008 0x110CEA: endElement(void*, char const*) (main.cpp:83)
+         n1: 27008 0x4E3DD43: doContent (xmlparse.c:2864)
+          n1: 27008 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+           n1: 27008 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 27008 0x111230: main (main.cpp:136)
+         n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 50 in 1 place, below massif's threshold (1.00%)
+   n0: 2 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x50F4424: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010781: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x2: ???
+     n1: 72704 0x1FFEFFFEA9: ???
+      n1: 72704 0x1FFEFFFEB6: ???
+       n1: 72704 0x1FFEFFFEBC: ???
+        n0: 72704 0x1FFEFFFEEE: ???
+ n1: 16384 0x4E412EC: XML_GetBuffer (xmlparse.c:2010)
+  n1: 16384 0x4E415D8: XML_Parse (xmlparse.c:1861)
+   n0: 16384 0x111230: main (main.cpp:136)
+ n0: 8300 in 26 places, all below massif's threshold (1.00%)
+ n1: 8192 0x5154FE6: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 8192 0x51590F0: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+   n1: 8192 0x515A0DC: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+    n0: 8192 0x110EDF: main (main.cpp:99)
+#-----------
+snapshot=83
+#-----------
+time=76567878445
+mem_heap_B=248779
+mem_heap_extra_B=741
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=84
+#-----------
+time=77298557021
+mem_heap_B=257791
+mem_heap_extra_B=737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=85
+#-----------
+time=78029236549
+mem_heap_B=255951
+mem_heap_extra_B=737
+mem_stacks_B=0
+heap_tree=empty

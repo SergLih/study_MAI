@@ -1,0 +1,1 @@
+matlab -nodisplay -nosplash -nodesktop -r "run('Lab_6.m');"

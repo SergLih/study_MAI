@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="urn:serv_wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:serv_wsdl">
+<types>
+<xsd:schema targetNamespace="urn:serv_wsdl"
+>
+ <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+ <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+</xsd:schema>
+</types>
+<message name="prog1Request">
+  <part name="x" type="xsd:string" /></message>
+<message name="prog1Response">
+  <part name="return" type="xsd:string" /></message>
+<message name="prog2Request">
+  <part name="x" type="xsd:string" />
+  <part name="y" type="xsd:string" /></message>
+<message name="prog2Response">
+  <part name="return" type="xsd:string" /></message>
+<message name="prog3Request">
+  <part name="x" type="xsd:string" />
+  <part name="y" type="xsd:string" />
+  <part name="z" type="xsd:string" /></message>
+<message name="prog3Response">
+  <part name="return" type="xsd:string" /></message>
+<message name="prog4Request">
+  <part name="x" type="xsd:string" /></message>
+<message name="prog4Response">
+  <part name="return" type="xsd:string" /></message>
+<message name="prog5Request">
+  <part name="x" type="xsd:string" />
+  <part name="y" type="xsd:string" /></message>
+<message name="prog5Response">
+  <part name="return" type="xsd:string" /></message>
+<message name="prog6Request">
+  <part name="x" type="xsd:string" />
+  <part name="y" type="xsd:string" />
+  <part name="z" type="xsd:string" /></message>
+<message name="prog6Response">
+  <part name="return" type="xsd:string" /></message>
+<message name="prog7Request">
+  <part name="x" type="xsd:string" /></message>
+<message name="prog7Response">
+  <part name="return" type="xsd:string" /></message>
+<message name="prog8Request">
+  <part name="x" type="xsd:string" />
+  <part name="y" type="xsd:string" /></message>
+<message name="prog8Response">
+  <part name="return" type="xsd:string" /></message>
+<message name="prog9Request">
+  <part name="x" type="xsd:string" />
+  <part name="y" type="xsd:string" />
+  <part name="z" type="xsd:string" /></message>
+<message name="prog9Response">
+  <part name="return" type="xsd:string" /></message>
+<message name="prog10Request">
+  <part name="x" type="xsd:string" /></message>
+<message name="prog10Response">
+  <part name="return" type="xsd:string" /></message>
+<message name="prog11Request">
+  <part name="x" type="xsd:string" />
+  <part name="y" type="xsd:string" /></message>
+<message name="prog11Response">
+  <part name="return" type="xsd:string" /></message>
+<message name="prog12Request">
+  <part name="x" type="xsd:string" />
+  <part name="y" type="xsd:string" />
+  <part name="z" type="xsd:string" /></message>
+<message name="prog12Response">
+  <part name="return" type="xsd:string" /></message>
+<message name="prog13Request">
+  <part name="x" type="xsd:string" /></message>
+<message name="prog13Response">
+  <part name="return" type="xsd:string" /></message>
+<message name="prog14Request">
+  <part name="x" type="xsd:string" />
+  <part name="y" type="xsd:string" /></message>
+<message name="prog14Response">
+  <part name="return" type="xsd:string" /></message>
+<message name="prog15Request">
+  <part name="x" type="xsd:string" />
+  <part name="y" type="xsd:string" />
+  <part name="z" type="xsd:string" /></message>
+<message name="prog15Response">
+  <part name="return" type="xsd:string" /></message>
+<message name="prog16Request">
+  <part name="x" type="xsd:string" /></message>
+<message name="prog16Response">
+  <part name="return" type="xsd:string" /></message>
+<message name="prog17Request">
+  <part name="x" type="xsd:string" />
+  <part name="y" type="xsd:string" /></message>
+<message name="prog17Response">
+  <part name="return" type="xsd:string" /></message>
+<message name="prog18Request">
+  <part name="x" type="xsd:string" />
+  <part name="y" type="xsd:string" />
+  <part name="z" type="xsd:string" /></message>
+<message name="prog18Response">
+  <part name="return" type="xsd:string" /></message>
+<message name="prog19Request">
+  <part name="x" type="xsd:string" /></message>
+<message name="prog19Response">
+  <part name="return" type="xsd:string" /></message>
+<message name="prog20Request">
+  <part name="x" type="xsd:string" />
+  <part name="y" type="xsd:string" /></message>
+<message name="prog20Response">
+  <part name="return" type="xsd:string" /></message>
+<portType name="serv_wsdl.phpPortType">
+  <operation name="prog1">
+    <documentation>x</documentation>
+    <input message="tns:prog1Request"/>
+    <output message="tns:prog1Response"/>
+  </operation>
+  <operation name="prog2">
+    <documentation>x,y</documentation>
+    <input message="tns:prog2Request"/>
+    <output message="tns:prog2Response"/>
+  </operation>
+  <operation name="prog3">
+    <documentation>x,y,z</documentation>
+    <input message="tns:prog3Request"/>
+    <output message="tns:prog3Response"/>
+  </operation>
+  <operation name="prog4">
+    <documentation>x</documentation>
+    <input message="tns:prog4Request"/>
+    <output message="tns:prog4Response"/>
+  </operation>
+  <operation name="prog5">
+    <documentation>x,y</documentation>
+    <input message="tns:prog5Request"/>
+    <output message="tns:prog5Response"/>
+  </operation>
+  <operation name="prog6">
+    <documentation>x,y,z</documentation>
+    <input message="tns:prog6Request"/>
+    <output message="tns:prog6Response"/>
+  </operation>
+  <operation name="prog7">
+    <documentation>x</documentation>
+    <input message="tns:prog7Request"/>
+    <output message="tns:prog7Response"/>
+  </operation>
+  <operation name="prog8">
+    <documentation>x,y</documentation>
+    <input message="tns:prog8Request"/>
+    <output message="tns:prog8Response"/>
+  </operation>
+  <operation name="prog9">
+    <documentation>x,y,z</documentation>
+    <input message="tns:prog9Request"/>
+    <output message="tns:prog9Response"/>
+  </operation>
+  <operation name="prog10">
+    <documentation>x</documentation>
+    <input message="tns:prog10Request"/>
+    <output message="tns:prog10Response"/>
+  </operation>
+  <operation name="prog11">
+    <documentation>x,y</documentation>
+    <input message="tns:prog11Request"/>
+    <output message="tns:prog11Response"/>
+  </operation>
+  <operation name="prog12">
+    <documentation>x,y,z</documentation>
+    <input message="tns:prog12Request"/>
+    <output message="tns:prog12Response"/>
+  </operation>
+  <operation name="prog13">
+    <documentation>x</documentation>
+    <input message="tns:prog13Request"/>
+    <output message="tns:prog13Response"/>
+  </operation>
+  <operation name="prog14">
+    <documentation>x,y</documentation>
+    <input message="tns:prog14Request"/>
+    <output message="tns:prog14Response"/>
+  </operation>
+  <operation name="prog15">
+    <documentation>x,y,z</documentation>
+    <input message="tns:prog15Request"/>
+    <output message="tns:prog15Response"/>
+  </operation>
+  <operation name="prog16">
+    <documentation>x</documentation>
+    <input message="tns:prog16Request"/>
+    <output message="tns:prog16Response"/>
+  </operation>
+  <operation name="prog17">
+    <documentation>x,y</documentation>
+    <input message="tns:prog17Request"/>
+    <output message="tns:prog17Response"/>
+  </operation>
+  <operation name="prog18">
+    <documentation>x,y,z</documentation>
+    <input message="tns:prog18Request"/>
+    <output message="tns:prog18Response"/>
+  </operation>
+  <operation name="prog19">
+    <documentation>x</documentation>
+    <input message="tns:prog19Request"/>
+    <output message="tns:prog19Response"/>
+  </operation>
+  <operation name="prog20">
+    <documentation>x,y</documentation>
+    <input message="tns:prog20Request"/>
+    <output message="tns:prog20Response"/>
+  </operation>
+</portType>
+<binding name="serv_wsdl.phpBinding" type="tns:serv_wsdl.phpPortType">
+  <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="prog1">
+    <soap:operation soapAction="urn:s4_wsdl#prog1" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="prog2">
+    <soap:operation soapAction="urn:s4_wsdl#prog2" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="prog3">
+    <soap:operation soapAction="urn:s4_wsdl#prog3" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="prog4">
+    <soap:operation soapAction="urn:s4_wsdl#prog4" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="prog5">
+    <soap:operation soapAction="urn:s4_wsdl#prog5" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="prog6">
+    <soap:operation soapAction="urn:s4_wsdl#prog6" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="prog7">
+    <soap:operation soapAction="urn:s4_wsdl#prog7" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="prog8">
+    <soap:operation soapAction="urn:s4_wsdl#prog8" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="prog9">
+    <soap:operation soapAction="urn:s4_wsdl#prog9" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="prog10">
+    <soap:operation soapAction="urn:s4_wsdl#prog10" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="prog11">
+    <soap:operation soapAction="urn:s4_wsdl#prog11" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="prog12">
+    <soap:operation soapAction="urn:s4_wsdl#prog12" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="prog13">
+    <soap:operation soapAction="urn:s4_wsdl#prog13" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="prog14">
+    <soap:operation soapAction="urn:s4_wsdl#prog14" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="prog15">
+    <soap:operation soapAction="urn:s4_wsdl#prog15" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="prog16">
+    <soap:operation soapAction="urn:s4_wsdl#prog16" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="prog17">
+    <soap:operation soapAction="urn:s4_wsdl#prog17" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="prog18">
+    <soap:operation soapAction="urn:s4_wsdl#prog18" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="prog19">
+    <soap:operation soapAction="urn:s4_wsdl#prog19" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="prog20">
+    <soap:operation soapAction="urn:s4_wsdl#prog20" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+</binding>
+<service name="serv_wsdl.php">
+  <port name="serv_wsdl.phpPort" binding="tns:serv_wsdl.phpBinding">
+    <soap:address location="http://www.chernyshov.com/WS-3/index.php"/>
+  </port>
+</service>
+</definitions>

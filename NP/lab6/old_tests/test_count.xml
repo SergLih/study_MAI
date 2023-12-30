@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="test_count.xsl"?>
+<films>
+  <film>
+    <title title="Ololo"/>
+    <year y="2000" />
+    <actor name="Johnny Depp"/>
+  </film>
+  <film>
+    <title title="Kokoko" subtitle="Vozvrashenie v kuryatnik"/>
+    <year y="2010" y_islam="5724" />
+    <actor name="Mila Jovovich"/>
+    <rating r="9.8"/>
+    <director name="Steven Spielberg"/>
+  </film>
+  <film>
+    <title title="Azaza"/>
+    <year y="2020" />
+    <actor name="Danila Kozlovsky"/>
+    <rating r="5.8"/>
+  </film>
+</films>

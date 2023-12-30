@@ -1,0 +1,11 @@
+1: hasClass()
+2: css()
+3: :reset
+4: offset()
+5: empty()
+6: prev()
+7: jQuery.proxy()
+8: dblclick()
+9: focus()
+10: fadeToggle()
+

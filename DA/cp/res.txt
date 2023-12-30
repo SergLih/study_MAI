@@ -1,0 +1,10 @@
+1,6d0
+< baaa
+< 
+< b
+< abb
+< bb
+< ba
+7a2,3
+> bba
+> babb

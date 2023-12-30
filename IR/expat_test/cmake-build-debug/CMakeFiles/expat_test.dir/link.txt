@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/expat_test.dir/main.cpp.o CMakeFiles/expat_test.dir/tstring.cpp.o CMakeFiles/expat_test.dir/index.cpp.o CMakeFiles/expat_test.dir/exprtree.cpp.o  -o expat_test 

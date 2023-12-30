@@ -1,0 +1,124 @@
+<html>
+
+  <head>
+    <title>Задание 3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+
+    <div class="text-center">
+      <h2>Лабораторная #3</h2>
+      <h3>Автор - Лихарев Сергей Сергеевич</h3>
+      <p>
+        Реализовать простой справочник на LocalStorage
+
+        Справочник должен <br />
+        1) отображаться в виде таблицы (0) <br />
+        2) содержать несколько полей (4). Первое поле ключевое. <br />
+        3) добавление элемента справочника по нажатию Enter в последнем поле (0) <br />
+        4) позволять удалять отдельные элементы c) по кнопке у каждого элемента (3) <br />
+        5) позволять изменять отдельные элементы (придумать как) <br />
+      </p>
+
+
+      <div>
+        <form id="form1">
+          <input type="text" id="key" placeholder="Имя" value="A" style="width: 40px;"/>
+          <input type="text" id="field1" placeholder="Х" value="1" style="width: 40px;"/>
+          <input type="text" id="field2" placeholder="Y" value="2" style="width: 40px;"/>
+          <input type="text" id="field3" placeholder="Z" value="3" style="width: 40px;"/>
+          
+          <input type="button" id="addBtn" value="Добавить в таблицу" onclick="addValue()">
+          <input type="button" id="clearBtn" value="Очистить" onclick="clearTable()">
+        </form>
+      </div><br />
+
+      <table id="table" border="1" cellspacing="0" width="300">
+      </table>
+
+
+    </div>
+
+    <script type="text/javascript">
+    	var itemsArray;
+    	if (localStorage.getItem("items") === null) 
+			itemsArray = {};
+		else
+			itemsArray = JSON.parse(localStorage.getItem("items"));
+    	
+		document.getElementById("field3").addEventListener(
+			'keyup', ({key}) => { if (key === "Enter") addValue();
+		})
+
+		outputTable();
+
+		function updateLocalStorage() {
+			localStorage.setItem("items", JSON.stringify(itemsArray));
+		}
+
+    	function outputTable() {
+	    	var table = document.getElementById("table");
+	    	var s = "<tr><th>Точка</th><td>X</td><td>Y</td><td>Z</td><td></td></tr>";
+	    	Object.entries(itemsArray).forEach(entry => {
+			  const [key, val] = entry;
+			  s += `<tr><th>${key}</th>` 
+	        		  + `<td>${val['x']}</td>`
+	                  + `<td>${val['y']}</td>`
+	                  + `<td>${val['z']}</td>`
+	                  + `<td><button onclick="removeItem('${key}')">❌</button>`
+	                  + `<button onclick="editItem('${key}')">🖊</button></td>`
+	                  + `</tr>`;    		
+			});
+			table.innerHTML = s;
+    	}
+
+      function addValue() {
+        
+        var f = document.forms.form1;
+        var key = f.elements.key.value, 
+        	x0 = f.elements.field1.value,
+            y0 = f.elements.field2.value,
+            z0 = f.elements.field3.value;
+
+        if (key in itemsArray) 
+        	alert('Такой ключ уже существует в справочнике');
+        else {
+        	itemsArray[key] = {x: x0, y: y0, z: z0};	// Model
+        	updateLocalStorage(); 						// Model
+        	outputTable();		   						// View
+        }
+        f.elements.key.value = f.elements.field1.value = f.elements.field2.value = f.elements.field3.value = "";
+    }
+
+
+      function clearTable() {
+      	itemsArray = {};
+      	updateLocalStorage(); 						// Model
+        outputTable();		   						// View
+      }
+
+      function removeItem(key) {
+      	console.log('remove');
+      	delete itemsArray[key];						// Model
+      	updateLocalStorage(); 						// Model
+        outputTable();		   						// View
+      }
+
+      function editItem(key) {
+      	console.log('change');
+      	var x0 = prompt('Новая координата X: ');
+      	var y0 = prompt('Новая координата Y: ');
+      	var z0 = prompt('Новая координата Z: ');
+
+      	itemsArray[key] = {x : x0, y: y0, z: z0};   // Model
+      	updateLocalStorage(); 						// Model
+        outputTable();		   						// View
+      }
+
+
+    </script>
+
+  </body>
+
+</html>

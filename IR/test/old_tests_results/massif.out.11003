@@ -1,0 +1,909 @@
+desc: --stacks=yes
+cmd: ./expat_test
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=399211
+mem_heap_B=37820
+mem_heap_extra_B=292
+mem_stacks_B=8672
+heap_tree=peak
+n8: 37820 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 24576 0x4E412EC: XML_GetBuffer (xmlparse.c:2010)
+  n1: 24576 0x4E415D8: XML_Parse (xmlparse.c:1861)
+   n0: 24576 0x108EE5: main (main.cpp:96)
+ n1: 8192 0x50E31FA: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 8192 0x50F33E7: _IO_doallocbuf (genops.c:365)
+   n1: 4096 0x50F0832: _IO_file_xsgetn (fileops.c:1310)
+    n1: 4096 0x50E442F: fread (iofread.c:38)
+     n0: 4096 0x108E9E: main (main.cpp:94)
+   n1: 4096 0x50F2506: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:759)
+    n1: 4096 0x50F0A5B: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1266)
+     n1: 4096 0x50E5AFD: puts (ioputs.c:40)
+      n1: 4096 0x108DA1: startElement(void*, char const*, char const**) (main.cpp:63)
+       n1: 4096 0x4E3E048: doContent (xmlparse.c:2774)
+        n1: 4096 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+         n1: 4096 0x4E3C231: doProlog (xmlparse.c:4390)
+          n1: 4096 0x4E3D469: prologProcessor (xmlparse.c:4113)
+           n1: 4096 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 4096 0x108EE5: main (main.cpp:96)
+ n0: 1040 in 4 places, all below massif's threshold (1.00%)
+ n1: 1036 0x4E37A9F: poolGrow (xmlparse.c:6758)
+  n1: 1036 0x4E37C98: poolCopyString (xmlparse.c:6587)
+   n1: 1036 0x4E3B027: storeAtts (xmlparse.c:3076)
+    n1: 1036 0x4E3E01F: doContent (xmlparse.c:2770)
+     n1: 1036 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+      n1: 1036 0x4E3C231: doProlog (xmlparse.c:4390)
+       n1: 1036 0x4E3D469: prologProcessor (xmlparse.c:4113)
+        n1: 1036 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 1036 0x108EE5: main (main.cpp:96)
+ n1: 1024 0x4E3FE3F: parserCreate (xmlparse.c:930)
+  n0: 1024 0x108E19: main (main.cpp:81)
+ n1: 928 0x4E401E0: parserCreate (xmlparse.c:898)
+  n0: 928 0x108E19: main (main.cpp:81)
+ n1: 512 0x4E383A3: lookup (xmlparse.c:6413)
+  n1: 512 0x4E3B043: storeAtts (xmlparse.c:3079)
+   n1: 512 0x4E3E01F: doContent (xmlparse.c:2770)
+    n1: 512 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+     n1: 512 0x4E3C231: doProlog (xmlparse.c:4390)
+      n1: 512 0x4E3D469: prologProcessor (xmlparse.c:4113)
+       n1: 512 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 512 0x108EE5: main (main.cpp:96)
+ n1: 512 0x4E3FE27: parserCreate (xmlparse.c:915)
+  n0: 512 0x108E19: main (main.cpp:81)
+#-----------
+snapshot=2
+#-----------
+time=2064577
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8896
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=3131836
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=4918317
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8904
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=6345609
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=7166812
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8952
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=9129471
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=10376416
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8952
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=11565369
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8904
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=13111246
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8856
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=14967724
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=16319811
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=17684175
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=detailed
+n8: 30664 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 16384 0x4E412EC: XML_GetBuffer (xmlparse.c:2010)
+  n1: 16384 0x4E415D8: XML_Parse (xmlparse.c:1861)
+   n0: 16384 0x108EE5: main (main.cpp:96)
+ n1: 8192 0x50E31FA: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 8192 0x50F33E7: _IO_doallocbuf (genops.c:365)
+   n1: 4096 0x50F0832: _IO_file_xsgetn (fileops.c:1310)
+    n1: 4096 0x50E442F: fread (iofread.c:38)
+     n0: 4096 0x108E9E: main (main.cpp:94)
+   n1: 4096 0x50F2506: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:759)
+    n1: 4096 0x50F0A5B: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1266)
+     n1: 4096 0x50E5AFD: puts (ioputs.c:40)
+      n1: 4096 0x108DA1: startElement(void*, char const*, char const**) (main.cpp:63)
+       n1: 4096 0x4E3E048: doContent (xmlparse.c:2774)
+        n1: 4096 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+         n1: 4096 0x4E3C231: doProlog (xmlparse.c:4390)
+          n1: 4096 0x4E3D469: prologProcessor (xmlparse.c:4113)
+           n1: 4096 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 4096 0x108EE5: main (main.cpp:96)
+ n2: 2072 0x4E37A9F: poolGrow (xmlparse.c:6758)
+  n1: 1036 0x4E37C98: poolCopyString (xmlparse.c:6587)
+   n1: 1036 0x4E3B027: storeAtts (xmlparse.c:3076)
+    n1: 1036 0x4E3E01F: doContent (xmlparse.c:2770)
+     n1: 1036 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+      n1: 1036 0x4E3C231: doProlog (xmlparse.c:4390)
+       n1: 1036 0x4E3D469: prologProcessor (xmlparse.c:4113)
+        n1: 1036 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 1036 0x108EE5: main (main.cpp:96)
+  n1: 1036 0x4E37D3B: poolAppend (xmlparse.c:6570)
+   n1: 1036 0x4E37D57: poolStoreString (xmlparse.c:6633)
+    n1: 1036 0x4E3D940: doContent (xmlparse.c:2789)
+     n1: 1036 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+      n1: 1036 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+       n0: 1036 0x108EE5: main (main.cpp:96)
+ n0: 1040 in 4 places, all below massif's threshold (1.00%)
+ n1: 1024 0x4E3FE3F: parserCreate (xmlparse.c:930)
+  n0: 1024 0x108E19: main (main.cpp:81)
+ n1: 928 0x4E401E0: parserCreate (xmlparse.c:898)
+  n0: 928 0x108E19: main (main.cpp:81)
+ n1: 512 0x4E383A3: lookup (xmlparse.c:6413)
+  n1: 512 0x4E3B043: storeAtts (xmlparse.c:3079)
+   n1: 512 0x4E3E01F: doContent (xmlparse.c:2770)
+    n1: 512 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+     n1: 512 0x4E3C231: doProlog (xmlparse.c:4390)
+      n1: 512 0x4E3D469: prologProcessor (xmlparse.c:4113)
+       n1: 512 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 512 0x108EE5: main (main.cpp:96)
+ n1: 512 0x4E3FE27: parserCreate (xmlparse.c:915)
+  n0: 512 0x108E19: main (main.cpp:81)
+#-----------
+snapshot=14
+#-----------
+time=18623257
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=20183621
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=21527569
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=detailed
+n8: 30664 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 16384 0x4E412EC: XML_GetBuffer (xmlparse.c:2010)
+  n1: 16384 0x4E415D8: XML_Parse (xmlparse.c:1861)
+   n0: 16384 0x108EE5: main (main.cpp:96)
+ n1: 8192 0x50E31FA: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 8192 0x50F33E7: _IO_doallocbuf (genops.c:365)
+   n1: 4096 0x50F0832: _IO_file_xsgetn (fileops.c:1310)
+    n1: 4096 0x50E442F: fread (iofread.c:38)
+     n0: 4096 0x108E9E: main (main.cpp:94)
+   n1: 4096 0x50F2506: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:759)
+    n1: 4096 0x50F0A5B: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1266)
+     n1: 4096 0x50E5AFD: puts (ioputs.c:40)
+      n1: 4096 0x108DA1: startElement(void*, char const*, char const**) (main.cpp:63)
+       n1: 4096 0x4E3E048: doContent (xmlparse.c:2774)
+        n1: 4096 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+         n1: 4096 0x4E3C231: doProlog (xmlparse.c:4390)
+          n1: 4096 0x4E3D469: prologProcessor (xmlparse.c:4113)
+           n1: 4096 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 4096 0x108EE5: main (main.cpp:96)
+ n2: 2072 0x4E37A9F: poolGrow (xmlparse.c:6758)
+  n1: 1036 0x4E37C98: poolCopyString (xmlparse.c:6587)
+   n1: 1036 0x4E3B027: storeAtts (xmlparse.c:3076)
+    n1: 1036 0x4E3E01F: doContent (xmlparse.c:2770)
+     n1: 1036 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+      n1: 1036 0x4E3C231: doProlog (xmlparse.c:4390)
+       n1: 1036 0x4E3D469: prologProcessor (xmlparse.c:4113)
+        n1: 1036 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 1036 0x108EE5: main (main.cpp:96)
+  n1: 1036 0x4E37D3B: poolAppend (xmlparse.c:6570)
+   n1: 1036 0x4E37D57: poolStoreString (xmlparse.c:6633)
+    n1: 1036 0x4E3D940: doContent (xmlparse.c:2789)
+     n1: 1036 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+      n1: 1036 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+       n0: 1036 0x108EE5: main (main.cpp:96)
+ n0: 1040 in 4 places, all below massif's threshold (1.00%)
+ n1: 1024 0x4E3FE3F: parserCreate (xmlparse.c:930)
+  n0: 1024 0x108E19: main (main.cpp:81)
+ n1: 928 0x4E401E0: parserCreate (xmlparse.c:898)
+  n0: 928 0x108E19: main (main.cpp:81)
+ n1: 512 0x4E383A3: lookup (xmlparse.c:6413)
+  n1: 512 0x4E3B043: storeAtts (xmlparse.c:3079)
+   n1: 512 0x4E3E01F: doContent (xmlparse.c:2770)
+    n1: 512 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+     n1: 512 0x4E3C231: doProlog (xmlparse.c:4390)
+      n1: 512 0x4E3D469: prologProcessor (xmlparse.c:4113)
+       n1: 512 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 512 0x108EE5: main (main.cpp:96)
+ n1: 512 0x4E3FE27: parserCreate (xmlparse.c:915)
+  n0: 512 0x108E19: main (main.cpp:81)
+#-----------
+snapshot=17
+#-----------
+time=22497856
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=23998035
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=24970533
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=26477799
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=27435493
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=28988720
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=29966359
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=31352473
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=33004245
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8952
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=34209508
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8904
+heap_tree=detailed
+n8: 30664 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 16384 0x4E412EC: XML_GetBuffer (xmlparse.c:2010)
+  n1: 16384 0x4E415D8: XML_Parse (xmlparse.c:1861)
+   n0: 16384 0x108EE5: main (main.cpp:96)
+ n1: 8192 0x50E31FA: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 8192 0x50F33E7: _IO_doallocbuf (genops.c:365)
+   n1: 4096 0x50F0832: _IO_file_xsgetn (fileops.c:1310)
+    n1: 4096 0x50E442F: fread (iofread.c:38)
+     n0: 4096 0x108E9E: main (main.cpp:94)
+   n1: 4096 0x50F2506: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:759)
+    n1: 4096 0x50F0A5B: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1266)
+     n1: 4096 0x50E5AFD: puts (ioputs.c:40)
+      n1: 4096 0x108DA1: startElement(void*, char const*, char const**) (main.cpp:63)
+       n1: 4096 0x4E3E048: doContent (xmlparse.c:2774)
+        n1: 4096 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+         n1: 4096 0x4E3C231: doProlog (xmlparse.c:4390)
+          n1: 4096 0x4E3D469: prologProcessor (xmlparse.c:4113)
+           n1: 4096 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 4096 0x108EE5: main (main.cpp:96)
+ n2: 2072 0x4E37A9F: poolGrow (xmlparse.c:6758)
+  n1: 1036 0x4E37C98: poolCopyString (xmlparse.c:6587)
+   n1: 1036 0x4E3B027: storeAtts (xmlparse.c:3076)
+    n1: 1036 0x4E3E01F: doContent (xmlparse.c:2770)
+     n1: 1036 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+      n1: 1036 0x4E3C231: doProlog (xmlparse.c:4390)
+       n1: 1036 0x4E3D469: prologProcessor (xmlparse.c:4113)
+        n1: 1036 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 1036 0x108EE5: main (main.cpp:96)
+  n1: 1036 0x4E37D3B: poolAppend (xmlparse.c:6570)
+   n1: 1036 0x4E37D57: poolStoreString (xmlparse.c:6633)
+    n1: 1036 0x4E3D940: doContent (xmlparse.c:2789)
+     n1: 1036 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+      n1: 1036 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+       n0: 1036 0x108EE5: main (main.cpp:96)
+ n0: 1040 in 4 places, all below massif's threshold (1.00%)
+ n1: 1024 0x4E3FE3F: parserCreate (xmlparse.c:930)
+  n0: 1024 0x108E19: main (main.cpp:81)
+ n1: 928 0x4E401E0: parserCreate (xmlparse.c:898)
+  n0: 928 0x108E19: main (main.cpp:81)
+ n1: 512 0x4E383A3: lookup (xmlparse.c:6413)
+  n1: 512 0x4E3B043: storeAtts (xmlparse.c:3079)
+   n1: 512 0x4E3E01F: doContent (xmlparse.c:2770)
+    n1: 512 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+     n1: 512 0x4E3C231: doProlog (xmlparse.c:4390)
+      n1: 512 0x4E3D469: prologProcessor (xmlparse.c:4113)
+       n1: 512 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 512 0x108EE5: main (main.cpp:96)
+ n1: 512 0x4E3FE27: parserCreate (xmlparse.c:915)
+  n0: 512 0x108E19: main (main.cpp:81)
+#-----------
+snapshot=27
+#-----------
+time=35446913
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8952
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=36949729
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=37915913
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8952
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=39366093
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8896
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=40342195
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8952
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=41822713
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=43262196
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8904
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=44746655
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=45714153
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=47240991
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=48780431
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=50707102
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=51692930
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=52750530
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8896
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=53723748
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8952
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=55180666
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8904
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=56244813
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=detailed
+n8: 30664 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 16384 0x4E412EC: XML_GetBuffer (xmlparse.c:2010)
+  n1: 16384 0x4E415D8: XML_Parse (xmlparse.c:1861)
+   n0: 16384 0x108EE5: main (main.cpp:96)
+ n1: 8192 0x50E31FA: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 8192 0x50F33E7: _IO_doallocbuf (genops.c:365)
+   n1: 4096 0x50F0832: _IO_file_xsgetn (fileops.c:1310)
+    n1: 4096 0x50E442F: fread (iofread.c:38)
+     n0: 4096 0x108E9E: main (main.cpp:94)
+   n1: 4096 0x50F2506: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:759)
+    n1: 4096 0x50F0A5B: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1266)
+     n1: 4096 0x50E5AFD: puts (ioputs.c:40)
+      n1: 4096 0x108DA1: startElement(void*, char const*, char const**) (main.cpp:63)
+       n1: 4096 0x4E3E048: doContent (xmlparse.c:2774)
+        n1: 4096 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+         n1: 4096 0x4E3C231: doProlog (xmlparse.c:4390)
+          n1: 4096 0x4E3D469: prologProcessor (xmlparse.c:4113)
+           n1: 4096 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 4096 0x108EE5: main (main.cpp:96)
+ n2: 2072 0x4E37A9F: poolGrow (xmlparse.c:6758)
+  n1: 1036 0x4E37C98: poolCopyString (xmlparse.c:6587)
+   n1: 1036 0x4E3B027: storeAtts (xmlparse.c:3076)
+    n1: 1036 0x4E3E01F: doContent (xmlparse.c:2770)
+     n1: 1036 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+      n1: 1036 0x4E3C231: doProlog (xmlparse.c:4390)
+       n1: 1036 0x4E3D469: prologProcessor (xmlparse.c:4113)
+        n1: 1036 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 1036 0x108EE5: main (main.cpp:96)
+  n1: 1036 0x4E37D3B: poolAppend (xmlparse.c:6570)
+   n1: 1036 0x4E37D57: poolStoreString (xmlparse.c:6633)
+    n1: 1036 0x4E3D940: doContent (xmlparse.c:2789)
+     n1: 1036 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+      n1: 1036 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+       n0: 1036 0x108EE5: main (main.cpp:96)
+ n0: 1040 in 4 places, all below massif's threshold (1.00%)
+ n1: 1024 0x4E3FE3F: parserCreate (xmlparse.c:930)
+  n0: 1024 0x108E19: main (main.cpp:81)
+ n1: 928 0x4E401E0: parserCreate (xmlparse.c:898)
+  n0: 928 0x108E19: main (main.cpp:81)
+ n1: 512 0x4E383A3: lookup (xmlparse.c:6413)
+  n1: 512 0x4E3B043: storeAtts (xmlparse.c:3079)
+   n1: 512 0x4E3E01F: doContent (xmlparse.c:2770)
+    n1: 512 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+     n1: 512 0x4E3C231: doProlog (xmlparse.c:4390)
+      n1: 512 0x4E3D469: prologProcessor (xmlparse.c:4113)
+       n1: 512 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 512 0x108EE5: main (main.cpp:96)
+ n1: 512 0x4E3FE27: parserCreate (xmlparse.c:915)
+  n0: 512 0x108E19: main (main.cpp:81)
+#-----------
+snapshot=44
+#-----------
+time=58232236
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=59236567
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=60225483
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=61231903
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=detailed
+n8: 30664 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 16384 0x4E412EC: XML_GetBuffer (xmlparse.c:2010)
+  n1: 16384 0x4E415D8: XML_Parse (xmlparse.c:1861)
+   n0: 16384 0x108EE5: main (main.cpp:96)
+ n1: 8192 0x50E31FA: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 8192 0x50F33E7: _IO_doallocbuf (genops.c:365)
+   n1: 4096 0x50F0832: _IO_file_xsgetn (fileops.c:1310)
+    n1: 4096 0x50E442F: fread (iofread.c:38)
+     n0: 4096 0x108E9E: main (main.cpp:94)
+   n1: 4096 0x50F2506: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:759)
+    n1: 4096 0x50F0A5B: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1266)
+     n1: 4096 0x50E5AFD: puts (ioputs.c:40)
+      n1: 4096 0x108DA1: startElement(void*, char const*, char const**) (main.cpp:63)
+       n1: 4096 0x4E3E048: doContent (xmlparse.c:2774)
+        n1: 4096 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+         n1: 4096 0x4E3C231: doProlog (xmlparse.c:4390)
+          n1: 4096 0x4E3D469: prologProcessor (xmlparse.c:4113)
+           n1: 4096 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 4096 0x108EE5: main (main.cpp:96)
+ n2: 2072 0x4E37A9F: poolGrow (xmlparse.c:6758)
+  n1: 1036 0x4E37C98: poolCopyString (xmlparse.c:6587)
+   n1: 1036 0x4E3B027: storeAtts (xmlparse.c:3076)
+    n1: 1036 0x4E3E01F: doContent (xmlparse.c:2770)
+     n1: 1036 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+      n1: 1036 0x4E3C231: doProlog (xmlparse.c:4390)
+       n1: 1036 0x4E3D469: prologProcessor (xmlparse.c:4113)
+        n1: 1036 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 1036 0x108EE5: main (main.cpp:96)
+  n1: 1036 0x4E37D3B: poolAppend (xmlparse.c:6570)
+   n1: 1036 0x4E37D57: poolStoreString (xmlparse.c:6633)
+    n1: 1036 0x4E3D940: doContent (xmlparse.c:2789)
+     n1: 1036 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+      n1: 1036 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+       n0: 1036 0x108EE5: main (main.cpp:96)
+ n0: 1040 in 4 places, all below massif's threshold (1.00%)
+ n1: 1024 0x4E3FE3F: parserCreate (xmlparse.c:930)
+  n0: 1024 0x108E19: main (main.cpp:81)
+ n1: 928 0x4E401E0: parserCreate (xmlparse.c:898)
+  n0: 928 0x108E19: main (main.cpp:81)
+ n1: 512 0x4E383A3: lookup (xmlparse.c:6413)
+  n1: 512 0x4E3B043: storeAtts (xmlparse.c:3079)
+   n1: 512 0x4E3E01F: doContent (xmlparse.c:2770)
+    n1: 512 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+     n1: 512 0x4E3C231: doProlog (xmlparse.c:4390)
+      n1: 512 0x4E3D469: prologProcessor (xmlparse.c:4113)
+       n1: 512 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 512 0x108EE5: main (main.cpp:96)
+ n1: 512 0x4E3FE27: parserCreate (xmlparse.c:915)
+  n0: 512 0x108E19: main (main.cpp:81)
+#-----------
+snapshot=48
+#-----------
+time=62283706
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8896
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=63729905
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=64558418
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8952
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=65379881
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8952
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=66202335
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8904
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=67090218
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=67913702
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=10544
+heap_tree=detailed
+n8: 30664 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 16384 0x4E412EC: XML_GetBuffer (xmlparse.c:2010)
+  n1: 16384 0x4E415D8: XML_Parse (xmlparse.c:1861)
+   n0: 16384 0x108EE5: main (main.cpp:96)
+ n1: 8192 0x50E31FA: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 8192 0x50F33E7: _IO_doallocbuf (genops.c:365)
+   n1: 4096 0x50F0832: _IO_file_xsgetn (fileops.c:1310)
+    n1: 4096 0x50E442F: fread (iofread.c:38)
+     n0: 4096 0x108E9E: main (main.cpp:94)
+   n1: 4096 0x50F2506: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:759)
+    n1: 4096 0x50F0A5B: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1266)
+     n1: 4096 0x50E5AFD: puts (ioputs.c:40)
+      n1: 4096 0x108DA1: startElement(void*, char const*, char const**) (main.cpp:63)
+       n1: 4096 0x4E3E048: doContent (xmlparse.c:2774)
+        n1: 4096 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+         n1: 4096 0x4E3C231: doProlog (xmlparse.c:4390)
+          n1: 4096 0x4E3D469: prologProcessor (xmlparse.c:4113)
+           n1: 4096 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 4096 0x108EE5: main (main.cpp:96)
+ n2: 2072 0x4E37A9F: poolGrow (xmlparse.c:6758)
+  n1: 1036 0x4E37C98: poolCopyString (xmlparse.c:6587)
+   n1: 1036 0x4E3B027: storeAtts (xmlparse.c:3076)
+    n1: 1036 0x4E3E01F: doContent (xmlparse.c:2770)
+     n1: 1036 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+      n1: 1036 0x4E3C231: doProlog (xmlparse.c:4390)
+       n1: 1036 0x4E3D469: prologProcessor (xmlparse.c:4113)
+        n1: 1036 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 1036 0x108EE5: main (main.cpp:96)
+  n1: 1036 0x4E37D3B: poolAppend (xmlparse.c:6570)
+   n1: 1036 0x4E37D57: poolStoreString (xmlparse.c:6633)
+    n1: 1036 0x4E3D940: doContent (xmlparse.c:2789)
+     n1: 1036 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+      n1: 1036 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+       n0: 1036 0x108EE5: main (main.cpp:96)
+ n0: 1040 in 4 places, all below massif's threshold (1.00%)
+ n1: 1024 0x4E3FE3F: parserCreate (xmlparse.c:930)
+  n0: 1024 0x108E19: main (main.cpp:81)
+ n1: 928 0x4E401E0: parserCreate (xmlparse.c:898)
+  n0: 928 0x108E19: main (main.cpp:81)
+ n1: 512 0x4E383A3: lookup (xmlparse.c:6413)
+  n1: 512 0x4E3B043: storeAtts (xmlparse.c:3079)
+   n1: 512 0x4E3E01F: doContent (xmlparse.c:2770)
+    n1: 512 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+     n1: 512 0x4E3C231: doProlog (xmlparse.c:4390)
+      n1: 512 0x4E3D469: prologProcessor (xmlparse.c:4113)
+       n1: 512 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 512 0x108EE5: main (main.cpp:96)
+ n1: 512 0x4E3FE27: parserCreate (xmlparse.c:915)
+  n0: 512 0x108E19: main (main.cpp:81)
+#-----------
+snapshot=55
+#-----------
+time=68735574
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8952
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=69558099
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8904
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=70457563
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=71279298
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8952
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=72184033
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=73006834
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8952
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=73830212
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8904
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=74686726
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8544
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=75509283
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8952
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=76333709
+mem_heap_B=30664
+mem_heap_extra_B=296
+mem_stacks_B=8904
+heap_tree=detailed
+n8: 30664 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 16384 0x4E412EC: XML_GetBuffer (xmlparse.c:2010)
+  n1: 16384 0x4E415D8: XML_Parse (xmlparse.c:1861)
+   n0: 16384 0x108EE5: main (main.cpp:96)
+ n1: 8192 0x50E31FA: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 8192 0x50F33E7: _IO_doallocbuf (genops.c:365)
+   n1: 4096 0x50F0832: _IO_file_xsgetn (fileops.c:1310)
+    n1: 4096 0x50E442F: fread (iofread.c:38)
+     n0: 4096 0x108E9E: main (main.cpp:94)
+   n1: 4096 0x50F2506: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:759)
+    n1: 4096 0x50F0A5B: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1266)
+     n1: 4096 0x50E5AFD: puts (ioputs.c:40)
+      n1: 4096 0x108DA1: startElement(void*, char const*, char const**) (main.cpp:63)
+       n1: 4096 0x4E3E048: doContent (xmlparse.c:2774)
+        n1: 4096 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+         n1: 4096 0x4E3C231: doProlog (xmlparse.c:4390)
+          n1: 4096 0x4E3D469: prologProcessor (xmlparse.c:4113)
+           n1: 4096 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+            n0: 4096 0x108EE5: main (main.cpp:96)
+ n2: 2072 0x4E37A9F: poolGrow (xmlparse.c:6758)
+  n1: 1036 0x4E37C98: poolCopyString (xmlparse.c:6587)
+   n1: 1036 0x4E3B027: storeAtts (xmlparse.c:3076)
+    n1: 1036 0x4E3E01F: doContent (xmlparse.c:2770)
+     n1: 1036 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+      n1: 1036 0x4E3C231: doProlog (xmlparse.c:4390)
+       n1: 1036 0x4E3D469: prologProcessor (xmlparse.c:4113)
+        n1: 1036 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+         n0: 1036 0x108EE5: main (main.cpp:96)
+  n1: 1036 0x4E37D3B: poolAppend (xmlparse.c:6570)
+   n1: 1036 0x4E37D57: poolStoreString (xmlparse.c:6633)
+    n1: 1036 0x4E3D940: doContent (xmlparse.c:2789)
+     n1: 1036 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+      n1: 1036 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+       n0: 1036 0x108EE5: main (main.cpp:96)
+ n0: 1040 in 4 places, all below massif's threshold (1.00%)
+ n1: 1024 0x4E3FE3F: parserCreate (xmlparse.c:930)
+  n0: 1024 0x108E19: main (main.cpp:81)
+ n1: 928 0x4E401E0: parserCreate (xmlparse.c:898)
+  n0: 928 0x108E19: main (main.cpp:81)
+ n1: 512 0x4E383A3: lookup (xmlparse.c:6413)
+  n1: 512 0x4E3B043: storeAtts (xmlparse.c:3079)
+   n1: 512 0x4E3E01F: doContent (xmlparse.c:2770)
+    n1: 512 0x4E3EB0A: contentProcessor (xmlparse.c:2463)
+     n1: 512 0x4E3C231: doProlog (xmlparse.c:4390)
+      n1: 512 0x4E3D469: prologProcessor (xmlparse.c:4113)
+       n1: 512 0x4E40FEB: XML_ParseBuffer (xmlparse.c:1908)
+        n0: 512 0x108EE5: main (main.cpp:96)
+ n1: 512 0x4E3FE27: parserCreate (xmlparse.c:915)
+  n0: 512 0x108E19: main (main.cpp:81)

@@ -1,0 +1,49 @@
+sergey@svb:~$ ./lab20.sh
+Missing arguments
+sergey@svb:~$ ./lab20.sh tst 4 Letters d
+'tst' is not a file
+sergey@svb:~$ ./lab20.sh test 4 Letters
+Need exactly four arguments. File, number of copies, size and name of result file
+sergey@svb:~$ ./lab20.sh test 4 Letters 2
+Size has to be a word
+sergey@svb:~$ ./lab20.sh test 4 Figures f
+Size has to be a number
+sergey@svb:~$ ./lab20.sh test 6 Figures 8
+test8
+test9
+test10
+test11
+test12
+test13
+Executed 6 copies source file, beginning with 9
+sergey@svb:~$ ./lab20.sh test 6 Letters z
+testz
+testza
+testzb
+testzc
+testzd
+testze
+Executed 6 copies source file, beginning with z
+sergey@svb:~$ ./lab20.sh test 3 Letters z example 2 Figures 9
+testz
+testza
+testzb
+Executed 3 copies source file, beginning with z
+example9
+example10
+Executed 2 copies source file, beginning with 9
+sergey@svb:~$ ./lab20.sh test 3 Letters z example 2 Figures
+testz
+testza
+testzb
+Executed 3 copies source file, beginning with z
+Need exactly four arguments. File, number of copies, size and name of result file
+sergey@svb:~$ ./lab20.sh test 3 Letters z example 2 Figur 3
+testz
+testza
+testzb
+Executed 3 copies source file, beginning with z
+Please enter correct size 'Letters' or 'Figures'
+sergey@svb:~$ ./lab20.sh test 3 Leters z example 2 Figur 3
+Please enter correct size 'Letters' or 'Figures'
+sergey@svb:~$

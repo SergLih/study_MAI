@@ -1,0 +1,4 @@
+/home/sergey/MAI/maga/Inf_search/expat_test/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/sergey/MAI/maga/Inf_search/expat_test/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/sergey/MAI/maga/Inf_search/expat_test/cmake-build-debug/CMakeFiles/tests.dir
+/home/sergey/MAI/maga/Inf_search/expat_test/cmake-build-debug/CMakeFiles/expat_test.dir

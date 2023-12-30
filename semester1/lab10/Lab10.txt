@@ -1,0 +1,108 @@
+sergey@svb:~/lab9$ gcc -g lab9.c -lm
+sergey@svb:~/lab9$ gdb ./a.out
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.04) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ./a.out...done.
+(gdb) break 78
+Breakpoint 1 at 0x400aa6: file lab9.c, line 78.
+(gdb) run
+Starting program: /home/sergey/lab9/a.out 
+5 5 4
+
+Breakpoint 1, main () at lab9.c:78
+78	    for (k = 1; !check(i_old, j_old) && k <= 50; ++k) {
+(gdb) step
+check (m=5, n=5) at lab9.c:53
+53	    return dotInRound(m, n);
+(gdb) next
+54	}
+(gdb) next
+main () at lab9.c:79
+79	        i = compute_i(i_old, j_old, l_old, k - 1);
+(gdb) print i_old j_old l_old
+A syntax error in expression, near `j_old l_old'.
+(gdb) print i_old, j_old, l_old
+$1 = 4
+(gdb) print j_old
+$2 = 5
+(gdb) next
+80	        j = compute_j(i_old, j_old, l_old, k - 1);
+(gdb) print i_old
+$3 = 5
+(gdb) next
+81	        l = compute_l(i_old, j_old, l_old, k - 1);
+(gdb) print i_old
+$4 = 5
+(gdb) next
+82	        i_old = i;
+(gdb) print i_old
+$5 = 5
+(gdb) next
+83	        j_old = j;
+(gdb) next
+84	        l_old = l;
+(gdb) next
+78	    for (k = 1; !check(i_old, j_old) && k <= 50; ++k) {
+(gdb) next
+79	        i = compute_i(i_old, j_old, l_old, k - 1);
+(gdb) print i
+$6 = 6
+(gdb) next
+80	        j = compute_j(i_old, j_old, l_old, k - 1);
+(gdb) next
+81	        l = compute_l(i_old, j_old, l_old, k - 1);
+(gdb) next
+82	        i_old = i;
+(gdb) next
+83	        j_old = j;
+(gdb) next
+84	        l_old = l;
+(gdb) next
+78	    for (k = 1; !check(i_old, j_old) && k <= 50; ++k) {
+(gdb) next
+79	        i = compute_i(i_old, j_old, l_old, k - 1);
+(gdb) print i
+$7 = -3
+(gdb) next
+80	        j = compute_j(i_old, j_old, l_old, k - 1);
+(gdb) next
+81	        l = compute_l(i_old, j_old, l_old, k - 1);
+(gdb) next
+82	        i_old = i;
+(gdb) next
+83	        j_old = j;
+(gdb) next
+84	        l_old = l;
+(gdb) next
+78	    for (k = 1; !check(i_old, j_old) && k <= 50; ++k) {
+(gdb) next
+79	        i = compute_i(i_old, j_old, l_old, k - 1);
+(gdb) print i
+$8 = -6
+(gdb) help set var
+Evaluate expression EXP and assign result to variable VAR, using assignment
+syntax appropriate for the current language (VAR = EXP or VAR := EXP for
+example).  VAR may be a debugger "convenience" variable (names starting
+with $), a register (a few standard names starting with $), or an actual
+variable in the program being debugged.  EXP is any valid expression.
+This may usually be abbreviated to simply "set".
+(gdb) continue
+Continuing.
+Yes
+-19 -11 73 22
+[Inferior 1 (process 5686) exited normally]
+(gdb) quit
+
+

@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:13.4-alpine
+    environment:
+        - POSTGRES_DB=tennisapp_db
+        - POSTGRES_USER=sergey
+        - POSTGRES_PASSWORD=sergiopostgres
+        - PGDATA=/var/lib/postgresql/data/
+        - "POSTGRES_HOST_AUTH_METHOD=trust"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    # ports:
+    #     - "5432:5432"
+    expose:
+      - '8000'
+    networks:
+        - djangonetwork
+
+  app:
+    build: ./django_project
+        # context: ./django_project/
+        # dockerfile: ./Dockerfile
+    # command: python3 /tennis_app/manage.py runserver 127.0.0.1:8000
+    command: gunicorn tennis_app.wsgi:application --bind 0.0.0.0:8000
+    ports:
+      - "0.0.0.0:8000:8000"
+    expose:
+     - '8000'
+    # ports:
+    #   - 8000:8000
+    volumes:
+      - ./tennis_app/:/home/sergey/MAI/maga/backend/works/django_project
+      - $HOME/.aws/credentials:/home/sergey/.aws/credentials:ro
+      - $HOME/.aws/config:/home/sergey/.aws/config:ro
+      #- TZ=Europe/Moscow
+    depends_on:
+      - db
+    env_file:
+      - .env
+    links:
+       - db:db
+    networks:
+       - djangonetwork
+
+  nginx:
+    build: ./nginx
+    volumes:
+      - ./public:/home/sergey/MAI_Backend/public
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+
+
+networks:
+    djangonetwork:
+        driver: bridge
+
+volumes:
+  postgres_data:

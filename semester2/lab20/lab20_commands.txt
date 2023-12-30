@@ -1,0 +1,8 @@
+1) Information about the processes used by the process
+
+ps -ef | grep bash | awk '{print $1}' | xargs -rn 1
+
+2) Check of the age of the file system
+
+df / | awk '{print $1}' | grep dev | xargs tune2fs -l | grep create
+

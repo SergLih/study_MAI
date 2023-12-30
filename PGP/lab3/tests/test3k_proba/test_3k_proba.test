@@ -1,0 +1,11 @@
+test_3k_proba.in.data
+test_3k_proba.out.data
+8
+0 0
+25 6
+50 12
+75 18
+0 25
+25 31
+50 37
+75 43

@@ -1,0 +1,312 @@
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.0 20120330//EN" "JATS-archivearticle1.dtd">
+<article xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML" article-type="research-article"><?properties open_access?><front><journal-meta><journal-id journal-id-type="nlm-ta">Adv Bioinformatics</journal-id><journal-id journal-id-type="iso-abbrev">Adv Bioinformatics</journal-id><journal-id journal-id-type="publisher-id">ABI</journal-id><journal-title-group><journal-title>Advances in Bioinformatics</journal-title></journal-title-group><issn pub-type="ppub">1687-8027</issn><issn pub-type="epub">1687-8035</issn><publisher><publisher-name>Hindawi Publishing Corporation</publisher-name></publisher></journal-meta><article-meta><article-id pub-id-type="pmid">19920988</article-id><article-id pub-id-type="pmc">2775695</article-id><article-id pub-id-type="doi">10.1155/2008/719468</article-id><article-categories><subj-group subj-group-type="heading"><subject>Research Article</subject></subj-group></article-categories><title-group><article-title>A Pathway Analysis Tool for Analyzing Microarray Data of Species with Low Physiological Information</article-title></title-group><contrib-group><contrib contrib-type="author"><name><surname>te Pas</surname><given-names>M. F. W.</given-names></name><xref ref-type="aff" rid="I1"><sup>1</sup></xref><xref ref-type="corresp" rid="cor1">*</xref></contrib><contrib contrib-type="author"><name><surname>van Hemert</surname><given-names>S.</given-names></name><xref ref-type="aff" rid="I2"><sup>2</sup></xref></contrib><contrib contrib-type="author"><name><surname>Hulsegge</surname><given-names>B.</given-names></name><xref ref-type="aff" rid="I1"><sup>1</sup></xref></contrib><contrib contrib-type="author"><name><surname>Hoekman</surname><given-names>A. J. W.</given-names></name><xref ref-type="aff" rid="I1"><sup>1</sup></xref></contrib><contrib contrib-type="author"><name><surname>Pool</surname><given-names>M. H.</given-names></name><xref ref-type="aff" rid="I1"><sup>1</sup></xref></contrib><contrib contrib-type="author"><name><surname>Rebel</surname><given-names>J. M. J.</given-names></name><xref ref-type="aff" rid="I2"><sup>2</sup></xref></contrib><contrib contrib-type="author"><name><surname>Smits</surname><given-names>M. A.</given-names></name><xref ref-type="aff" rid="I1"><sup>1</sup></xref></contrib></contrib-group><aff id="I1"><sup>1</sup>Animal Breeding and Genetics Centre (ABGC), Animal Sciences Group, Wageningen University and Research Centre, P.O. Box 65, 8200 AB, Lelystad, The Netherlands</aff><aff id="I2"><sup>2</sup>Department of Infectious Biology, Animal Sciences Group, Wageningen University and Research Centre, P.O. Box 65, 8200 AB, Lelystad, The Netherlands</aff><author-notes><corresp id="cor1">*M. F. W. te Pas: <email>marinus.tepas@wur.nl</email></corresp><fn fn-type="other"><p>Recommended by Pierre Rouz&#x000e9;</p></fn></author-notes><pub-date pub-type="ppub"><year>2008</year></pub-date><pub-date pub-type="epub"><day>24</day><month>12</month><year>2008</year></pub-date><volume>2008</volume><elocation-id>719468</elocation-id><history><date date-type="received"><day>18</day><month>2</month><year>2008</year></date><date date-type="rev-recd"><day>25</day><month>7</month><year>2008</year></date><date date-type="accepted"><day>17</day><month>10</month><year>2008</year></date></history><permissions><copyright-statement>Copyright &#x000a9; 2008 M. F. W. te Pas et al.</copyright-statement><copyright-year>2008</copyright-year><license license-type="open-access"><license-p>This is an open access article distributed under the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions><abstract><p>Pathway information provides insight into the biological processes underlying microarray data. Pathway information is widely available for humans and laboratory animals in databases through the internet, but less for other species, for example, livestock. Many software packages use species-specific gene IDs that cannot handle genomics data from other species. We developed a species-independent method to search pathways databases to analyse microarray data. Three PERL scripts were developed that use the names of the genes on the microarray. (1) Add synonyms of gene names by searching the Gene Ontology (GO) database. (2) Search the Kyoto Encyclopaedia of Genes and Genomes (KEGG) database for pathway information using this GO-enriched gene list. (3) Combine the pathway data with the microarray data and visualize the results using color codes indicating regulation. To demonstrate the power of the method, we used a previously reported chicken microarray experiment investigating line-specific reactions to Salmonella infection as an example.</p></abstract></article-meta></front><body><sec id="sec1"><title>1. Introduction</title><p>Microarray technology can simultaneously
+measure the expression of large numbers of genes in a tissue and thereby identify the genes
+involved in a process. Typically, microarray experiments produce long lists of
+genes that are differentially expressed between two different situations. In
+order to better understand the biology behind these data, it is relevant to
+include the available biological information of the genes under study [<xref rid="B1" ref-type="bibr">1</xref>]. Many
+databases such as the KEGG contain information on biochemical pathways [<xref rid="B2" ref-type="bibr">2</xref>]. 
+Combination of microarray data and pathway information may highlight the
+processes taking place in the cell and tissue and provide biological knowledge
+on the tissue- and process-specific functioning of the genome.</p><p>Pathway databases contain information mainly
+based on research performed with human and laboratory animal material. Most
+pathway information is displayed species-specific. Livestock animals and
+animals with less information on genome sequence and/or physiology are less represented. 
+Comparative genomics suggests that most of the genetics and physiology of the
+less well-represented species will be similar or comparable with the data of
+human and laboratory animal species stored in the database. However, many
+software tools to analyse microarray data use species-specific gene
+identification. This makes it difficult to use pathway information for other
+animal species. The development of software tools that allow the use of pathway
+information across other species is therefore necessary.</p><p>The present study aimed
+to develop software tools using species-independent gene IDs that streamline
+the process of searching for pathways information in online databases using
+lists of genes represented on microarrays followed by combining pathway
+information with microarray data. This enabled us to identify relevant pathways
+from the KEGG database (see [<xref rid="B2" ref-type="bibr">2</xref>] and <ext-link ext-link-type="uri" xlink:href="http://www.genome.ad.jp/kegg/">http://www.genome.ad.jp/kegg/</ext-link>)
+for livestock species. Part of the software has been
+tested and published before [<xref rid="B3" ref-type="bibr">3</xref>]. A new powerful module has been added since
+then enabling the direct quantitative visualization of microarray results on
+the pathway file obtained through the internet. To demonstrate the power
+of the method, we used a dataset of a previously reported chicken microarray
+experiment investigating line-specific host reaction to Salmonella infection. 
+Combination of the microarray data with the pathway information highlighted
+line-specific biological processes underlining the added value of the developed
+method.</p></sec><sec id="sec2"><title>2. Materials and Methods</title><sec sec-type="subsection" id="sec2.1"><title>2.1. Database Searches</title><p>The KEGG database (see <ext-link ext-link-type="uri" xlink:href="http://www.genome.ad.jp/kegg/">http://www.genome.ad.jp/kegg/</ext-link>)
+contains general information on biological pathways including gene names and
+information on species-specific pathways [<xref rid="B2" ref-type="bibr">2</xref>]. While searching the KEGG database
+with known pathways, we found that genes may be represented with several
+synonyms that were not all linked to the pathways in the KEGG database. 
+Therefore, we first linked the microarray data with a local MySQL (see <ext-link ext-link-type="uri" xlink:href="http://www.mysql.com/">http://www.mysql.com/</ext-link>)
+installation of the Gene Ontology database (<ext-link ext-link-type="uri" xlink:href="http://www.godatabase.org/cgi-bin/amigo/go.cgi">http://www.godatabase.org/cgi-bin/amigo/go.cgi</ext-link>)
+which contains the monthly release to collect all the common names (some of
+them obsolete) and added these to the file before searching the KEGG database. 
+To automate the searching and retrieving of pathway data from the KEGG database
+[<xref rid="B2" ref-type="bibr">2</xref>], a PERL script was written using the KEGG API [<xref rid="B4" ref-type="bibr">4</xref>]. Direct links to each pathway
+for each gene were added to the file. A third PERL script quantitatively
+visualizes the microarray results in the obtained pathways. All database
+searches were performed with homemade PERL scripts (<ext-link ext-link-type="uri" xlink:href="http://www.perl.com/">http://www.perl.com/</ext-link>). The software can be
+used for free at <ext-link ext-link-type="uri" xlink:href="http://www.ASGbioinformatics.wur.nl/">http://www.ASGbioinformatics.wur.nl/</ext-link>. 
+Free registration is required to use the software.</p></sec><sec sec-type="subsection" id="sec2.2"><title>2.2. The Example: Animals, Experiment, and Microarray Analysis</title><p>Two chicken lines differently selected for growth rate were used. The lines also differed for Salmonella host
+response. Five one-day-old
+chickens were orally inoculated with 10<sup>5</sup> CFU <italic>S. enteritidis</italic>, 
+five animals served as controls. Twenty-four hours after the infection, the
+chickens were killed and parts of the jejunum were snapped frozen in liquid nitrogen and used
+for RNA isolation. For further details, see van Hemert et al. [<xref rid="B5" ref-type="bibr">5</xref>, <xref rid="B6" ref-type="bibr">6</xref>].</p><p>RNA pools were
+hybridized on an Affymetrix chicken whole genome Genechip array. The annotation file of the
+microarrays was provided by the supplier. See van Hemert et al. [<xref rid="B6" ref-type="bibr">6</xref>] for further details
+on the microarrays used, the hybridizations, and the first analysis. For raw
+data see NCBI (<ext-link ext-link-type="uri" xlink:href="http://www.ncbi.nlm.nih.gov/geo/">http://www.ncbi.nlm.nih.gov/geo/</ext-link>), accession 
+number GSE3702.
+</p></sec></sec><sec id="sec3"><title>3. Results</title><sec sec-type="subsection" id="sec3.1"><title>3.1. Flow Diagram of the Developed Tool</title><p>The pathway analysis tool is a four-step procedure; see <xref ref-type="fig" rid="fig1">Figure 1</xref>. 
+The first three steps are automated with PERL scripts that are available as 
+additional information (see Additional File
+1 available online at doi:10.1155/2008/719468). 
+The tool uses gene names to find pathway information in the database. Since
+genes may be known by different names, it is important to have all the
+synonymous names of all the genes in the gene name list of the microarray. 
+Therefore, the first step (script 1) of the procedure is to collect all the
+synonymous names of all genes. The Gene Ontology (GO) database (<ext-link ext-link-type="uri" xlink:href="http://amigo.geneontology.org/cgi-bin/amigo/go.cgi">http://amigo.geneontology.org/cgi-bin/amigo/go.cgi</ext-link>)
+is a web-based resource that contains all synonyms. The PERL-script tool
+searches a local download of the GO database using a txt file of a list of all
+gene names on the microarray and the results were added to the list. The second
+script uses this updated gene list to search the pathway database. There are
+several pathway databases accessible via the internet such as KEGG (<ext-link ext-link-type="uri" xlink:href="http://www.genome.ad.jp/kegg/">http://www.genome.ad.jp/kegg/</ext-link>),
+BioCarta (<ext-link ext-link-type="uri" xlink:href="http://www.biocarta.com/">http://www.biocarta.com/</ext-link>), Reactome (<ext-link ext-link-type="uri" xlink:href="http://www.reactome.org/">http://www.reactome.org/</ext-link>),
+and others. Presently, the PERL script to search the KEGG database is available
+as a proven tool and the BioCarta tool is under development. Searching the
+database returns for all recognized gene names, the names of the pathways in
+which the genes are found, and a link to the reference pathway. These data are
+added to the file. The reference pathways are developed by the KEGG database comparing
+the species-specific pathways. Thus, the reference pathways represent pathways
+that seem to be similar in different species. In our projects, we often use the
+reference pathways after checking for similarity with the human and mouse
+pathways. The third step (script) downloads the figure/diagram of the pathway
+and visualizes the microarray results in the pathways figure. The PERL script
+places a colored oval around the gene name in the figure. It is suggested to
+use green for upregulated genes, red for downregulated genes, and black for not
+regulated genes. The tool can visualize separately together the data from more
+than one microarray in the figure. A practical step by step guide to use the pathway analysis tool is
+given in <xref ref-type="fig" rid="boxx1">Box 1</xref>.</p><p>The fourth step is not automated by a PERL
+script, and is probably not automatable in a research setting because it
+comprises the biological analysis of the results generating physiological or
+biological knowledge from the data. Part of this analysis is the generation of networks
+of pathways, which may be automated in the future. Networks of pathways are
+generated using two types of data: (1) KEGG pathway figures may indicate input
+from, or output to another pathway, or (2) genes may be found in more than one
+pathway suggesting direct links between pathways. The final outcome of the
+method is that biological knowledge is generated from microarray data.</p></sec><sec sec-type="subsection" id="sec3.2"><title>3.2. An Example: Chicken Line-Specific Reaction to Salmonella Infection</title><p>To show the power of the developed tools, we used a dataset of a
+previously reported experiment. The study focussed on the early host gene
+expression response to Salmonella infection in the intestine of newly hatched
+chicken of two chicken lines.</p><p><statement id="step1"><title>Step 1</title><p>The Affymetrix GeneChip chicken
+genome array contained 14 343 entries (38,449 Gallus gallus probe sets, with 11 pairs of 25 mers). 
+However, these entries contained known genes, EST sequences, and chromosomal
+locations. Only known genes with names can be used to search the GO database
+for synonyms and to search the KEGG database for pathways. In this example, a
+total of 4666 gene names were found in the GO database and updated.</p></statement></p><p><statement id="step2"><title>Step 2</title><p>The KEGG database search retrieved
+178 pathways. From the known genes 3520 gene&#x02014;pathway combinations were found
+in the KEGG database. Of these, 1203 gene&#x02014;pathway combinations showed up or
+down regulation of the gene expression in at least one of the four experiments. 
+The number of genes per pathway with microarray information varied from 1 (14
+pathways) to 109 (one pathway) (<xref ref-type="fig" rid="fig2">Figure 2</xref>).</p></statement></p><p><statement id="step3"><title>Step 3</title><p>Visualization of microarray data on
+the pathways revealed that the pathways could be categorized (see <xref ref-type="table" rid="tab1">Table 1</xref>). <italic>Category A</italic>: 57 pathways with relevant
+microarray information were observed, of which 22 have suggested linkages with
+one or more other KEGG pathways. KEGG pathways may have connections with other
+pathways through input/output of biochemical products or via protein sharing
+forming a biochemical network of pathways. See Additional Files 2 and 3 for
+information on each individual gene within each individual pathway. Additional File 3 shows the visualization of microarray
+data, which is the output of the newly added module as compared to the previous
+publication [<xref rid="B3" ref-type="bibr">3</xref>]. <italic>Category B</italic>: fourteen pathways with relevant microarray information but none of the genes
+showed differential expression. This indicates that these pathways are active
+but not involved in the regulation of the traits under investigation. <italic>Category C&#x02013;F</italic>: For several reasons
+pathways cannot be analysed further, or can be analysed only partly: (i)
+Especially for the pathways represented by a few genes (e.g., less than five)
+on the microarray the information content is low and the participation of that
+pathway in the processes studied was considered highly uncertain (Category E). 
+However, it was observed that for several pathways limited microarray information
+was present. Such limited information may be found localized on a single
+biochemical path. We named this a subpathway, and analyzed it further; (ii)
+Other pathways returned by the KEGG database search were clearly false positive
+hits, for example, a photosynthetic pathway was returned by the KEGG database
+search for one gene (Category D).</p></statement></p><p><statement id="step4"><title>Step 4 (constructing networks of pathways)</title><p>Networks of pathways can be
+generated using two types of data. (i) KEGG links between pathways indicate
+where the information in one pathway ends and continues in the next pathway. (ii) Genes may be
+active in more than one pathway (see <xref ref-type="fig" rid="fig3">Figure 3</xref>). Most genes were found in a single
+pathway. The KEGG database search returned more than one pathway for 698 genes,
+ranging from two pathways up to a maximum of 35. Altogether networks of
+pathways are constructed for &#x0201c;mechanisms of cytoskeletal changes&#x0201d; (ten KEGG
+pathways), &#x0201c;apoptosis mechanism&#x0201d; (five KEGG pathways) and &#x0201c;regulation of energy metabolism&#x0201d; (six KEGG pathways), and several pathways
+that could be grouped without direct network associations (see te Pas et al.s' Additional
+File 4 for details).</p></statement></p></sec><sec sec-type="subsection" id="sec3.3"><title>3.3. Biological Knowledge Derived from the Pathways Analysis</title><p>For each of the networks of pathways and some other pathways, the
+chicken lines differed in reaction to Salmonella infection. The data of all
+pathways of the networks are summarized in the table in Additional File 5. 
+Detailed information is given in the file following the table. In summary,
+chicken lines A and B differ in their Salmonella susceptibility phenotype. The
+faster growing line A shows more severe illness as measured with growth and
+colony-forming units in the liver to Salmonella infection than the slower growing line B. The results of the
+pathway analysis of the microarray data provide insight into differential
+line-specific biological processes that may explain the difference in host
+response to Salmonella. Three major networks of pathways that differ between
+the lines are discussed in more detail below.</p><p><statement id="head1"><title>(i) Mechanisms of Cytoskeletal Changes</title><p>Pathways analysis indicated that the chicken
+lines differ in their expression of the genes in the network regulating the
+cytoskeleton, at least in the intestinal tissues used for microarray analysis. 
+The genes in the pathways in this network show higher expression levels in line
+B compared to line A. Following Salmonella infection, line A increases its
+expression to the same (basal) level of line B, while the expression level in
+line B was unchanged. Thus, selection for a production trait has influenced the
+reaction mechanism of the animals to respond to Salmonella infection. This
+result may be related to the reaction time of the lines to Salmonella infection:
+line B reacts faster than line A. Apparently, the different selection background
+of the chicken lines which created a difference in growth rate between the
+chicken lines is accompanied with a difference in basal expression levels of
+the cytoskeletal network pathways. Part of these results confirmed the results
+of previous reports [<xref rid="B5" ref-type="bibr">5</xref>, <xref rid="B6" ref-type="bibr">6</xref>] or what is known about the involvement of the
+cytoskeleton in cellular uptake of Salmonella [<xref rid="B7" ref-type="bibr">7</xref>].</p></statement></p><p><statement id="head2"><title>(ii) Apoptosis Mechanism</title><p>Pathway analysis suggests that the intestinal tissue of line A reacts
+to a Salmonella infection with an apoptotic mechanism, while line B resumes
+growing (i.e., proliferation and differentiation mechanisms).</p></statement></p><p><statement id="head3"><title>(iii) Regulation of Energy Metabolism</title><p>The apoptosis versus growth mechanism may be supported by the observed
+higher expression of genes related to energy metabolism in line B making energy
+available for the mechanisms of cell proliferation and differentiation. 
+However, it should be noted that the expression levels of the genes in the
+energy metabolism pathways were reduced in both lines in response to Salmonella
+infection, but the effect was more severe in line A than in line B.</p></statement></p></sec></sec><sec id="sec4"><title>4. Discussion</title><p>High throughput postgenomics methods generate large-scale dataset. The
+conversion of these data into knowledge requires approaches that allow
+integration of the results into models describing how the cell or its
+components, or tissues, organs, and so forth, work. This approach is called
+systems biology [<xref rid="B8" ref-type="bibr">8</xref>], which requires computerized methods to build integrated models
+on all levels. A good example of this is the Physiome Project [<xref rid="B9" ref-type="bibr">9</xref>, <xref rid="B10" ref-type="bibr">10</xref>]. Placing transcriptomics
+and proteomics results in the physiological knowledge is a first step on this
+road. Different approaches consist to continue in this direction. Based on the functional
+genomics, data genetic networks can be identified [<xref rid="B1" ref-type="bibr">1</xref>, <xref rid="B11" ref-type="bibr">11</xref>, <xref rid="B12" ref-type="bibr">12</xref>]. Models for gene
+regulation and regulation of networks of genes can be determined [<xref rid="B13" ref-type="bibr">13</xref>]. Such
+approaches are valuable for understanding the large datasets, but these results
+might or might not be related to the physiology of the cell. Other approaches
+more directly use the wealth of validated physiological knowledge available
+through the internet [<xref rid="B14" ref-type="bibr">14</xref>]. However, such data is often presented in a
+species-specific way for good reasons. To enable us to use the physiological information for less well-studied species,
+software tools need to be developed. The pathway
+analysis tool described here generates physiological data from microarray
+results of species less well represented in the physiological pathway databases. 
+Previously, a manuscript using
+only the first two modules of the pathway analysis software tool has been published [<xref rid="B3" ref-type="bibr">3</xref>]. In the
+latter manuscript, we used these modules to analyze microarray data on the
+prenatal development of muscle tissue in pigs. The data consisted of a time
+series. Results were not recorded as up or downregulation, but as differential
+expression in time. The latter paper is an example of a specific case of using
+only part of the pathway
+analysis tool made possible by keeping the software as free&#x02014;nonintegrated&#x02014;software
+components. In contrast, the present description of the software and the
+example given show how quantitative results of microarray experiments can be
+integrated directly into pathway structures and visualized. This enables to
+draw conclusions about up or downregulated pathways. Furthermore, it suggests
+how information flows may go from one pathway to another and thus how pathways
+can be integrated into networks.</p><sec sec-type="subsection" id="sec4.1"><title>4.1. The Pathway Analysis Tool: Merging Microarray Data with Biological Database Information</title><p>Pathway analysis is a tool to produce biological meaningful knowledge
+from the huge amount of data resulting from microarray experiments. Biochemical
+pathways such as those
+stored in the KEGG database describe physiological processes. However, one
+should keep in mind that the description of the biological process may be
+species-specific. Furthermore, the gene list of the microarray may be incomplete
+for a pathway, due to inadequate annotation of genes. These considerations may
+hamper the analysis of the microarray results for the pathways. The physiology
+of a process may also differ between lines due to selection background. Therefore,
+both general (called reference) pathways and species-specific pathways can be
+searched. Chicken-specific pathways are often not available. Therefore, we used
+pathway data from other species and always compared these with the reference
+pathways, which were used for further analysis.</p><p>A set of PERL scripts written to extract data
+from databases via the internet was developed. The need for biological interpretation of microarray
+data has been recognized by many research groups, and consequently the
+presented pathway
+analysis tool is not the only tool that can be applied. However, many software
+packages work well with human or model (laboratory) animal species, but less
+well with organisms lacking (much) physiologic knowledge. Nevertheless,
+applying the principle of comparative genomics could make the knowledge of the
+model species available for other species if the software tool guaranties the
+use of species-independent gene identifiers. For example, one could try the use
+of Entrez IDs and HomoloGene. On the other hand, this software tool uses the
+identifier recognized by each investigator: the gene name or abbreviation. We
+feel this gives an advantage to this software. Differently from other similar software that can be found on the internet
+(Bioconductor (<ext-link ext-link-type="uri" xlink:href="http://www.bioconductor.org/">http://www.bioconductor.org/</ext-link>),
+Whole Pathway Scope (<ext-link ext-link-type="uri" xlink:href="http://www.abcc.ncifcrf.gov/wps/wps_login.php?typ=download">http://www.abcc.ncifcrf.gov/wps/wps_login.php?typ=download</ext-link>),
+GOminer (<ext-link ext-link-type="uri" xlink:href="http://discover.nci.nih.gov/gominer/">http://discover.nci.nih.gov/gominer/</ext-link>), GenMapp (<ext-link ext-link-type="uri" xlink:href="http://www.genmapp.org/">http://www.genmapp.org/</ext-link>)) we use the names and synonyms of
+the genes rather than the species-specific gene-IDs. Therefore, this tool
+allows analysing microarray data from species with relative low physiological
+and/or sequencing information in the database. As a consequence, it will remain
+important to screen manually for obvious false positive pathways. In the example,
+a chlorophyll metabolism pathway was discarded as false positive result (1 gene
+in the pathway, data not shown).</p><p>From all entries listed
+on the microarray and used for searching the KEGG pathway database,
+approximately 25 percent were found on one or more pathways. The reasons for
+not finding pathway information for an entry may be diverse, but often related
+to the annotation of the microarray: (1) gene entries indicated by a locus
+(LOC) number were rarely found on a pathway; (2) hypothetical protein entries
+were also rarely found on a pathway; (3) entries indicated by a chromosomal
+position were never found on a pathway; and (4) in the example given in <xref ref-type="sec" rid="sec3.2">Section 3.2</xref> with details in the additional file, 
+the annotation of chicken genes is often
+poor. These results strongly support the importance of the continuously ongoing
+efforts to improve the annotation of microarrays. We have used the annotation
+provided by the supplier, which was similar to the annotation used in the
+initial analysis [<xref rid="B5" ref-type="bibr">5</xref>]. This implies that the improvement of the current analysis
+is solely due to the use of the new developed pathway analysis tool. Of course,
+updating the annotation to a more up-to-date level could have increased the
+number of pathways found, and thus improved the analysis even further.</p><p>Apart from these
+reasons, there were also known genes without known pathway information in the
+KEGG database. However, the method used in this study returned substantially
+more results than the software where species-specific gene IDs have to be used
+(data not shown) because many pathways in the KEGG and other databases do not
+have a chicken-specific pathway included although it is clear that many
+metabolism-specific pathways do exist in the chicken. However, one should keep
+in mind that species-specific differences in pathways do exist. We keep this
+risk to a minimum using the reference pathways of the KEGG database, which are
+created combining the species-specific pathways of as many as possible species.</p><p>Approximately one third
+of the pathways found by searching the KEGG database in our example proved to
+be regulated in the experiment. The majority of the pathways were excluded for
+several reasons as outlined in <xref ref-type="table" rid="tab1">Table 1</xref>. Apart from false positive pathways that may be found due
+to genes that may have similar gene name, synonyms about one third of the
+pathways were supposed to be irrelevant for the regulation of the traits under
+investigation because of the absence of differential expression in the
+experiments or too limited information content in the microarray dataset.</p><p>In the example given, the pathways
+analysis resulted in not less than 57 pathways which were found to be
+differentially regulated between the two chicken lines with or without Salmonella
+infection. Furthermore, from the data, four networks were designed that describe
+the reaction of the chicken to Salmonella at a higher level. The results
+confirm and extend the previously reported results and extend the knowledge to
+a higher physiological level&#x02014;networks of
+regulated pathways in intestine tissue. This example shows that the developed
+tool is able to increase biological insight in processes studied with
+microarrays, especially for species with either little genomic information or
+with little physiologic information available.</p></sec></sec><sec sec-type="supplementary-material" id="supplementary-material-sec"><title>Supplementary Material</title><supplementary-material content-type="local-data" id="f1"><caption><p>Additional file 1 contains the details of the PERL scripts underlying the steps 1, 2,
+and 3 of the developed Pathway tool (Microsoft Word file). 
+Additional file 2 shows all the data of the example given in the manuscript required to
+do the pathway analysis using the tool. The Microsoft Excel file gives gene names
+(including synonyms), microarray results, and KEGG database URLs. The file
+includes the data of Figures 2 and 3 given in the manuscript. 
+Additional file 3 shows the interesting KEGG pathways with the microarray results
+visualized in the pathway figures (Microsoft PowerPoint file). 
+Additional file 4 shows the three networks of pathways derived from the pathway
+data. Furthermore, additional information is provided on the formation and
+interpretation of the networks (Microsoft Word file). 
+Additional file 5 provides a table with detailed information on the pathways
+underlying the networks. The data are extracted from additional files 2 (data), 3
+(pathways), and 4 (networks). This table should be read together with additional file
+4.</p></caption><media xlink:href="719468.f1.doc"><caption><p>Click here for additional data file.</p></caption></media></supplementary-material><supplementary-material content-type="local-data" id="f2"><media xlink:href="719468.f2.xls"><caption><p>Click here for additional data file.</p></caption></media></supplementary-material><supplementary-material content-type="local-data" id="f3"><media xlink:href="719468.f3.ppt"><caption><p>Click here for additional data file.</p></caption></media></supplementary-material><supplementary-material content-type="local-data" id="f4"><media xlink:href="719468.f4.doc"><caption><p>Click here for additional data file.</p></caption></media></supplementary-material><supplementary-material content-type="local-data" id="f5"><media xlink:href="719468.f5.doc"><caption><p>Click here for additional data file.</p></caption></media></supplementary-material></sec></body><back><ack><title>Acknowledgments</title><p>This research was supported by
+internal WUR funds (Grants no. 213.213.4000 and no. 4434.6057.00). The research
+was also supported by a grant from the EADGENE FP6 EU Network of Excellence.</p></ack><ref-list><ref id="B1"><label>1</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Papin</surname><given-names>JA</given-names></name><name><surname>Stelling</surname><given-names>J</given-names></name><name><surname>Price</surname><given-names>ND</given-names></name><name><surname>Klamt</surname><given-names>S</given-names></name><name><surname>Schuster</surname><given-names>S</given-names></name><name><surname>Palsson</surname><given-names>BO</given-names></name></person-group><article-title>Comparison of network-based pathway analysis methods</article-title><source><italic>Trends in Biotechnology</italic></source><year>2004</year><volume>22</volume><issue>8</issue><fpage>400</fpage><lpage>405</lpage><pub-id pub-id-type="pmid">15283984</pub-id></element-citation></ref><ref id="B2"><label>2</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Kanehisa</surname><given-names>M</given-names></name><name><surname>Goto</surname><given-names>S</given-names></name><name><surname>Hattori</surname><given-names>M</given-names></name><etal/></person-group><article-title>From genomics to chemical genomics: new developments in KEGG</article-title><source><italic>Nucleic Acids Research</italic></source><year>2006</year><volume>34, database issue</volume><fpage>D354</fpage><lpage>D357</lpage><pub-id pub-id-type="pmid">16381885</pub-id></element-citation></ref><ref id="B3"><label>3</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>te Pas</surname><given-names>MFW</given-names></name><name><surname>Hulsegge</surname><given-names>I</given-names></name><name><surname>Coster</surname><given-names>A</given-names></name><name><surname>Pool</surname><given-names>MH</given-names></name><name><surname>Heuven</surname><given-names>HH</given-names></name><name><surname>Janss</surname><given-names>LLG</given-names></name></person-group><article-title>Biochemical pathways analysis of microarray results: regulation of myogenesis in pigs</article-title><source><italic>BMC Developmental Biology</italic></source><year>2007</year><volume>7, article 66</volume><fpage>1</fpage><lpage>15</lpage><pub-id pub-id-type="pmid">17199897</pub-id></element-citation></ref><ref id="B4"><label>4</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Kawashima</surname><given-names>S</given-names></name><name><surname>Katayama</surname><given-names>T</given-names></name><name><surname>Sato</surname><given-names>Y</given-names></name><name><surname>Kanehisa</surname><given-names>M</given-names></name></person-group><article-title>KEGG API: a web service using SOAP/WSDL to access the KEGG system</article-title><source><italic>Genome Informatics</italic></source><year>2003</year><volume>14</volume><fpage>673</fpage><lpage>674</lpage></element-citation></ref><ref id="B5"><label>5</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>van Hemert</surname><given-names>S</given-names></name><name><surname>Hoekman</surname><given-names>AJW</given-names></name><name><surname>Smits</surname><given-names>MA</given-names></name><name><surname>Rebel</surname><given-names>JMJ</given-names></name></person-group><article-title>Gene expression responses to a <italic>Salmonella</italic> infection in the chicken intestine differ between lines</article-title><source><italic>Veterinary Immunology and Immunopathology</italic></source><year>2006</year><volume>114</volume><issue>3-4</issue><fpage>247</fpage><lpage>258</lpage><pub-id pub-id-type="pmid">16978708</pub-id></element-citation></ref><ref id="B6"><label>6</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>van Hemert</surname><given-names>S</given-names></name><name><surname>Hoekman</surname><given-names>AJW</given-names></name><name><surname>Smits</surname><given-names>MA</given-names></name><name><surname>Rebel</surname><given-names>JMJ</given-names></name></person-group><article-title>Early host gene expression responses to a <italic>Salmonella</italic> infection in the intestine of chickens with different genetic background examined with cDNA and oligonucleotide microarrays</article-title><source><italic>Comparative Biochemistry and Physiology Part D</italic></source><year>2006</year><volume>1</volume><issue>3</issue><fpage>292</fpage><lpage>299</lpage></element-citation></ref><ref id="B7"><label>7</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Guiney</surname><given-names>DG</given-names></name><name><surname>Lesnick</surname><given-names>M</given-names></name></person-group><article-title>Targeting of the actin cytoskeleton during infection by <italic>Salmonella</italic> strains</article-title><source><italic>Clinical Immunology</italic></source><year>2005</year><volume>114</volume><issue>3</issue><fpage>248</fpage><lpage>255</lpage><pub-id pub-id-type="pmid">15721835</pub-id></element-citation></ref><ref id="B8"><label>8</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Ideker</surname><given-names>T</given-names></name><name><surname>Galitski</surname><given-names>T</given-names></name><name><surname>Hood</surname><given-names>L</given-names></name></person-group><article-title>A new approach to decoding life: systems biology</article-title><source><italic>Annual Review of Genomics and Human Genetics</italic></source><year>2001</year><volume>2</volume><fpage>343</fpage><lpage>372</lpage></element-citation></ref><ref id="B9"><label>9</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Hunter</surname><given-names>P</given-names></name><name><surname>Robbins</surname><given-names>P</given-names></name><name><surname>Noble</surname><given-names>D</given-names></name></person-group><article-title>The IUPS human Physiome project</article-title><source><italic>Pfl&#x000fc;gers Archiv European Journal of Physiology</italic></source><year>2002</year><volume>445</volume><issue>1</issue><fpage>1</fpage><lpage>9</lpage><pub-id pub-id-type="pmid">12397380</pub-id></element-citation></ref><ref id="B10"><label>10</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Hunter</surname><given-names>PJ</given-names></name><name><surname>Borg</surname><given-names>TK</given-names></name></person-group><article-title>Integration from proteins to organs: the Physiome project</article-title><source><italic>Nature Reviews Molecular Cell Biology</italic></source><year>2003</year><volume>4</volume><issue>3</issue><fpage>237</fpage><lpage>243</lpage><pub-id pub-id-type="pmid">12612642</pub-id></element-citation></ref><ref id="B11"><label>11</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Xiong</surname><given-names>M</given-names></name><name><surname>Li</surname><given-names>J</given-names></name><name><surname>Fang</surname><given-names>X</given-names></name></person-group><article-title>Identification of genetic networks</article-title><source><italic>Genetics</italic></source><year>2004</year><volume>166</volume><issue>2</issue><fpage>1037</fpage><lpage>1052</lpage><pub-id pub-id-type="pmid">15020486</pub-id></element-citation></ref><ref id="B12"><label>12</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Zhou</surname><given-names>XJ</given-names></name><name><surname>Kao</surname><given-names>M-CJ</given-names></name><name><surname>Huang</surname><given-names>H</given-names></name><etal/></person-group><article-title>Functional annotation and network reconstruction through cross-platform integration of microarray data</article-title><source><italic>Nature Biotechnology</italic></source><year>2005</year><volume>23</volume><issue>2</issue><fpage>238</fpage><lpage>243</lpage></element-citation></ref><ref id="B13"><label>13</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Guido</surname><given-names>NJ</given-names></name><name><surname>Wang</surname><given-names>X</given-names></name><name><surname>Adalsteinsson</surname><given-names>D</given-names></name><etal/></person-group><article-title>A bottom-up approach to gene regulation</article-title><source><italic>Nature</italic></source><year>2006</year><volume>439</volume><issue>7078</issue><fpage>856</fpage><lpage>860</lpage><pub-id pub-id-type="pmid">16482159</pub-id></element-citation></ref><ref id="B14"><label>14</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Pang</surname><given-names>H</given-names></name><name><surname>Lin</surname><given-names>A</given-names></name><name><surname>Holford</surname><given-names>M</given-names></name><etal/></person-group><article-title>Pathway analysis using random forests classification and regression</article-title><source><italic>Bioinformatics</italic></source><year>2006</year><volume>22</volume><issue>16</issue><fpage>2028</fpage><lpage>2036</lpage><pub-id pub-id-type="pmid">16809386</pub-id></element-citation></ref></ref-list></back><floats-group><fig id="fig1" position="float"><label>Figure 1</label><caption><p>Flow diagram of the pathway
+analysis tool. The method comprises four steps, of which the first three steps
+are automated by PERL scripts.<xref ref-type="statement" rid="step1"> Step 1</xref>. Use the gene names list of the
+microarray annotation to search the Gene Ontology database for synonyms of the
+gene names and add to the list.<xref ref-type="statement" rid="step2"> Step 2</xref>. Use the updated gene name list to
+search the pathway database for pathway information of the genes and add
+pathway names and web links to the file.<xref ref-type="statement" rid="step3"> Step 3</xref>. Visualize the microarray
+results on the pathways.<xref ref-type="statement" rid="step4"> Step 4</xref>. Construct networks of pathways and generate
+biological knowledge from the results.</p></caption><graphic xlink:href="ABI2008-719468.001"/></fig><fig id="boxx1" position="float"><label>Box 1</label><graphic xlink:href="ABI2008-719468.002"/></fig><fig id="fig2" position="float"><label>Figure 2</label><caption><p>The number of genes on the microarray found per pathway.</p></caption><graphic xlink:href="ABI2008-719468.003"/></fig><fig id="fig3" position="float"><label>Figure 3</label><caption><p>The number of pathways per gene returned by the KEGG database search.</p></caption><graphic xlink:href="ABI2008-719468.004"/></fig><table-wrap id="tab1" position="float"><label>Table 1</label><caption><p>Pathways returned by searching the KEGG database. The list of
+gene names of the microarray was first updated for all synonyms using the Gene
+Ontology database before searching the KEGG database.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left" rowspan="2" colspan="1">Pathways category</th><th align="center" rowspan="1" colspan="1">Number of </th></tr><tr><th align="center" rowspan="1" colspan="1">pathways</th></tr></thead><tbody><tr><td align="left" rowspan="1" colspan="1">A: total number of pathways returned by KEGG search</td><td align="center" rowspan="1" colspan="1">178</td></tr><tr><td align="left" rowspan="1" colspan="1">B: positive associated pathways (with links to other pathways)</td><td align="center" rowspan="1" colspan="1">57 (22)</td></tr><tr><td align="left" rowspan="1" colspan="1">C: no regulation*</td><td align="center" rowspan="1" colspan="1">14</td></tr><tr><td align="left" rowspan="1" colspan="1">D: false positive**</td><td align="center" rowspan="1" colspan="1">30</td></tr><tr><td align="left" rowspan="1" colspan="1">E: (too) limited information to conclude***</td><td align="center" rowspan="1" colspan="1">35</td></tr><tr><td align="left" rowspan="1" colspan="1">F: uncertain****</td><td align="center" rowspan="1" colspan="1">42</td></tr></tbody></table><table-wrap-foot><fn><p>*None of the genes in the pathways present on the microarray were regulated. 
+These pathways were considered not related to the chicken line differences for
+Salmonella infection response.</p><p>
+**Plant or prokaryote-specific pathways&#x02014;recognized due to
+gene name similarity. Almost always these pathways were recognized by a very limited
+number of genes on the microarray.</p><p>
+***The genes with microarray data on the pathway are too limited in
+number or their locations on the pathway are too scattered to conclude on the
+relevance of the pathway for the studied traits.</p><p>
+****The available microarray data of the genes on the pathway show
+either limited or confusing up- or downregulatory patterns.</p></fn></table-wrap-foot></table-wrap></floats-group></article>

@@ -1,0 +1,15 @@
+(define(try neg-point pos-point)
+ (let(
+       (midpoint (average neg-point pos-point))
+       (test-value 0)
+     )
+     (display "+")
+   
+     (set! test-value (fun midpoint))
+     (cond((close-enough? neg-point pos-point) midpoint)
+            ((<= 0 test-value)(try neg-point midpoint))
+            ((<= test-value 0)(try midpoint pos-point))
+            ((= test-value 0) midpoint)
+     )
+ )
+)

@@ -1,0 +1,26 @@
+<Articles>
+  <Article>
+    <Journal>Advances in Bioinformatics</Journal>
+    <Title>A Pathway Analysis Tool for Analyzing Microarray Data of Species with Low Physiological Information</Title>
+    <Doi>10.1155/2008/719468</Doi>
+    <Authors>te Pas M. F. W., van Hemert S., Hulsegge B., Hoekman A. J. W., Pool M. H., Rebel J. M. J., Smits M. A.</Authors>
+    <Abstact>Pathway information provides insight into the biological processes underlying microarray data. Pathway information is widely available for humans and laboratory animals in databases through the internet, but less for other species, for example, livestock. Many software packages use species-specific gene IDs that cannot handle genomics data from other species. We developed a species-independent method to search pathways databases to analyse microarray data. Three PERL scripts were developed that use the names of the genes on the microarray. (1) Add synonyms of gene names by searching the Gene Ontology (GO) database. (2) Search the Kyoto Encyclopaedia of Genes and Genomes (KEGG) database for pathway information using this GO-enriched gene list. (3) Combine the pathway data with the microarray data and visualize the results using color codes indicating regulation. To demonstrate the power of the method, we used a previously reported chicken microarray experiment investigating line-specific reactions to Salmonella infection as an example.</Abstact>
+  </Article>
+  <Article>
+    <Journal>Advances in Bioinformatics</Journal>
+    <Title>Metagenome Fragment Classification Using N-Mer Frequency Profiles</Title>
+    <Doi>10.1155/2008/205969</Doi>
+    <Authors>Rosen Gail, Garbarine Elaine, Caseiro Diamantino, Polikar Robi, Sokhansanj Bahrad</Authors>
+    <Abstact>
+A vast amount of microbial sequencing data is being generated through large-scale projects in ecology, agriculture, and human health. Efficient high-throughput methods are needed to analyze the mass amounts of metagenomic data, all DNA present in an environmental sample. A major obstacle in metagenomics is the inability to obtain accuracy using technology that yields short reads. We construct the unique N-mer frequency profiles of 635 microbial genomes publicly available as of February 2008. These profiles are used to train a naive Bayes classifier (NBC) that can be used to identify the genome of any fragment. We show that our method is comparable to BLAST for small 25 bp fragments but does not have the ambiguity of BLAST's tied top scores. We demonstrate that this approach is scalable to identify any fragment from hundreds of genomes. It also performs quite well at the strain, species, and genera levels and achieves strain resolution despite classifying ubiquitous genomic fragments (gene and nongene regions). Cross-validation analysis demonstrates that species-accuracy achieves 90% for highly-represented species containing an average of 8 strains. We demonstrate that such a tool can be used on the Sargasso Sea dataset, and our analysis shows that NBC can be further enhanced. 
+</Abstact>
+  </Article>
+  <Article>
+    <Journal>Advances in Bioinformatics</Journal>
+    <Title>In Silico Analysis of SNPs in PARK2 and PINK1 Genes That Potentially Cause Autosomal Recessive Parkinson Disease</Title>
+    <Doi>10.1155/2016/9313746</Doi>
+    <Authors>Bakhit Yousuf Hasan Yousuf, Ibrahim Mohamed Osama Mirghani, Amin Mutaz, Mirghani Yousra Abdelazim, Hassan Mohamed Ahmed Salih</Authors>
+    <Abstact>
+Introduction. Parkinson's disease (PD) is a common neurodegenerative disorder. Mutations in PINK1 are the second most common agents causing autosomal recessive, early onset PD. We aimed to identify the pathogenic SNPs in PARK2 and PINK1 using in silico prediction software and their effect on the structure, function, and regulation of the proteins. Materials and Methods. We carried out in silico prediction of structural effect of each SNP using different bioinformatics tools to predict substitution influence on protein structure and function. Result. Twenty-one SNPs in PARK2 gene were found to affect transcription factor binding activity. 185 SNPs were found to affect splicing. Ten SNPs were found to affect the miRNA binding site. Two SNPs rs55961220 and rs56092260 affected the structure, function, and stability of Parkin protein. In PINK1 gene only one SNP (rs7349186) was found to affect the structure, function, and stability of the PINK1 protein. Ten SNPs were found to affect the microRNA binding site. Conclusion. Better understanding of Parkinson's disease caused by mutations in PARK2 and PINK1 genes was achieved using in silico prediction. Further studies should be conducted with a special consideration of the ethnic diversity of the different populations.</Abstact>
+  </Article>
+</Articles>

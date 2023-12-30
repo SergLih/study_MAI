@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="urn:serv_wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:serv_wsdl">
+<types>
+<xsd:schema targetNamespace="urn:serv_wsdl"
+>
+ <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+ <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+</xsd:schema>
+</types>
+<message name="prog4Request">
+  <part name="x" type="xsd:string" />
+</message>
+<message name="prog4Response">
+  <part name="return" type="xsd:string" />
+</message>
+<portType name="serv_wsdl.phpPortType">
+  <operation name="prog4">
+    <documentation>x</documentation>
+    <input message="tns:prog4Request"/>
+    <output message="tns:prog4Response"/>
+  </operation>
+</portType>
+<binding name="serv_wsdl.phpBinding" type="tns:serv_wsdl.phpPortType">
+  <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="prog4">
+    <soap:operation soapAction="urn:s4_wsdl#prog4" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:s4_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+</binding>
+<service name="serv_wsdl.php">
+  <port name="serv_wsdl.phpPort" binding="tns:serv_wsdl.phpBinding">
+    <soap:address location="http://www.chernyshov.com/WS-3/index.php"/>
+  </port>
+</service>
+</definitions>

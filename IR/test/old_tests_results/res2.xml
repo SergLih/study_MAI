@@ -1,0 +1,11 @@
+<article xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+  <Article>
+    <Journal>Advances in Bioinformatics</Journal>
+    <Title>Metagenome Fragment Classification Using N-Mer Frequency Profiles</Title>
+    <Doi>10.1155/2008/205969</Doi>
+    <Authors>Rosen Gail, Garbarine Elaine, Caseiro Diamantino, Polikar Robi, Sokhansanj Bahrad</Authors>
+    <Abstact>
+A vast amount of microbial sequencing data is being generated through large-scale projects in ecology, agriculture, and human health. Efficient high-throughput methods are needed to analyze the mass amounts of metagenomic data, all DNA present in an environmental sample. A major obstacle in metagenomics is the inability to obtain accuracy using technology that yields short reads. We construct the unique N-mer frequency profiles of 635 microbial genomes publicly available as of February 2008. These profiles are used to train a naive Bayes classifier (NBC) that can be used to identify the genome of any fragment. We show that our method is comparable to BLAST for small 25 bp fragments but does not have the ambiguity of BLAST's tied top scores. We demonstrate that this approach is scalable to identify any fragment from hundreds of genomes. It also performs quite well at the strain, species, and genera levels and achieves strain resolution despite classifying ubiquitous genomic fragments (gene and nongene regions). Cross-validation analysis demonstrates that species-accuracy achieves 90% for highly-represented species containing an average of 8 strains. We demonstrate that such a tool can be used on the Sargasso Sea dataset, and our analysis shows that NBC can be further enhanced. 
+</Abstact>
+  </Article>
+</article>

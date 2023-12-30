@@ -1,0 +1,5 @@
+/home/sergey/MAI/maga/network_progr/lab8/res_lab8/lab8np/lab8np/obj/Debug/.NETPortable,Version=v4.5,Profile=Profile111.AssemblyAttribute.cs
+/home/sergey/MAI/maga/network_progr/lab8/res_lab8/lab8np/lab8np/bin/Debug/lab8np.pdb
+/home/sergey/MAI/maga/network_progr/lab8/res_lab8/lab8np/lab8np/bin/Debug/lab8np.dll
+/home/sergey/MAI/maga/network_progr/lab8/res_lab8/lab8np/lab8np/obj/Debug/lab8np.dll
+/home/sergey/MAI/maga/network_progr/lab8/res_lab8/lab8np/lab8np/obj/Debug/lab8np.pdb

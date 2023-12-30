@@ -1,0 +1,11 @@
+sergey@ubuntu-srv:~/MAI/PGP/lab4$ ./a.out 8 8 < test128
+CPU: ready
+Working time:     26.468305 sec.  Result: 7.8444651288e-84
+GPU: ready
+Working time:     0.025945 sec.  Result: 7.8444651288e-84
+sergey@ubuntu-srv:~/MAI/PGP/lab4$ ./a.out 8 16 < test128
+CPU: ready
+Working time:     106.864508 sec.  Result: 7.8444651288e-84
+GPU: ready
+Working time:     0.028661 sec.  Result: 7.8444651288e-84
+

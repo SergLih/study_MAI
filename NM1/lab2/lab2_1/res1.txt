@@ -1,0 +1,3 @@
+Newton method:  1.2469820297515721
+
+Iteration_method:  1.2515346622202028

@@ -1,0 +1,67 @@
+Source matrix: [[12.0, -3.0, -1.0, 3.0], [5.0, 20.0, 9.0, 1.0], [6.0, -3.0, -21.0, -7.0], [8.0, -7.0, 3.0, -27.0]]
+Order:  4
+Vector answers:  [-31.0, 90.0, 119.0, 71.0]
+
+Equivalent form:
+Alpha: 
+[[ 0.      ,  0.25    ,  0.083333, -0.25    ],
+ [-0.25    ,  0.      , -0.45    , -0.05    ],
+ [ 0.285714, -0.142857,  0.      , -0.333333],
+ [ 0.296296, -0.259259,  0.111111,  0.      ]]
+Beta: 
+[-2.583333,  4.5     , -5.666667, -2.62963 ]
+
+Simple iteration method:
+
+Iter 1: norm = 10.647407407407405 and precision = 0.001
+
+Iter 2: norm = 4.576725455614343 and precision = 0.001
+
+Iter 3: norm = 2.1435056829316093 and precision = 0.001
+
+Iter 4: norm = 1.0792462751447174 and precision = 0.001
+
+Iter 5: norm = 0.5119168913805935 and precision = 0.001
+
+Iter 6: norm = 0.2999719832940456 and precision = 0.001
+
+Iter 7: norm = 0.11908213482058155 and precision = 0.001
+
+Iter 8: norm = 0.05331141428336535 and precision = 0.001
+
+Iter 9: norm = 0.037598835918930706 and precision = 0.001
+
+Iter 10: norm = 0.016046421043206745 and precision = 0.001
+
+Iter 11: norm = 0.007150532641699668 and precision = 0.001
+
+Iter 12: norm = 0.004264632371038601 and precision = 0.001
+
+Iter 13: norm = 0.0019602155231041246 and precision = 0.001
+
+Iter 14: norm = 0.0010603205588665785 and precision = 0.001
+
+Iter 15: norm = 0.0004342914443242306 and precision = 0.001
+
+Seidel method:
+
+Iter 1: norm = 9.64259455222418 and precision = 0.001
+
+Iter 2: norm = 4.661501077797372 and precision = 0.001
+
+Iter 3: norm = 2.116695490099715 and precision = 0.001
+
+Iter 4: norm = 0.6806485962888642 and precision = 0.001
+
+Iter 5: norm = 0.166701078680785 and precision = 0.001
+
+Iter 6: norm = 0.06601867632851678 and precision = 0.001
+
+Iter 7: norm = 0.023281363143348693 and precision = 0.001
+
+Iter 8: norm = 0.008409947133654326 and precision = 0.001
+
+Iter 9: norm = 0.002777179343148361 and precision = 0.001
+
+Iter 10: norm = 0.0007364764203771299 and precision = 0.001
+

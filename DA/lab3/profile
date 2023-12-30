@@ -1,0 +1,390 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 57.60      3.65     3.65 28574826     0.00     0.00  CompareKey(TString const&, TString const&)
+ 16.41      4.69     1.04  1500000     0.00     0.00  TString::Encode(char const*)
+  5.84      5.06     0.37        2   185.08   185.08  TRBTree::DestroyR(TRBTree::TNode*)
+  3.94      5.31     0.25        1   250.11   261.87  TRBTree::Serialize(TRBTree::TNode*, std::basic_ofstream<char, std::char_traits<char> >&) const
+  3.63      5.54     0.23  1000000     0.00     0.00  TRBTree::Insert(TString const&, unsigned long long const&)
+  2.21      5.68     0.14  2000000     0.00     0.00  TString::operator=(TString const&)
+  2.05      5.81     0.13   500000     0.00     0.00  TRBTree::SearchNode(TString const&) const
+  1.89      5.93     0.12  1000000     0.00     0.00  TRBTree::InsertFix(TRBTree::TNode*)
+  1.26      6.01     0.08   168625     0.00     0.00  TRBTree::Minimum(TRBTree::TNode*)
+  0.79      6.06     0.05 28495582     0.00     0.00  TString::BlocksCnt() const
+  0.79      6.11     0.05   244506     0.00     0.00  TRBTree::DeleteFix(TRBTree::TNode*)
+  0.63      6.15     0.04  1000000     0.00     0.00  Deserialize(TString&, std::basic_ifstream<char, std::char_traits<char> >&)
+  0.63      6.19     0.04        1    40.02   167.09  TRBTree::Deserialize(TRBTree::TNode*, std::basic_ifstream<char, std::char_traits<char> >&)
+  0.39      6.22     0.03   500000     0.00     0.00  TRBTree::Delete(TString const&)
+  0.32      6.24     0.02  2000000     0.00     0.00  TRBTree::CreateNode(TRBTree::TNode*, TString const&, unsigned long long const&, TColor)
+  0.32      6.26     0.02        1    20.01    20.01  TRBTree::TRBTree()
+  0.32      6.28     0.02                             main
+  0.24      6.29     0.02                             TRBTree::Search(TString const&, unsigned long long&) const
+  0.16      6.30     0.01  1500000     0.00     0.00  operator>>(std::istream&, TString&)
+  0.16      6.31     0.01  1000000     0.00     0.00  Serialize(TString const&, std::basic_ofstream<char, std::char_traits<char> >&)
+  0.16      6.32     0.01   492599     0.00     0.00  TRBTree::Transplant(TRBTree::TNode*, TRBTree::TNode*)
+  0.16      6.33     0.01   361324     0.00     0.00  TRBTree::RotateLeft(TRBTree::TNode*)
+  0.16      6.34     0.01        2     5.00     5.00  std::operator|(std::_Ios_Openmode, std::_Ios_Openmode)
+  0.00      6.34     0.00  3000002     0.00     0.00  TString::TString()
+  0.00      6.34     0.00  3000002     0.00     0.00  TString::~TString()
+  0.00      6.34     0.00  2000001     0.00     0.00  TRBTree::TNode::TNode()
+  0.00      6.34     0.00  2000001     0.00     0.00  TRBTree::TNode::~TNode()
+  0.00      6.34     0.00  1000000     0.00     0.00  Deserialize(unsigned long long&, std::basic_ifstream<char, std::char_traits<char> >&)
+  0.00      6.34     0.00  1000000     0.00     0.00  Serialize(unsigned long long const&, std::basic_ofstream<char, std::char_traits<char> >&)
+  0.00      6.34     0.00   361462     0.00     0.00  TRBTree::RotateRight(TRBTree::TNode*)
+  0.00      6.34     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z8filesizePKc
+  0.00      6.34     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN7TStringC2Ev
+  0.00      6.34     0.00        1     0.00     0.00  _GLOBAL__sub_I_main
+  0.00      6.34     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      6.34     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      6.34     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      6.34     0.00        1     0.00     0.00  filesize(char const*)
+  0.00      6.34     0.00        1     0.00   357.18  TRBTree::Load(char const*)
+  0.00      6.34     0.00        1     0.00   266.87  TRBTree::Save(char const*)
+  0.00      6.34     0.00        1     0.00   185.08  TRBTree::~TRBTree()
+  0.00      6.34     0.00        1     0.00   185.08  TRBTree::~TRBTree()
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2015 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.16% of 6.34 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     99.8    0.02    6.31                 main [1]
+                0.23    2.66 1000000/1000000     TRBTree::Insert(TString const&, unsigned long long const&) [3]
+                0.03    1.51  500000/500000      TRBTree::Delete(TString const&) [4]
+                0.01    1.05 1500000/1500000     operator>>(std::istream&, TString&) [6]
+                0.00    0.36       1/1           TRBTree::Load(char const*) [9]
+                0.00    0.27       1/1           TRBTree::Save(char const*) [10]
+                0.00    0.19       1/1           TRBTree::~TRBTree() [12]
+                0.02    0.00       1/1           TRBTree::TRBTree() [22]
+                0.00    0.00       1/3000002     TString::TString() [35]
+                0.00    0.00       1/3000002     TString::~TString() [36]
+-----------------------------------------------
+                1.23    0.01 9596408/28574826     TRBTree::SearchNode(TString const&) const [5]
+                2.43    0.02 18978418/28574826     TRBTree::Insert(TString const&, unsigned long long const&) [3]
+[2]     58.1    3.65    0.03 28574826         CompareKey(TString const&, TString const&) [2]
+                0.03    0.00 18507384/28495582     TString::BlocksCnt() const [20]
+-----------------------------------------------
+                0.23    2.66 1000000/1000000     main [1]
+[3]     45.5    0.23    2.66 1000000         TRBTree::Insert(TString const&, unsigned long long const&) [3]
+                2.43    0.02 18978418/28574826     CompareKey(TString const&, TString const&) [2]
+                0.12    0.01 1000000/1000000     TRBTree::InsertFix(TRBTree::TNode*) [17]
+                0.01    0.07 1000000/2000000     TRBTree::CreateNode(TRBTree::TNode*, TString const&, unsigned long long const&, TColor) [15]
+-----------------------------------------------
+                0.03    1.51  500000/500000      main [1]
+[4]     24.2    0.03    1.51  500000         TRBTree::Delete(TString const&) [4]
+                0.13    1.24  500000/500000      TRBTree::SearchNode(TString const&) const [5]
+                0.08    0.00  168625/168625      TRBTree::Minimum(TRBTree::TNode*) [18]
+                0.05    0.00  244506/244506      TRBTree::DeleteFix(TRBTree::TNode*) [19]
+                0.01    0.00  492599/492599      TRBTree::Transplant(TRBTree::TNode*, TRBTree::TNode*) [25]
+                0.00    0.00  393295/2000001     TRBTree::TNode::~TNode() [38]
+-----------------------------------------------
+                0.13    1.24  500000/500000      TRBTree::Delete(TString const&) [4]
+[5]     21.6    0.13    1.24  500000         TRBTree::SearchNode(TString const&) const [5]
+                1.23    0.01 9596408/28574826     CompareKey(TString const&, TString const&) [2]
+-----------------------------------------------
+                0.01    1.05 1500000/1500000     main [1]
+[6]     16.6    0.01    1.05 1500000         operator>>(std::istream&, TString&) [6]
+                1.04    0.01 1500000/1500000     TString::Encode(char const*) [7]
+-----------------------------------------------
+                1.04    0.01 1500000/1500000     operator>>(std::istream&, TString&) [6]
+[7]     16.5    1.04    0.01 1500000         TString::Encode(char const*) [7]
+                0.01    0.00 2988198/28495582     TString::BlocksCnt() const [20]
+-----------------------------------------------
+                             1606703             TRBTree::DestroyR(TRBTree::TNode*) [8]
+                0.19    0.00       1/2           TRBTree::Load(char const*) [9]
+                0.19    0.00       1/2           TRBTree::~TRBTree() [13]
+[8]      5.8    0.37    0.00       2+1606703 TRBTree::DestroyR(TRBTree::TNode*) [8]
+                0.00    0.00 1606705/2000001     TRBTree::TNode::~TNode() [38]
+                             1606703             TRBTree::DestroyR(TRBTree::TNode*) [8]
+-----------------------------------------------
+                0.00    0.36       1/1           main [1]
+[9]      5.6    0.00    0.36       1         TRBTree::Load(char const*) [9]
+                0.19    0.00       1/2           TRBTree::DestroyR(TRBTree::TNode*) [8]
+                0.04    0.13       1/1           TRBTree::Deserialize(TRBTree::TNode*, std::basic_ifstream<char, std::char_traits<char> >&) [14]
+                0.01    0.00       1/2           std::operator|(std::_Ios_Openmode, std::_Ios_Openmode) [27]
+                0.00    0.00       1/1           filesize(char const*) [48]
+-----------------------------------------------
+                0.00    0.27       1/1           main [1]
+[10]     4.2    0.00    0.27       1         TRBTree::Save(char const*) [10]
+                0.25    0.01       1/1           TRBTree::Serialize(TRBTree::TNode*, std::basic_ofstream<char, std::char_traits<char> >&) const [11]
+                0.01    0.00       1/2           std::operator|(std::_Ios_Openmode, std::_Ios_Openmode) [27]
+-----------------------------------------------
+                              999999             TRBTree::Serialize(TRBTree::TNode*, std::basic_ofstream<char, std::char_traits<char> >&) const [11]
+                0.25    0.01       1/1           TRBTree::Save(char const*) [10]
+[11]     4.1    0.25    0.01       1+999999  TRBTree::Serialize(TRBTree::TNode*, std::basic_ofstream<char, std::char_traits<char> >&) const [11]
+                0.01    0.00 1000000/1000000     Serialize(TString const&, std::basic_ofstream<char, std::char_traits<char> >&) [24]
+                0.00    0.00 1000000/1000000     Serialize(unsigned long long const&, std::basic_ofstream<char, std::char_traits<char> >&) [40]
+                              999999             TRBTree::Serialize(TRBTree::TNode*, std::basic_ofstream<char, std::char_traits<char> >&) const [11]
+-----------------------------------------------
+                0.00    0.19       1/1           main [1]
+[12]     2.9    0.00    0.19       1         TRBTree::~TRBTree() [12]
+                0.00    0.19       1/1           TRBTree::~TRBTree() [13]
+-----------------------------------------------
+                0.00    0.19       1/1           TRBTree::~TRBTree() [12]
+[13]     2.9    0.00    0.19       1         TRBTree::~TRBTree() [13]
+                0.19    0.00       1/2           TRBTree::DestroyR(TRBTree::TNode*) [8]
+                0.00    0.00       1/2000001     TRBTree::TNode::~TNode() [38]
+-----------------------------------------------
+                              999999             TRBTree::Deserialize(TRBTree::TNode*, std::basic_ifstream<char, std::char_traits<char> >&) [14]
+                0.04    0.13       1/1           TRBTree::Load(char const*) [9]
+[14]     2.6    0.04    0.13       1+999999  TRBTree::Deserialize(TRBTree::TNode*, std::basic_ifstream<char, std::char_traits<char> >&) [14]
+                0.01    0.07 1000000/2000000     TRBTree::CreateNode(TRBTree::TNode*, TString const&, unsigned long long const&, TColor) [15]
+                0.04    0.00 1000000/1000000     Deserialize(TString&, std::basic_ifstream<char, std::char_traits<char> >&) [21]
+                0.00    0.00 1000000/3000002     TString::TString() [35]
+                0.00    0.00 1000000/1000000     Deserialize(unsigned long long&, std::basic_ifstream<char, std::char_traits<char> >&) [39]
+                0.00    0.00 1000000/3000002     TString::~TString() [36]
+                              999999             TRBTree::Deserialize(TRBTree::TNode*, std::basic_ifstream<char, std::char_traits<char> >&) [14]
+-----------------------------------------------
+                0.01    0.07 1000000/2000000     TRBTree::Deserialize(TRBTree::TNode*, std::basic_ifstream<char, std::char_traits<char> >&) [14]
+                0.01    0.07 1000000/2000000     TRBTree::Insert(TString const&, unsigned long long const&) [3]
+[15]     2.6    0.02    0.15 2000000         TRBTree::CreateNode(TRBTree::TNode*, TString const&, unsigned long long const&, TColor) [15]
+                0.14    0.01 2000000/2000000     TString::operator=(TString const&) [16]
+                0.00    0.00 2000000/2000001     TRBTree::TNode::TNode() [37]
+-----------------------------------------------
+                0.14    0.01 2000000/2000000     TRBTree::CreateNode(TRBTree::TNode*, TString const&, unsigned long long const&, TColor) [15]
+[16]     2.3    0.14    0.01 2000000         TString::operator=(TString const&) [16]
+                0.01    0.00 4000000/28495582     TString::BlocksCnt() const [20]
+-----------------------------------------------
+                0.12    0.01 1000000/1000000     TRBTree::Insert(TString const&, unsigned long long const&) [3]
+[17]     2.0    0.12    0.01 1000000         TRBTree::InsertFix(TRBTree::TNode*) [17]
+                0.01    0.00  291192/361324      TRBTree::RotateLeft(TRBTree::TNode*) [26]
+                0.00    0.00  291490/361462      TRBTree::RotateRight(TRBTree::TNode*) [41]
+-----------------------------------------------
+                0.08    0.00  168625/168625      TRBTree::Delete(TString const&) [4]
+[18]     1.3    0.08    0.00  168625         TRBTree::Minimum(TRBTree::TNode*) [18]
+-----------------------------------------------
+                0.05    0.00  244506/244506      TRBTree::Delete(TString const&) [4]
+[19]     0.8    0.05    0.00  244506         TRBTree::DeleteFix(TRBTree::TNode*) [19]
+                0.00    0.00   70132/361324      TRBTree::RotateLeft(TRBTree::TNode*) [26]
+                0.00    0.00   69972/361462      TRBTree::RotateRight(TRBTree::TNode*) [41]
+-----------------------------------------------
+                0.00    0.00 1000000/28495582     Serialize(TString const&, std::basic_ofstream<char, std::char_traits<char> >&) [24]
+                0.00    0.00 2000000/28495582     Deserialize(TString&, std::basic_ifstream<char, std::char_traits<char> >&) [21]
+                0.01    0.00 2988198/28495582     TString::Encode(char const*) [7]
+                0.01    0.00 4000000/28495582     TString::operator=(TString const&) [16]
+                0.03    0.00 18507384/28495582     CompareKey(TString const&, TString const&) [2]
+[20]     0.8    0.05    0.00 28495582         TString::BlocksCnt() const [20]
+-----------------------------------------------
+                0.04    0.00 1000000/1000000     TRBTree::Deserialize(TRBTree::TNode*, std::basic_ifstream<char, std::char_traits<char> >&) [14]
+[21]     0.7    0.04    0.00 1000000         Deserialize(TString&, std::basic_ifstream<char, std::char_traits<char> >&) [21]
+                0.00    0.00 2000000/28495582     TString::BlocksCnt() const [20]
+-----------------------------------------------
+                0.02    0.00       1/1           main [1]
+[22]     0.3    0.02    0.00       1         TRBTree::TRBTree() [22]
+                0.00    0.00       1/2000001     TRBTree::TNode::TNode() [37]
+-----------------------------------------------
+                                                 <spontaneous>
+[23]     0.2    0.02    0.00                 TRBTree::Search(TString const&, unsigned long long&) const [23]
+-----------------------------------------------
+                0.01    0.00 1000000/1000000     TRBTree::Serialize(TRBTree::TNode*, std::basic_ofstream<char, std::char_traits<char> >&) const [11]
+[24]     0.2    0.01    0.00 1000000         Serialize(TString const&, std::basic_ofstream<char, std::char_traits<char> >&) [24]
+                0.00    0.00 1000000/28495582     TString::BlocksCnt() const [20]
+-----------------------------------------------
+                0.01    0.00  492599/492599      TRBTree::Delete(TString const&) [4]
+[25]     0.2    0.01    0.00  492599         TRBTree::Transplant(TRBTree::TNode*, TRBTree::TNode*) [25]
+-----------------------------------------------
+                0.00    0.00   70132/361324      TRBTree::DeleteFix(TRBTree::TNode*) [19]
+                0.01    0.00  291192/361324      TRBTree::InsertFix(TRBTree::TNode*) [17]
+[26]     0.2    0.01    0.00  361324         TRBTree::RotateLeft(TRBTree::TNode*) [26]
+-----------------------------------------------
+                0.01    0.00       1/2           TRBTree::Load(char const*) [9]
+                0.01    0.00       1/2           TRBTree::Save(char const*) [10]
+[27]     0.2    0.01    0.00       2         std::operator|(std::_Ios_Openmode, std::_Ios_Openmode) [27]
+-----------------------------------------------
+                0.00    0.00       1/3000002     main [1]
+                0.00    0.00 1000000/3000002     TRBTree::Deserialize(TRBTree::TNode*, std::basic_ifstream<char, std::char_traits<char> >&) [14]
+                0.00    0.00 2000001/3000002     TRBTree::TNode::TNode() [37]
+[35]     0.0    0.00    0.00 3000002         TString::TString() [35]
+-----------------------------------------------
+                0.00    0.00       1/3000002     main [1]
+                0.00    0.00 1000000/3000002     TRBTree::Deserialize(TRBTree::TNode*, std::basic_ifstream<char, std::char_traits<char> >&) [14]
+                0.00    0.00 2000001/3000002     TRBTree::TNode::~TNode() [38]
+[36]     0.0    0.00    0.00 3000002         TString::~TString() [36]
+-----------------------------------------------
+                0.00    0.00       1/2000001     TRBTree::TRBTree() [22]
+                0.00    0.00 2000000/2000001     TRBTree::CreateNode(TRBTree::TNode*, TString const&, unsigned long long const&, TColor) [15]
+[37]     0.0    0.00    0.00 2000001         TRBTree::TNode::TNode() [37]
+                0.00    0.00 2000001/3000002     TString::TString() [35]
+-----------------------------------------------
+                0.00    0.00       1/2000001     TRBTree::~TRBTree() [13]
+                0.00    0.00  393295/2000001     TRBTree::Delete(TString const&) [4]
+                0.00    0.00 1606705/2000001     TRBTree::DestroyR(TRBTree::TNode*) [8]
+[38]     0.0    0.00    0.00 2000001         TRBTree::TNode::~TNode() [38]
+                0.00    0.00 2000001/3000002     TString::~TString() [36]
+-----------------------------------------------
+                0.00    0.00 1000000/1000000     TRBTree::Deserialize(TRBTree::TNode*, std::basic_ifstream<char, std::char_traits<char> >&) [14]
+[39]     0.0    0.00    0.00 1000000         Deserialize(unsigned long long&, std::basic_ifstream<char, std::char_traits<char> >&) [39]
+-----------------------------------------------
+                0.00    0.00 1000000/1000000     TRBTree::Serialize(TRBTree::TNode*, std::basic_ofstream<char, std::char_traits<char> >&) const [11]
+[40]     0.0    0.00    0.00 1000000         Serialize(unsigned long long const&, std::basic_ofstream<char, std::char_traits<char> >&) [40]
+-----------------------------------------------
+                0.00    0.00   69972/361462      TRBTree::DeleteFix(TRBTree::TNode*) [19]
+                0.00    0.00  291490/361462      TRBTree::InsertFix(TRBTree::TNode*) [17]
+[41]     0.0    0.00    0.00  361462         TRBTree::RotateRight(TRBTree::TNode*) [41]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [56]
+[42]     0.0    0.00    0.00       1         _GLOBAL__sub_I__Z8filesizePKc [42]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [46]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [56]
+[43]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN7TStringC2Ev [43]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [47]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [56]
+[44]     0.0    0.00    0.00       1         _GLOBAL__sub_I_main [44]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [45]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I_main [44]
+[45]     0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [45]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I__Z8filesizePKc [42]
+[46]     0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [46]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I__ZN7TStringC2Ev [43]
+[47]     0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [47]
+-----------------------------------------------
+                0.00    0.00       1/1           TRBTree::Load(char const*) [9]
+[48]     0.0    0.00    0.00       1         filesize(char const*) [48]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2015 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [42] _GLOBAL__sub_I__Z8filesizePKc [25] TRBTree::Transplant(TRBTree::TNode*, TRBTree::TNode*) [12] TRBTree::~TRBTree()
+  [43] _GLOBAL__sub_I__ZN7TStringC2Ev [14] TRBTree::Deserialize(TRBTree::TNode*, std::basic_ifstream<char, std::char_traits<char> >&) [13] TRBTree::~TRBTree()
+  [44] _GLOBAL__sub_I_main    [41] TRBTree::RotateRight(TRBTree::TNode*) [7] TString::Encode(char const*)
+   [2] CompareKey(TString const&, TString const&) [9] TRBTree::Load(char const*) [35] TString::TString()
+  [21] Deserialize(TString&, std::basic_ifstream<char, std::char_traits<char> >&) [10] TRBTree::Save(char const*) [36] TString::~TString()
+  [39] Deserialize(unsigned long long&, std::basic_ifstream<char, std::char_traits<char> >&) [37] TRBTree::TNode::TNode() [16] TString::operator=(TString const&)
+  [45] __static_initialization_and_destruction_0(int, int) [38] TRBTree::TNode::~TNode() [5] TRBTree::SearchNode(TString const&) const
+  [46] __static_initialization_and_destruction_0(int, int) [4] TRBTree::Delete(TString const&) [23] TRBTree::Search(TString const&, unsigned long long&) const
+  [47] __static_initialization_and_destruction_0(int, int) [3] TRBTree::Insert(TString const&, unsigned long long const&) [11] TRBTree::Serialize(TRBTree::TNode*, std::basic_ofstream<char, std::char_traits<char> >&) const
+  [48] filesize(char const*)  [18] TRBTree::Minimum(TRBTree::TNode*) [20] TString::BlocksCnt() const
+  [24] Serialize(TString const&, std::basic_ofstream<char, std::char_traits<char> >&) [8] TRBTree::DestroyR(TRBTree::TNode*) [27] std::operator|(std::_Ios_Openmode, std::_Ios_Openmode)
+  [40] Serialize(unsigned long long const&, std::basic_ofstream<char, std::char_traits<char> >&) [19] TRBTree::DeleteFix(TRBTree::TNode*) [6] operator>>(std::istream&, TString&)
+  [15] TRBTree::CreateNode(TRBTree::TNode*, TString const&, unsigned long long const&, TColor) [17] TRBTree::InsertFix(TRBTree::TNode*) [1] main
+  [26] TRBTree::RotateLeft(TRBTree::TNode*) [22] TRBTree::TRBTree()

@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.0 20120330//EN" "JATS-archivearticle1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="letter">
+  <?properties open_access?>
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="nlm-ta">Biophys Rev</journal-id>
+      <journal-id journal-id-type="iso-abbrev">Biophys Rev</journal-id>
+      <journal-title-group>
+        <journal-title>Biophysical Reviews</journal-title>
+      </journal-title-group>
+      <issn pub-type="ppub">1867-2450</issn>
+      <issn pub-type="epub">1867-2469</issn>
+      <publisher>
+        <publisher-name>Springer Berlin Heidelberg</publisher-name>
+        <publisher-loc>Berlin/Heidelberg</publisher-loc>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="pmid">28884448</article-id>
+      <article-id pub-id-type="pmc">5711698</article-id>
+      <article-id pub-id-type="publisher-id">318</article-id>
+      <article-id pub-id-type="doi">10.1007/s12551-017-0318-y</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Letter to the Editor</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Conference report: the 5th Asia Pacific Protein Association Conference joint meeting with the 12th International Symposium of the Protein Society of Thailand</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author" corresp="yes">
+          <name>
+            <surname>Ketudat Cairns</surname>
+            <given-names>James R.</given-names>
+          </name>
+          <address>
+            <email>cairns@sut.ac.th</email>
+          </address>
+          <xref ref-type="aff" rid="Aff1">1</xref>
+          <xref ref-type="aff" rid="Aff2">2</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Champattanachai</surname>
+            <given-names>Voraratt</given-names>
+          </name>
+          <xref ref-type="aff" rid="Aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Srisomsap</surname>
+            <given-names>Chantragan</given-names>
+          </name>
+          <xref ref-type="aff" rid="Aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Paricharttanakul</surname>
+            <given-names>N. Monique</given-names>
+          </name>
+          <xref ref-type="aff" rid="Aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Verathamjamras</surname>
+            <given-names>Chris</given-names>
+          </name>
+          <xref ref-type="aff" rid="Aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Lirdprapamongkol</surname>
+            <given-names>Kriengsak</given-names>
+          </name>
+          <xref ref-type="aff" rid="Aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Svasti</surname>
+            <given-names>Jisnuson</given-names>
+          </name>
+          <xref ref-type="aff" rid="Aff1">1</xref>
+        </contrib>
+        <aff id="Aff1"><label>1</label><institution-wrap><institution-id institution-id-type="ISNI">0000 0004 0617 2559</institution-id><institution-id institution-id-type="GRID">grid.418595.4</institution-id><institution>Laboratory of Biochemistry, </institution><institution>Chulabhorn Research Institute, </institution></institution-wrap>Bangkok, 10210 Thailand </aff>
+        <aff id="Aff2"><label>2</label><institution-wrap><institution-id institution-id-type="ISNI">0000 0001 0739 3220</institution-id><institution-id institution-id-type="GRID">grid.6357.7</institution-id><institution>School of Chemistry, Institute of Science and Center for Biomolecular Structure, Function and Application, </institution><institution>Suranaree University of Technology, </institution></institution-wrap>Nakhon Ratchasima, 30000 Thailand </aff>
+      </contrib-group>
+      <pub-date pub-type="epub">
+        <day>7</day>
+        <month>9</month>
+        <year>2017</year>
+      </pub-date>
+      <pub-date pub-type="collection">
+        <month>12</month>
+        <year>2017</year>
+      </pub-date>
+      <volume>9</volume>
+      <issue>6</issue>
+      <fpage>857</fpage>
+      <lpage>860</lpage>
+      <history>
+        <date date-type="received">
+          <day>10</day>
+          <month>8</month>
+          <year>2017</year>
+        </date>
+        <date date-type="accepted">
+          <day>11</day>
+          <month>8</month>
+          <year>2017</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-statement>&#xA9; International Union for Pure and Applied Biophysics (IUPAB) and Springer-Verlag GmbH Germany 2017</copyright-statement>
+      </permissions>
+      <funding-group>
+        <award-group>
+          <funding-source>
+            <institution-wrap>
+              <institution-id institution-id-type="FundRef">http://dx.doi.org/10.13039/501100007959</institution-id>
+              <institution>Chulabhorn Research Institute</institution>
+            </institution-wrap>
+          </funding-source>
+        </award-group>
+      </funding-group>
+      <funding-group>
+        <award-group>
+          <funding-source>
+            <institution>Protein Society of Thailand</institution>
+          </funding-source>
+        </award-group>
+      </funding-group>
+      <custom-meta-group>
+        <custom-meta>
+          <meta-name>issue-copyright-statement</meta-name>
+          <meta-value>&#xA9; International Union for Pure and Applied Biophysics (IUPAB) and Springer-Verlag GmbH Germany, part of Springer Nature 2017</meta-value>
+        </custom-meta>
+      </custom-meta-group>
+    </article-meta>
+  </front>
+  <body>
+    <p id="Par1">The 5th Asia Pacific Protein Association Conference and 12th International Symposium of the Protein Society of Thailand (APPA/PST2017) was held at The Tide Resort, Bangsaen, Chonburi, Thailand, from the 11th to the 14th of July, 2017 (Fig.&#xA0;<xref rid="Fig1" ref-type="fig">1</xref>). It was hosted by the Protein Society of Thailand, Chulabhorn Research Institute, and Burapha University, in honor of the 60th birthday of Professor Dr. H.R.H. Chulabhorn Mahidol, the President of the Chulabhorn Research Institute, and a prolific contributor to chemical and biomedical research, as well as related social issues.<fig id="Fig1"><label>Fig. 1</label><caption><p>Scenes from the 5th Asia Pacific Protein Association Conference/12th International Symposium of the Protein Society of Thailand. Clockwise from top: The PST and APPA Councils are photographed with the representative of Prof. Dr. HRH Chulabhorn, Surapit Kirtiputra, during the Opening Ceremony; Thomas Steitz entertains the audience with the rhythms of the ribosome; Akhilesh Pandey discusses a poster with Richard Simpson; Jisnuson Svasti comments on another speaker&#x2019;s talk; So Iwata answers a question after his plenary; Madan Babu poses a question to another speaker; Carol B. Post and Ruiming Xu share a light moment during preparation for the Opening Ceremony; and center: sunset on the beach in front of the hotel at the end of the conference</p></caption><graphic xlink:href="12551_2017_318_Fig1_HTML" id="MO1"/></fig>
+</p>
+    <p id="Par2">The Asia Pacific Protein Association (APPA; <ext-link ext-link-type="uri" xlink:href="http://www.pssj.jp/APPA/about/overview">http://www.pssj.jp/APPA/about/overview/</ext-link>) grew from the Pacific Rim International Conference on Protein Structure (PRICPS), which was first held in Yokohama, Japan, in 2004. After that outstanding meeting, the organizers endeavored to continue in its tradition to organize the 2nd PRICPS in Cairns, Australia, in 2008 in conjunction with the Asia Oceania Human Proteome Organization (AOHUPO) Congress. At that meeting, the Asia Pacific Protein Association was formed, with the main purpose of organizing protein structure and function in the Asia Pacific region, in order to promote the development of protein science and collaboration. Subsequently, the 3rd APPA Conference was held in Shanghai, China, in 2011, and the 4th APPA Conference in Jeju, Korea, in 2014, followed by this, the 5th in this series.</p>
+    <p id="Par3">The Protein Society of Thailand (PST; <ext-link ext-link-type="uri" xlink:href="http://www.proteinsocthai.net">www.proteinsocthai.net</ext-link>) originated from similar goals to build a network of scientists working on proteins and to provide a forum for them to exchange their research and ideas. This network developed into the society known at the PST, which has held the conference series now called the International Symposium of the PST since 2006, at which international and local invited speakers, including senior scientists and notable young scientists, share their work in English to promote international interactions.</p>
+    <p id="Par4">The APPA/PST2017 meeting included 7 plenary lectures, led by Thomas Steitz, who regaled the assembled group of 400 participants with his description of the ribosome structure and the use of bacterial ribosome structures in designing improved antibiotics (Fig. <xref rid="Fig1" ref-type="fig">1</xref>). In the second plenary, M.R. Jisnuson Svasti described the development of protein science in Thailand using illustrations from his own career. This was followed by the EMBO Keynote Lecture by Madan Babu, in which he described the importance of intrinsically disordered proteins and protein regions at a proteome- and genome-wide level. In his plenary, So Iwata described the use of the free electron laser to gain temporal insight into light-initiated reactions in bacterial rhodopsin and the photosystem II oxygen-evolving complex, while Ruiming Xu considered the structural basis of epigenetics, particularly histone acetylation and deacetylation. In the penultimate plenary, Akhilesh Pandey explored the identification and validation of protein&#x2013;protein interactions in cells as the current frontier in proteomics. Carol B. Post presented the final plenary, &#x201C;The Protein Society Keynote Lecture,&#x201D; in which she described an unusual mechanism for regulation of protein&#x2013;protein interactions by phosphorylation in Syk tyrosine kinase.</p>
+    <p id="Par5">Interspersed among the plenary lectures were 43 invited and 25 selected oral lectures, divided into 17 parallel sessions. These sessions focused on diverse areas of protein research, from advances in proteomics, systems biology and bioinformatics to structural investigations of protein&#x2013;nucleic acid interactions and molecular processes, enzyme catalysis, dynamics of protein&#x2013;protein interactions and signaling, as well as protein engineering to achieve new protein activities. Outstanding scientists from around the Asia Pacific region, together with Prof. Joan Steitz from the USA, were featured as invited speakers (Table <xref rid="Tab1" ref-type="table">1</xref>). An 18th session honoring the 70th birthday of Prof. M.R. Jisnuson Svasti featured outstanding Thai protein scientists who have worked with Prof. Svasti during the development of their careers. Furthermore, a Systems Biology and Computational Biology Workshop, in which senior and local scientists shared their experiences and discussed their research and related issues, was included in the afternoon parallel sessions of 12th July, while the Synchrotron Light Research Institute (SLRI) sponsored a workshop on Synchrotron Protein Research in the afternoon of 13th July to introduce researchers to the facilities available at the SLRI in Thailand, as well as in the National Synchrotron Radiation Research Center (NSRRC), Taiwan, China, and the SPring-8 facilities in Japan.<table-wrap id="Tab1"><label>Table 1</label><caption><p>Invited lectures</p></caption><table frame="hsides" rules="groups"><thead><tr><th>Invited Speaker</th><th>Session</th><th/><th/></tr></thead><tbody><tr><td>Norie Araki</td><td>PS12</td><td>Kumamoto University, Japan</td><td>&#x201C;Systems biology of cancer stem cells by integrated proteomics and glycomics&#x201D;</td></tr><tr><td>Salvador Eugenio Caoili</td><td>PS9</td><td><p>University of the Philippines, Manila,</p><p>The Philippines</p></td><td>&#x201C;Antibodies, synthetic peptides and related constructs for planetary health under the precautionary regime of the contemporary Anthropocene&#x201D;</td></tr><tr><td>Pimchai Chaiyen</td><td>JS 70&#xA0;yr</td><td>VISTEC and Mahidol University, Thailand</td><td>&#x201C;Flavin-dependent monooxygenases for sustainable technology&#x201D;</td></tr><tr><td>Zengyi Chang</td><td>PS6</td><td>Peking University, China</td><td>&#x201C;The biogenesis and quality control of beta-barrel outer membrane proteins in Gram-negative bacteria&#x201D;</td></tr><tr><td>Yun-Ru (Ruby) Chen</td><td>PS3</td><td>Genome Research Center, Academia Sinica, Taiwan</td><td>&#x201C;Understanding TDP-43 oligomers and dipeptide repeats in neurodegenerative diseases&#x201D;</td></tr><tr><td>Maxey C.M. Chung</td><td>PS9</td><td>National University of Singapore, Singapore</td><td>&#x201C;Mining the cancer secretome as a source for biomarkers&#x201D;</td></tr><tr><td>Yuji Goto</td><td>PS6</td><td>Osaka University Japan</td><td>&#x201C;Supersaturation-limited phase transitions of denatured proteins producing amyloid fibrils&#x201D;</td></tr><tr><td>Damien Hall</td><td>PS1</td><td>Australian National University, Osaka University, Japan</td><td>&#x201C;Physical biochemistry studies of amyloid&#x201D;</td></tr><tr><td>Chwan-Deng (David) Hsiao</td><td>PS15</td><td>Academia Sinica, Taiwan</td><td>&#x201C;Structure and function of the polymyxin-resistance-associated response regulator PmrA&#x201D;</td></tr><tr><td>Mitsunori Ikeguchi</td><td>PS1</td><td>Yokohama University, Japan</td><td>&#x201C;Molecular dynamics simulations of molecular rotary motors&#x201D;</td></tr><tr><td>Syed Rashel Kabir</td><td>PS10</td><td>University of Rajshahi, Bangladesh</td><td><italic>&#x201C;</italic>Therapeutic evaluation of plant lectins as promising anticancer agents<italic>&#x201D;</italic></td></tr><tr><td>Yangmee Kim</td><td>PS8</td><td>Konkuk University, Korea</td><td>&#x201C;Structures and dynamics of acyl carrier proteins from multi-drug resistant bacteria<bold>&#x201D;</bold>
+</td></tr><tr><td>Kurt Krause</td><td>PS8</td><td>University of Otago, New Zealand</td><td>&#x201C;Glutamate racemase from <italic>Mycobacterium tuberculosis</italic> is a new target for antituberculosis drug design&#x201D;</td></tr><tr><td>Ubolsree Leartsakulpanich</td><td>PS7</td><td>National Center for Genetic Engineering and Biotechnology, Thailand</td><td>&#x201C;Serine hydroxymethyltransferase for antimalarial drug&#x201D;</td></tr><tr><td>Erinna F. Lee</td><td>PS7</td><td>La Trobe University, Australia</td><td>&#x201C;Disarming the critical drivers of cancer&#x201D;</td></tr><tr><td>Jooyoung Lee</td><td>PS1:</td><td>Korea Institute of Advanced Study, Korea</td><td>&#x201C;Protein structure prediction/determination by global optimization&#x201D;</td></tr><tr><td>Weontae Lee</td><td>PS15:</td><td>Yonsei University, Korea</td><td>&#x201C;Oligomerization and adapter molecule interaction of proteoglycans reveals a unique molecular function related to cancer signaling&#x201D;</td></tr><tr><td>Zhenfeng Liu</td><td>PS10</td><td>Institute of Biophysics (CAS), China</td><td>&#x201C;Supramolecular basis for the light-harvesting processes in plants&#x201D;</td></tr><tr><td>Ping-Chiang Lyu</td><td>PS7</td><td>National Tsing-Hua University, Taiwan</td><td>&#x201C;Structural insights into the catalytic mechanism of dopamine N-acetyltransferase&#x201D;</td></tr><tr><td>Jacqueline Matthews</td><td>PS13</td><td>University of Sydney, Australia</td><td>&#x201C;Assembly of an activating transcription factor complex&#x201D;</td></tr><tr><td>Osamu Nureki</td><td>PS13</td><td>University of Tokyo, Japan</td><td>&#x201C;Molecular mechanism of CRISPR and structure-based development of genome editing tool towards medical application&#x201D;</td></tr><tr><td>Ray Norton</td><td>PS3</td><td>Monash University, Australia</td><td>&#x201C;Structural and dynamic aspects of antibody recognition of intrinsically disordered antigens&#x201D;</td></tr><tr><td>Truong Quoc Phong</td><td>PS4</td><td>Hanoi University of Science and Technology, Vietnam</td><td>&#x201C;Production of rotavirus recombinant VP6 protein and its specific antibody for development of the lateral flow immunoassay test strip&#x201D;</td></tr><tr><td>Piamsook Pongsawasdi</td><td>JS 70&#xA0;years</td><td>Chulalongkorn University, Thailand</td><td>&#x201C;Glycosyltransferases for the synthesis of oligosaccharides and glycosides&#x201D;</td></tr><tr><td>Terence Poon</td><td>PS11</td><td>University of Macau, Macau, China</td><td>&#x201C;Application of proteomics approaches to discovery of biomarkers in cancer diagnosis &#x2013; An impossible mission?&#x201D;</td></tr><tr><td>Mohan Rao</td><td>PS3</td><td>Centre for Cellular &amp; Molecular Biology, India</td><td>&#x201C;Clusterin: full-length protein and one of its chains show opposing effects on cellular lipid accumulation&#x201D;</td></tr><tr><td>Gavin Reid</td><td>PS2</td><td>University of Melbourne, Australia</td><td>&#x201C;An integrated &#x2018;omics approach toward understanding the role of aberrant lipid metabolism in colon cancer&#x201D;</td></tr><tr><td>Polkit Sangwanich</td><td>PS2</td><td>Chulalongkorn University, Thailand</td><td>&#x201C;Plant proteomics and their potential approaches in various applications&#x201D;</td></tr><tr><td>Rajan Sankaranarayanan</td><td>PS14</td><td>Centre for Cellular &amp; Molecular Biology, India</td><td>&#x201C;Chiral proofreading: mechanism and functional implications&#x201D;</td></tr><tr><td>Ichio Shimada</td><td>PS15</td><td>University of Tokyo, Japan</td><td>&#x201C;Developments and applications of novel NMR methods to characterize functional dynamics of high molecular weight proteins&#x201D;</td></tr><tr><td>Nikhat Ahmed Siddiqui</td><td>PS9:</td><td>Barrett Hodgson University, Pakistan</td><td>&#x201C;Understanding the molecular basis and complexity of Schizophrenia through neuroproteomics and interactomics&#x201D;</td></tr><tr><td>Richard Simpson</td><td>PS2:</td><td>La Trobe University, Australia</td><td>&#x201C;Proteogenomic profiling of secreted colon cancer extracellular vesicle subtypes: functional insights&#x201D;</td></tr><tr><td>Joan Steitz</td><td>PS13</td><td>Yale University, USA</td><td>&#x201C;Nuclear noncoding RNAs: more surprises&#x201D;</td></tr><tr><td>Chantragan Srisomsap</td><td>JS 70&#xA0;years</td><td>Chulabhorn Research Institute, Thailand</td><td>&#x201C;Cancer proteomics and marker discovery&#x201D;</td></tr><tr><td>Bambang Sugiharto</td><td>PS10</td><td>Jember University, Indonesia</td><td>&#x201C;The function and regulation of sucrose-phosphate synthase from sugarcane&#x201D;</td></tr><tr><td>Wipa Suginta</td><td>PS8</td><td>Suranaree University of Technology, Thailand</td><td>&#x201C;Structural and biophysical insights into chitin acquisition by marine <italic>Vibrio</italic>s&#x201D;</td></tr><tr><td>Ratchanok Tinikul</td><td>PS14</td><td>Mahidol University, Thailand</td><td>pH effect study for exploring enzyme mechanisms-case studies from bacterial luciferase and succinic semialdehyde dehydrogenase</td></tr><tr><td>Ming Daw Tsai</td><td>PS14</td><td>Academia Sinica, Taipei, Taiwan</td><td>&#x201C;Structural mechanism for the fidelity modulation of DNA polymerase &#x3BB;&#x201D;</td></tr><tr><td>Kouhei Tsumoto</td><td>PS4:</td><td>University of Tokyo, Japan</td><td>&#x201C;Recent progress on the analytical solutions for bio-pharmaceutics&#x201D;</td></tr><tr><td>Xinquan Wang</td><td>PS5:</td><td>Tsinghua University, China</td><td>&#x201C;MERS and SARS coronavirus cell entry: from structure to neutralizing antibody.&#x201D;</td></tr><tr><td>Sopit Wongkham</td><td>PS12</td><td>Khon Kaen University, Thailand</td><td>&#x201C;Glycomic analysis reveals the significance of high mannose N-glycan in progression of cholangiocarcinoma.&#x201D;</td></tr><tr><td>Yeon Gyu Yu</td><td>PS11</td><td>Kookmin University, Korea</td><td>&#x201C;A novel method for the preparation and stabilization of membrane proteins and its application for the biochemical analysis of GPCRs.&#x201D;</td></tr><tr><td>Raja Noor Zaliha Raja Abd. Rahman</td><td>PS4</td><td>University Putra Malaysia, Malaysia</td><td>&#x201C;A thermotolerant lipase with broad pH isolated from Antarctic <italic>Pseudomonas</italic> sp. AMS3&#x201D;</td></tr></tbody></table></table-wrap>
+</p>
+    <p id="Par6">In addition to the lectures, 5 poster sessions allowed participants ample time to discuss the excellent work of young and a few senior scientists presenting in these sessions. Luncheon lectures from Bio-Rad, GE and Merck introduced participants to ways of collaborating with the companies, along with some of the latest technologies available from these companies, while other companies presented their products in the exhibition. Several young scientists also took advantage of the Young Scientist Program held just ahead of the conference (9th to 11th July) to learn from senior protein researchers and present their own research in short talks.</p>
+    <p id="Par7">In short, the APPA/PST2017 conference provided an exciting forum for protein science, with some of the world&#x2019;s top protein scientists sharing their research results, with particular emphasis on research from the Asia Pacific region. The high quality of the research presented bodes well for the future meetings of the APPA, including the 6th APPA Conference to be held in Sapporo, Japan, in July, 2020, in collaboration with the Protein Science Society of Japan and the Protein Society.</p>
+  </body>
+  <back>
+    <notes notes-type="ethics">
+      <title>Compliance with ethical standards</title>
+      <notes notes-type="COI-statement">
+        <title>Conflicts of interest</title>
+        <p id="Par8">James R. Ketudat Cairns declares that he has no conflicts of interest. Voraratt Champattanachai declares that he has no conflicts of interest. Chantragan Srisomsap declares that she has no conflicts of interest. N. Monique Paricharttanakul declares that she has no conflicts of interest. Chris Verathamjamras declares that he has no conflicts of interest. Kriengsak Lirdprapamongkol declares that he has &#xFEFF;no conflicts of interest. Jisnuson Svasti declares that he has no conflicts of interest.</p>
+      </notes>
+      <notes>
+        <title>Ethical approval</title>
+        <p id="Par9">This article does not contain any studies with human participants or animals performed by any of the authors.</p>
+      </notes>
+    </notes>
+  </back>
+</article>

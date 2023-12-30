@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:simpleType name="time">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="(([01]?[0-9]|2[0-3]):[0-5][0-9])?"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="weekday">
+	  <xs:restriction base="xs:string">
+		  <xs:enumeration value="понедельник"/>
+		  <xs:enumeration value="вторник"/>
+		  <xs:enumeration value="среда"/>
+		  <xs:enumeration value="четверг"/>
+		  <xs:enumeration value="пятница"/>
+		  <xs:enumeration value="суббота"/>
+		  <xs:enumeration value="воскресенье"/>
+	  </xs:restriction>
+	</xs:simpleType>
+	
+  <xs:simpleType name="emailAddress">
+    <xs:restriction base="xs:token">
+        <xs:maxLength value="254"/>
+        <xs:pattern value="[_\-a-zA-Z0-9\.\+]+@[a-zA-Z0-9](\.?[\-a-zA-Z0-9]*[a-zA-Z0-9])*"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+	<xs:complexType name="geoCoords">
+	  <xs:attribute name="N">
+		  <xs:simpleType>
+			  <xs:restriction base="xs:double">
+				 <xs:minInclusive value="-90"/>
+				 <xs:maxInclusive value="90"/>
+			  </xs:restriction>
+		   </xs:simpleType>
+	  </xs:attribute>
+	  <xs:attribute name="E">
+		  <xs:simpleType>
+			  <xs:restriction base="xs:double">
+				 <xs:minInclusive value="-180"/>
+				 <xs:maxInclusive value="180"/>
+			  </xs:restriction>
+		  </xs:simpleType>
+	  </xs:attribute>
+	</xs:complexType>
+	
+  <xs:simpleType name="numberINN">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{10,12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+   <xs:simpleType name="numberKPP">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{9}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="numberOGRN">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([0-9]{13}|[0-9]{15})"/>
+    </xs:restriction>
+  </xs:simpleType> 
+  
+  
+  
+  <xs:simpleType name="moscowPhone">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\((495|499|9[0-9]{2})\) [0-9]{3}-[0-9]{2}-[0-9]{2}"/>
+    </xs:restriction>
+  </xs:simpleType> 
+
+  <xs:element name="SportsComplexes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="SportsComplex" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="WorkingHours">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Day" maxOccurs="7">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="weekday"></xs:attribute>
+                        <xs:attribute name="open" type="time"></xs:attribute>
+                        <xs:attribute name="close" type="time"></xs:attribute>
+                         </xs:complexType>
+                       </xs:element>
+                     </xs:sequence>
+                   </xs:complexType>
+                 </xs:element>
+              <xs:element name="ChiefPosition" type="xs:string"></xs:element>
+              <xs:element name="Category" type="xs:string"></xs:element>
+              <xs:element name="Email">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Email" type="emailAddress"  maxOccurs="unbounded"></xs:element>
+                  </xs:sequence>
+                   </xs:complexType>
+                 </xs:element>
+              <xs:element name="global_id" type="xs:int"></xs:element>
+              <xs:element name="ShortName" type="xs:string"></xs:element>
+              <xs:element name="Coordinates" type="geoCoords"></xs:element>
+              <xs:element name="OrgInfo">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="OGRN" type="numberOGRN"></xs:element>
+                    <xs:element name="ChiefPosition" type="xs:string"></xs:element>
+                    <xs:element name="ChiefPhone">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ChiefPhone" type="moscowPhone"  maxOccurs="unbounded"></xs:element>
+                           </xs:sequence>
+                         </xs:complexType>
+                       </xs:element>
+                    <xs:element name="FullName" type="xs:string"></xs:element>
+                    <xs:element name="INN" type="numberINN"></xs:element>
+                    <xs:element name="KPP" type="numberKPP"></xs:element>
+                    <xs:element name="LegalAddress" type="xs:string"></xs:element>
+                    <xs:element name="ChiefName" type="xs:string"></xs:element>
+                     </xs:sequence>
+                   </xs:complexType>
+                 </xs:element>
+              <xs:element name="ChiefPhone">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ChiefPhone" type="moscowPhone"  maxOccurs="unbounded"></xs:element>
+                     </xs:sequence>
+                   </xs:complexType>
+                 </xs:element>
+              <xs:element name="PublicPhone">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PublicPhone" type="moscowPhone"  maxOccurs="unbounded"></xs:element>
+                     </xs:sequence>
+                   </xs:complexType>
+                 </xs:element>
+              <xs:element name="FullName" type="xs:string"></xs:element>
+              <xs:element name="ChiefName" type="xs:string"></xs:element>
+              <xs:element name="Address">
+                <xs:complexType>
+                  <xs:attribute name="postal_code" type="xs:int"></xs:attribute>
+                  <xs:attribute name="city" type="xs:string"></xs:attribute>
+                  <xs:attribute name="address" type="xs:string"></xs:attribute>
+                  <xs:attribute name="adm_area" type="xs:string"></xs:attribute>
+                  <xs:attribute name="district" type="xs:string"></xs:attribute>
+                   </xs:complexType>
+                 </xs:element>
+              <xs:element name="Availability" type="xs:string"></xs:element>
+              <xs:element name="CommonName" type="xs:string"></xs:element>
+               </xs:sequence>
+             </xs:complexType>
+           </xs:element>
+         </xs:sequence>
+       </xs:complexType>
+     </xs:element>
+   </xs:schema>

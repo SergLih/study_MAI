@@ -1,0 +1,993 @@
+<catalog>
+  <WorkingHours>
+      <Day name="понедельник" open="07:00" close="22:00"/>
+      <Day name="вторник" open="07:00" close="22:00"/>
+      <Day name="среда" open="07:00" close="22:00"/>
+      <Day name="четверг" open="07:00" close="22:00"/>
+      <Day name="пятница" open="07:00" close="22:00"/>
+      <Day name="суббота" open="08:30" close="19:00"/>
+      <Day name="воскресенье" open="08:30" close="19:00"/>
+   </WorkingHours>
+   <ChiefPosition>заведующий спортсооружением</ChiefPosition>
+   <Category>Бассейн плавательный</Category>
+   <Email>
+      <Email>skarbat@mail.ru</Email>
+    </Email>
+   <global_id>62838544</global_id>
+   <ShortName>Бассейн плавательный «Арбат»</ShortName>
+   <Coordinates N="37.5864988196735" E="55.7510751115798"/>
+   <OrgInfo>
+      <OGRN>1057749067936</OGRN>
+      <ChiefPosition>директор</ChiefPosition>
+      <ChiefPhone>
+        <ChiefPhone>(495) 707-24-79</ChiefPhone>
+      </ChiefPhone>
+      <FullName>ГБУ «ЦФКиС ЦАО г. Москвы» Москомспорта</FullName>
+      <INN>7703570818</INN>
+      <KPP>770301001</KPP>
+      <LegalAddress>123100, г. Москва, ул. Мантулинская, д. 24, стр. 1</LegalAddress>
+      <ChiefName>Сергеев Сергей Геннадьевич</ChiefName>
+    </OrgInfo>
+   <ChiefPhone>
+      <ChiefPhone>(495) 514-99-92</ChiefPhone>
+    </ChiefPhone>
+   <PublicPhone>
+      <PublicPhone>(495) 514-99-92</PublicPhone>
+    </PublicPhone>
+   <FullName>Бассейн плавательный «Арбат»</FullName>
+   <ChiefName>Орлов Владимир Юрьевич</ChiefName>
+   <ObjectAddress>
+      <Availability>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>лестницы на пути движения</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>частично</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды по слуху</Group_mgn>
+            <Element_mgn>визуальные средства информации о предоставлении услуги</Element_mgn>
+            <Area_mgn>зона оказания услуги</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>нулевой вход</Element_mgn>
+            <Area_mgn>входная группа</Area_mgn>
+            <available_degree>недоступно</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>не соответствует</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>поручни на имеющейся лестнице</Element_mgn>
+            <Area_mgn>входная группа</Area_mgn>
+            <available_degree>частично</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>лифт</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>недоступно</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>поручни у унитаза</Element_mgn>
+            <Area_mgn>санитарный узел</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>не соответствует</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>поручень у раковины</Element_mgn>
+            <Area_mgn>санитарный узел</Area_mgn>
+            <available_degree>недоступно</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>соответствует</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>ширина входной двери</Element_mgn>
+            <Area_mgn>входная группа</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>платформа подъемная (мобильный лестничный подъемник)</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>недоступно</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды по зрению</Group_mgn>
+            <Element_mgn>нулевой вход</Element_mgn>
+            <Area_mgn>входная группа</Area_mgn>
+            <available_degree>недоступно</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>не соответствует</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>габариты кабины</Element_mgn>
+            <Area_mgn>санитарный узел</Area_mgn>
+            <available_degree>недоступно</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>лифт</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>недоступно</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>соответствует</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>ширина полосы движения (при обслуживании с перемещением)</Element_mgn>
+            <Area_mgn>зона оказания услуги</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>пандус с поручнями и его уклон</Element_mgn>
+            <Area_mgn>входная группа</Area_mgn>
+            <available_degree>недоступно</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>соответствует</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>габариты зоны сидения (глубина)</Element_mgn>
+            <Area_mgn>зона оказания услуги</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды по слуху</Group_mgn>
+            <Element_mgn>наличие указателей, пиктограмм</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>соответствует</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>ширина полосы движения</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды по зрению</Group_mgn>
+            <Element_mgn>тактильные средства информации</Element_mgn>
+            <Area_mgn>зона оказания услуги</Area_mgn>
+            <available_degree>частично</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды по зрению</Group_mgn>
+            <Element_mgn>контрастная маркировка ступеней</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>частично</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>соответствует</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>ширина полосы движения</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>нулевой вход</Element_mgn>
+            <Area_mgn>входная группа</Area_mgn>
+            <available_degree>недоступно</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>поручни на имеющейся лестнице</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>частично</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>пандус с поручнями и его уклон</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>недоступно</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>не соответствует</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>ширина двери</Element_mgn>
+            <Area_mgn>санитарный узел</Area_mgn>
+            <available_degree>недоступно</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>соответствует</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>ширина полосы движения (при обслуживании с перемещением)</Element_mgn>
+            <Area_mgn>зона оказания услуги</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды по зрению</Group_mgn>
+            <Element_mgn>тактильная полоса перед входной лестницей</Element_mgn>
+            <Area_mgn>входная группа</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>не соответствует</available_index>
+            <Group_mgn>инвалиды по зрению</Group_mgn>
+            <Element_mgn>поручни на имеющейся лестнице</Element_mgn>
+            <Area_mgn>входная группа</Area_mgn>
+            <available_degree>частично</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды по зрению</Group_mgn>
+            <Element_mgn>поручни на имеющейся лестнице</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>частично</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>не соответствует</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>обслуживание через окно/прилавок</Element_mgn>
+            <Area_mgn>зона оказания услуги</Area_mgn>
+            <available_degree>недоступно</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды по слуху</Group_mgn>
+            <Element_mgn>наличие надписей</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>не соответствует</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>ширина дверей в кабинеты</Element_mgn>
+            <Area_mgn>зона оказания услуги</Area_mgn>
+            <available_degree>недоступно</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>лестницы на пути движения</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>недоступно</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды по зрению</Group_mgn>
+            <Element_mgn>тактильное обозначение санузла</Element_mgn>
+            <Area_mgn>санитарный узел</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>платформа подъемная (мобильный лестничный подъемник)</Element_mgn>
+            <Area_mgn>входная группа</Area_mgn>
+            <available_degree>недоступно</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды по зрению</Group_mgn>
+            <Element_mgn>лестницы на пути движения</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>частично</available_degree>
+        </available_element>
+        <available_o>частично</available_o>
+        <available_s>полностью</available_s>
+        <available_z>частично</available_z>
+        <available_k>недоступно</available_k>
+      </Availability>
+      <Address>город Москва, Композиторская улица, дом 17</Address>
+      <PostalCode>121099</PostalCode>
+      <District>район Арбат</District>
+      <AdmArea>Центральный административный округ</AdmArea>
+    </ObjectAddress>
+   <CommonName>Бассейн плавательный «Арбат»</CommonName>
+  <WorkingHours>
+      <Day name="понедельник" open="07:00" close="23:00"/>
+      <Day name="вторник" open="07:00" close="23:00"/>
+      <Day name="среда" open="07:00" close="23:00"/>
+      <Day name="четверг" open="07:00" close="23:00"/>
+      <Day name="пятница" open="07:00" close="23:00"/>
+      <Day name="суббота" open="07:00" close="23:00"/>
+      <Day name="воскресенье" open="07:00" close="23:00"/>
+   </WorkingHours>
+   <ChiefPosition>старший администратор</ChiefPosition>
+   <Category>Физкультурно-оздоровительный комплекс с бассейном</Category>
+   <Email>
+      <Email>fokmalino@yandex.ru</Email>
+    </Email>
+   <global_id>62838545</global_id>
+   <ShortName>Физкультурно-оздоровительный комплекс с бассейном «Малино»</ShortName>
+   <Coordinates N="37.1995643958663" E="55.9731969028595"/>
+   <OrgInfo>
+      <OGRN>1057749095634</OGRN>
+      <ChiefPosition>директор</ChiefPosition>
+      <ChiefPhone>
+        <ChiefPhone>(499) 762-33-60</ChiefPhone>
+      </ChiefPhone>
+      <FullName>ГБУ «ЦФКиС Зеленоградского АО г. Москвы» Москомспорта</FullName>
+      <INN>7735515464</INN>
+      <KPP>773501001</KPP>
+      <LegalAddress>ГОРОД ЗЕЛЕНОГРАД, к.118</LegalAddress>
+      <ChiefName>ПОМОГАЕВ СЕРГЕЙ ВЯЧЕСЛАВОВИЧ</ChiefName>
+    </OrgInfo>
+   <ChiefPhone>
+      <ChiefPhone>(499) 710-46-80</ChiefPhone>
+    </ChiefPhone>
+   <PublicPhone>
+      <PublicPhone>(499) 710-46-80</PublicPhone>
+    </PublicPhone>
+   <FullName>Физкультурно-оздоровительный комплекс с бассейном «Малино»</FullName>
+   <ChiefName>Малиновская Татьяна Олеговна</ChiefName>
+   <ObjectAddress>
+      <Availability>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>нулевой вход</Element_mgn>
+            <Area_mgn>входная группа</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды по слуху</Group_mgn>
+            <Element_mgn>наличие указателей, пиктограмм</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды по зрению</Group_mgn>
+            <Element_mgn>контрастная маркировка ступеней</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>частично</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды по зрению</Group_mgn>
+            <Element_mgn>нулевой вход</Element_mgn>
+            <Area_mgn>входная группа</Area_mgn>
+            <available_degree>частично</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды по слуху</Group_mgn>
+            <Element_mgn>указатели направления движения</Element_mgn>
+            <Area_mgn>территория объекта</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>лифт</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>недоступно</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды по слуху</Group_mgn>
+            <Element_mgn>визуальные средства информации о предоставлении услуги</Element_mgn>
+            <Area_mgn>зона оказания услуги</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>нулевой вход</Element_mgn>
+            <Area_mgn>входная группа</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды по зрению</Group_mgn>
+            <Element_mgn>безбарьерный путь до главного входа</Element_mgn>
+            <Area_mgn>территория объекта</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>соответствует</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>ширина входной двери</Element_mgn>
+            <Area_mgn>входная группа</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>лестницы на пути движения</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>недоступно</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды по зрению</Group_mgn>
+            <Element_mgn>поручни на имеющейся лестнице</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>частично</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>информационные указатели</Element_mgn>
+            <Area_mgn>входная группа</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>поручень у раковины</Element_mgn>
+            <Area_mgn>санитарный узел</Area_mgn>
+            <available_degree>недоступно</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>машино-место для инвалидов</Element_mgn>
+            <Area_mgn>территория объекта</Area_mgn>
+            <available_degree>частично</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>лестницы на пути движения</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>безбарьерный путь до главного входа</Element_mgn>
+            <Area_mgn>территория объекта</Area_mgn>
+            <available_degree>частично</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>соответствует</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>ширина полосы движения</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>машино-место для инвалидов</Element_mgn>
+            <Area_mgn>территория объекта</Area_mgn>
+            <available_degree>частично</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды по зрению</Group_mgn>
+            <Element_mgn>лестницы на пути движения</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>частично</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>соответствует</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>ширина дверей в кабинеты</Element_mgn>
+            <Area_mgn>зона оказания услуги</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>безбарьерный путь до главного входа</Element_mgn>
+            <Area_mgn>территория объекта</Area_mgn>
+            <available_degree>частично</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды по слуху</Group_mgn>
+            <Element_mgn>наличие надписей</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>информационные указатели</Element_mgn>
+            <Area_mgn>территория объекта</Area_mgn>
+            <available_degree>частично</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>платформа подъемная (мобильный лестничный подъемник)</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>недоступно</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды по зрению</Group_mgn>
+            <Element_mgn>тактильная полоса перед входной лестницей</Element_mgn>
+            <Area_mgn>входная группа</Area_mgn>
+            <available_degree>частично</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды по зрению</Group_mgn>
+            <Element_mgn>тактильные средства информации</Element_mgn>
+            <Area_mgn>зона оказания услуги</Area_mgn>
+            <available_degree>частично</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>поручни у унитаза</Element_mgn>
+            <Area_mgn>санитарный узел</Area_mgn>
+            <available_degree>недоступно</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>пандус с поручнями и его уклон</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>недоступно</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>не соответствует</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>ширина двери</Element_mgn>
+            <Area_mgn>санитарный узел</Area_mgn>
+            <available_degree>недоступно</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>поручни на имеющейся лестнице</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>соответствует</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>габариты зоны сидения (глубина)</Element_mgn>
+            <Area_mgn>зона оказания услуги</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды по зрению</Group_mgn>
+            <Element_mgn>тактильное обозначение санузла</Element_mgn>
+            <Area_mgn>санитарный узел</Area_mgn>
+            <available_degree>частично</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>не соответствует</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>габариты кабины</Element_mgn>
+            <Area_mgn>санитарный узел</Area_mgn>
+            <available_degree>недоступно</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>соответствует</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>ширина полосы движения</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>недоступно</available_degree>
+        </available_element>
+        <available_o>частично</available_o>
+        <available_s>полностью</available_s>
+        <available_z>частично</available_z>
+        <available_k>недоступно</available_k>
+      </Availability>
+      <Address>город Москва, город Зеленоград, корпус 860</Address>
+      <PostalCode>124527</PostalCode>
+      <District>район Старое Крюково</District>
+      <AdmArea>Зеленоградский административный округ</AdmArea>
+    </ObjectAddress>
+   <CommonName>Физкультурно-оздоровительный комплекс с бассейном «Малино»</CommonName>
+  <WorkingHours>
+      <Day name="понедельник" open="09:00" close="22:00"/>
+      <Day name="вторник" open="09:00" close="22:00"/>
+      <Day name="среда" open="09:00" close="22:00"/>
+      <Day name="четверг" open="09:00" close="22:00"/>
+      <Day name="пятница" open="09:00" close="22:00"/>
+      <Day name="суббота" open="09:00" close="22:00"/>
+      <Day name="воскресенье" open="09:00" close="20:00"/>
+   </WorkingHours>
+   <ChiefPosition>заведующий спортивным объектом</ChiefPosition>
+   <Category>Физкультурно-оздоровительный комплекс</Category>
+   <Email>
+      <Email>dvorec2003@mail.ru</Email>
+    </Email>
+   <global_id>62838548</global_id>
+   <ShortName>Комплекс спортивных сооружений «Учебно-спортивный комплекс Курьяново»</ShortName>
+   <Coordinates N="37.6955978977902" E="55.655665532658"/>
+   <OrgInfo>
+      <OGRN>1037739763588</OGRN>
+      <ChiefPosition>директор</ChiefPosition>
+      <ChiefPhone>
+        <ChiefPhone>(499) 175-54-12</ChiefPhone>
+      </ChiefPhone>
+      <FullName>ГБУ «СШОР № 64» Москомспорта</FullName>
+      <INN>7721020415</INN>
+      <KPP>772101001</KPP>
+      <LegalAddress>БУЛЬВАР ЕСЕНИНСКИЙ, дом 9, к.2</LegalAddress>
+      <ChiefName>ОСТРОУМОВ ВЛАДИМИР НИКОЛАЕВИЧ</ChiefName>
+    </OrgInfo>
+   <ChiefPhone>
+      <ChiefPhone>(499) 357-15-81</ChiefPhone>
+    </ChiefPhone>
+   <PublicPhone>
+      <PublicPhone>(499) 357-15-81</PublicPhone>
+    </PublicPhone>
+   <FullName>Комплекс спортивных сооружений «Учебно-спортивный комплекс Курьяново»</FullName>
+   <ChiefName>Матийко Василий Анатольевич</ChiefName>
+   <ObjectAddress>
+      <Availability>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>лестницы на пути движения</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>соответствует</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>ширина полосы движения</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>соответствует</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>ширина двери</Element_mgn>
+            <Area_mgn>санитарный узел</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>соответствует</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>ширина полосы движения (при обслуживании с перемещением)</Element_mgn>
+            <Area_mgn>зона оказания услуги</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды по зрению</Group_mgn>
+            <Element_mgn>тактильное обозначение санузла</Element_mgn>
+            <Area_mgn>санитарный узел</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды по зрению</Group_mgn>
+            <Element_mgn>нулевой вход</Element_mgn>
+            <Area_mgn>входная группа</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>поручни у унитаза</Element_mgn>
+            <Area_mgn>санитарный узел</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>машино-место для инвалидов</Element_mgn>
+            <Area_mgn>территория объекта</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>не соответствует</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>пандус с поручнями и его уклон</Element_mgn>
+            <Area_mgn>входная группа</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>не соответствует</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>габариты зоны сидения (глубина)</Element_mgn>
+            <Area_mgn>зона оказания услуги</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>не соответствует</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>ширина дверей в кабинеты</Element_mgn>
+            <Area_mgn>зона оказания услуги</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>лифт</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды по слуху</Group_mgn>
+            <Element_mgn>указатели направления движения</Element_mgn>
+            <Area_mgn>территория объекта</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды по зрению</Group_mgn>
+            <Element_mgn>поручни на имеющейся лестнице</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>пандус с поручнями и его уклон</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды по зрению</Group_mgn>
+            <Element_mgn>поручни на имеющейся лестнице</Element_mgn>
+            <Area_mgn>территория объекта</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>лифт</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>информационные указатели</Element_mgn>
+            <Area_mgn>территория объекта</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды по слуху</Group_mgn>
+            <Element_mgn>визуальные средства информации о предоставлении услуги</Element_mgn>
+            <Area_mgn>зона оказания услуги</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>безбарьерный путь до главного входа</Element_mgn>
+            <Area_mgn>территория объекта</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>не соответствует</available_index>
+            <Group_mgn>инвалиды по зрению</Group_mgn>
+            <Element_mgn>поручни на имеющейся лестнице</Element_mgn>
+            <Area_mgn>входная группа</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды по зрению</Group_mgn>
+            <Element_mgn>контрастная маркировка ступеней</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>платформа подъемная (мобильный лестничный подъемник)</Element_mgn>
+            <Area_mgn>входная группа</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>соответствует</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>обслуживание через окно/прилавок</Element_mgn>
+            <Area_mgn>зона оказания услуги</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>поручни на имеющейся лестнице</Element_mgn>
+            <Area_mgn>входная группа</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>места для инвалидов-колясочников в зале</Element_mgn>
+            <Area_mgn>зона оказания услуги</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды по зрению</Group_mgn>
+            <Element_mgn>тактильная полоса перед лестницей</Element_mgn>
+            <Area_mgn>территория объекта</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>информационные указатели</Element_mgn>
+            <Area_mgn>входная группа</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>зона рядом с унитазом</Element_mgn>
+            <Area_mgn>санитарный узел</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>нулевой вход</Element_mgn>
+            <Area_mgn>входная группа</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>поручень у раковины</Element_mgn>
+            <Area_mgn>санитарный узел</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>не соответствует</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>ширина полосы движения (при обслуживании с перемещением)</Element_mgn>
+            <Area_mgn>зона оказания услуги</Area_mgn>
+            <available_degree>частично</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>не соответствует</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>ширина полосы движения (при обслуживании с перемещением)</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>поручни на имеющейся лестнице</Element_mgn>
+            <Area_mgn>территория объекта</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>нулевой вход</Element_mgn>
+            <Area_mgn>входная группа</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды по зрению</Group_mgn>
+            <Element_mgn>тактильная полоса перед входной лестницей</Element_mgn>
+            <Area_mgn>входная группа</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды по слуху</Group_mgn>
+            <Element_mgn>наличие указателей, пиктограмм</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>платформа подъемная (мобильный лестничный подъемник)</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды по зрению</Group_mgn>
+            <Element_mgn>тактильные средства информации</Element_mgn>
+            <Area_mgn>зона оказания услуги</Area_mgn>
+            <available_degree>частично</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>поручни на имеющейся лестнице</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>соответствует</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>габариты кабины</Element_mgn>
+            <Area_mgn>санитарный узел</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды по слуху</Group_mgn>
+            <Element_mgn>места для инвалидов-колясочников в зале</Element_mgn>
+            <Area_mgn>зона оказания услуги</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды по слуху</Group_mgn>
+            <Element_mgn>наличие надписей</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды по зрению</Group_mgn>
+            <Element_mgn>безбарьерный путь до главного входа</Element_mgn>
+            <Area_mgn>территория объекта</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>безбарьерный путь до главного входа</Element_mgn>
+            <Area_mgn>территория объекта</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-опорники</Group_mgn>
+            <Element_mgn>лестницы на пути движения</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>есть</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>зона у раковины для кресла-коляски</Element_mgn>
+            <Area_mgn>санитарный узел</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>не соответствует</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>ширина входной двери</Element_mgn>
+            <Area_mgn>входная группа</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды по зрению</Group_mgn>
+            <Element_mgn>лестницы на пути движения</Element_mgn>
+            <Area_mgn>пути движения и эвакуации</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_element>
+            <available_index>нет</available_index>
+            <Group_mgn>инвалиды-колясочники</Group_mgn>
+            <Element_mgn>машино-место для инвалидов</Element_mgn>
+            <Area_mgn>территория объекта</Area_mgn>
+            <available_degree>полностью</available_degree>
+        </available_element>
+        <available_o>частично</available_o>
+        <available_s>частично</available_s>
+        <available_z>частично</available_z>
+        <available_k>частично</available_k>
+      </Availability>
+      <Address>город Москва, 1-й Курьяновский проезд, дом 17, строение 1</Address>
+      <PostalCode>109235</PostalCode>
+      <District>район Печатники</District>
+      <AdmArea>Юго-Восточный административный округ</AdmArea>
+    </ObjectAddress>
+   <CommonName>Комплекс спортивных сооружений «Учебно-спортивный комплекс Курьяново»</CommonName>
+</catalog>
+

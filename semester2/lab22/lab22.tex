@@ -1,0 +1,66 @@
+\documentclass[11pt,twoside,draft]{article}
+\usepackage[T1, T2A]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{mathtools}
+%\usepackage[a4paper, total={6in, 8in}]{geometry}
+%\usepackage{fancyhdr} 
+%\pagestyle{fancy}
+%\lhead{136}
+%\rhead{\it\S\ \it {\sl{47}. Криволинейные интегралы}}
+\makeatletter
+\renewcommand{\@oddhead}{136\hfill\emph{\S\ {\sl47}. Криволинейные интегралы}}
+\renewcommand{\@oddfoot}{}
+\renewcommand{\@evenhead}{{\sl 47.7.} \emph {Геометрический смысл знака якобиана}\hfill 137}
+\renewcommand{\@evenfoot}{}
+\makeatother
+\binoppenalty=10000
+\relpenalty=10000
+\textwidth=122mm
+\textheight=215mm
+\newcommand\mes{\mathop{\mathrm{mes}}\nolimits}
+\begin{document}
+    Согласно формуле (47.20),
+    $$\mes\Gamma^*=\varepsilon\int\limits_{\gamma^*}xdy,\eqno{(47.25)}$$
+    где $\varepsilon = +1$, если ориентация контура $\gamma^*$ положительна, и $\varepsilon = -1$\linebreak в противоположном случае. Иначе говоря, $\varepsilon = +1$ (соответственно \linebreak $\varepsilon = -1$), если положительному обходу данного контура $\gamma$ соот-\linebreak ветствует при отображении (47.23) положительный же (соответст-\linebreak венно отрицательный) обход контура $\gamma^* = F(\gamma)$.
+    
+    Вычисляя интеграл (47.25) по формуле (47.8), используя пред-\linebreak ставление\,\, (47.24)\,\, контура\,\, $\gamma^*$,\,\, получим
+    $$\mes\Gamma^*=\varepsilon\int\limits_{a}^{b}xy'_t\,dt=\varepsilon\int\limits_{a}^{b}x\left(\frac{\partial y} {\partial u} \,\frac{du} {dt} + \frac{\partial y} {\partial v} \,\frac{dv} {dt}\right)dt=$$
+    $$=\varepsilon\int\limits_{\gamma}x\frac{\partial y} {\partial u}\,du + x\frac{\partial y} {\partial v}\,dv.$$
+    
+    К получившемуся интегралу применим формулу Грина (47.12)\linebreak (здесь нами и используется потребованная выше непрерывность\linebreak вторых производных\,$\,\frac{\partial^2\,y} {\partial u\,\partial v}$ и $\frac{\partial^2\,y} {\partial v\,\partial u})$. \!\!\!Полагая \,$P\!=x\frac{\partial y} {\partial u}$ и $Q=x\frac{\partial y} {\partial v}$\linebreak и\,\, замечая,\,\, что\,\, в\,\, этом\,\, случае
+    $$\frac{\partial Q} {\partial u} - \frac{\partial P} {\partial v}=\frac{\partial x} {\partial u} \,\frac{\partial y} {\partial v} - \frac{\partial x} {\partial v} \,\frac{\partial y} {\partial u}=\frac{\partial\, (x,\,y)} {\partial\, (u,\,v)},$$
+    получим
+    $$\mes\Gamma^*=\varepsilon\int\limits_{\gamma^+}Pdu+Qdv=\varepsilon\iint \limits_{\Gamma}\left(\frac{\partial Q} {\partial u} - \frac{\partial P} {\partial v}\right)du\,dv=$$
+    $$=\varepsilon \iint \limits_{\Gamma}\frac{\partial\, (x,\,y)} {\partial\, (u,\,v)} du\,dv.$$
+    
+    Левая часть получившегося равенства больше нуля, значит,\linebreak правая часть также положительна, и так как якобиан отображения (47.22) не меняет знака, то это возможно лишь в том случае, когда число $\varepsilon$ имеет тот же знак, что и якобиан $\frac{\partial (x,\,\,y)} {\partial (u,\,\,v)}$, а в этом случае $\varepsilon\frac{\partial (x,\,\,y)} {\partial (u,\,\,v)}\!=\!\left|\frac{\partial (x,\,\,y)} {\partial (u,\,\,v)}\right|$. Тем самым знак $\varepsilon$ не зависит от выбора контура~$\gamma$,\linebreak а определяется знаком якобиан, который один и тот же во всех\linebreak точках области G.
+    
+    Таким образом, доказана следующая теорема.
+%$$x+\mathbf y$$
+
+
+\newpage
+%\rhead{137}
+%\lhead{47.7 \emph {Геометрический смысл знака якобиана}}
+    \textbf{\textit{Теорема} {\sl\textbf 2}.} \emph{\!Если\, выполнены сделанные выше предположения,\linebreak то справедлива формула}
+    $$\mes\Gamma^*=\iint\limits_\Gamma\left|\frac{\partial\, (x,\,y)} {\partial\, (u,\,v)}\right|du\,dv.\eqno{(47.26)}$$
+    \emph{Кроме того, если якобиан $\frac{\partial (x,\,\,y)} {\partial (u,\,\,v)} > 0$ на $\Gamma$, то $\varepsilon=+1$, иначе говоря,\linebreak если якобиан отображения F положителен, то положительному\linebreak обходу всякого контура $\gamma\!\!\!\subset\!\!\!G$, являющегося границей ограниченной\linebreak области $\Gamma\!\!\subset\!\!G$, при отображении F соответствует положительный обход контура $\gamma^*=F(\gamma)$, являющегося границей ограниченной об-\linebreak ласти $\Gamma^*=F(\Gamma)$. \!\!Если же якобиан\,\, $\frac{\partial (x,\,\,y)} {\partial (u,\,\,v)} < 0$ на $\Gamma$, то $\varepsilon=-1$, т.\! е. положительному обходу всякого контура\, $\gamma$, указанного типа, соответствует при отображении F отрицательный обход контура\linebreak $\gamma^*=F(\gamma)$.}
+    
+    Таким образом, \emph{геометрический смысл знака якобиана состоит\linebreak в том, что при положительном якобиане ориентация контуров со\-храняется,\, а\, при\, отрицательном --- меняется.}
+    
+    С помощью формулы (47.19) формула (47.26) легко обобщается~на случай, когда граница области $\Gamma$ состоит из конечного числа кусоч-\linebreak но-гладких\,\, замкнутых\,\, контуров.
+    
+    Отметим еще, что с помощью формулы (47.26) можно без труда\linebreak получить более простое доказательство теоремы 1 из п. \!\!46.1 о гео-\linebreak метрическом \!\!смысле\,\, модуля\,\, якобиана. \!\!\!Действительно,\,\,\, пусть\linebreak $M_0\!\!\in\!\!\Gamma$, $d\,\,(\Gamma)$ --- диаметр области $\Gamma$,\,\, и область $\Gamma$ каким-либо образом стягивается к точке $M_0$ и, следовательно, $d(\Gamma)\to 0$.
+    
+    По теореме о среднем (см. п. 44.5)
+    $$\mes\Gamma^*=\iint\limits_\Gamma\left|\frac{\partial\, (x,\,y)} {\partial\, (u,\,v)} \right| du\,dv = {\left|\frac{\partial\, (x,\,y)} {\partial\, (u,\,v)}\right|}_M\!\!\mes\Gamma,\,\,M\!\!\in\!\Gamma,$$
+    поэтому
+    $$\frac{\mes\Gamma^*} {\mes\Gamma}={\left|\frac{\partial\,(x,\,y)} {\partial\,(u,\,v)}\right|}_M.$$
+    
+    В силу непрерывности якобиана
+    $$\lim\limits_{d\,(\Gamma)\to 0} {\left|\frac{\partial\, (x,\,y)} {\partial\, (u,\,v)}\right|}_M={\left|\frac{\partial\, (x,\,y)} {\partial\, (u,\,v)}\right|}_{M_0},$$
+    поэтому
+    $$\lim\limits_{d\,(\Gamma)\to 0}\frac{\mes\Gamma^*} {\mes\Gamma}={\left|\frac{\partial\, (x,\,y)} {\partial\, (u,\,v)} \right|}_{M_0},\eqno{(47.27)}$$
+    т. е. мы доказали формулу (46.6) и в некотором смысле даже в более\linebreak общем виде; так, здесь $\Gamma$ --- не\, обязательно\, квадрат (правда,\!~ на\linebreak
+\newpage
+\end{document}

@@ -1,0 +1,612 @@
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.0 20120330//EN" "JATS-archivearticle1.dtd">
+<article xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML" article-type="research-article"><?properties open_access?><front><journal-meta><journal-id journal-id-type="nlm-ta">Adv Bioinformatics</journal-id><journal-id journal-id-type="iso-abbrev">Adv Bioinformatics</journal-id><journal-id journal-id-type="publisher-id">ABI</journal-id><journal-title-group><journal-title>Advances in Bioinformatics</journal-title></journal-title-group><issn pub-type="ppub">1687-8027</issn><issn pub-type="epub">1687-8035</issn><publisher><publisher-name>Hindawi Publishing Corporation</publisher-name></publisher></journal-meta><article-meta><article-id pub-id-type="pmid">19956701</article-id><article-id pub-id-type="pmc">2777009</article-id><article-id pub-id-type="doi">10.1155/2008/205969</article-id><article-categories><subj-group subj-group-type="heading"><subject>Research Article</subject></subj-group></article-categories><title-group><article-title>Metagenome Fragment Classification Using <italic>N</italic>-Mer Frequency Profiles</article-title></title-group><contrib-group><contrib contrib-type="author"><name><surname>Rosen</surname><given-names>Gail</given-names></name><xref ref-type="aff" rid="I1"><sup>1</sup></xref><xref ref-type="corresp" rid="cor1">*</xref></contrib><contrib contrib-type="author"><name><surname>Garbarine</surname><given-names>Elaine</given-names></name><xref ref-type="aff" rid="I1"><sup>1</sup></xref></contrib><contrib contrib-type="author"><name><surname>Caseiro</surname><given-names>Diamantino</given-names></name><xref ref-type="aff" rid="I2"><sup>2</sup></xref></contrib><contrib contrib-type="author"><name><surname>Polikar</surname><given-names>Robi</given-names></name><xref ref-type="aff" rid="I3"><sup>3</sup></xref></contrib><contrib contrib-type="author"><name><surname>Sokhansanj</surname><given-names>Bahrad</given-names></name><xref ref-type="aff" rid="I4"><sup>4</sup></xref></contrib></contrib-group><aff id="I1"><sup>1</sup>Department of Electrical and Computer Engineering, Drexel University, Philadelphia, PA 19104, USA</aff><aff id="I2"><sup>2</sup>Spoken Language Systems Laboratory, INESC-ID, 1000 Lisbon, Portugal</aff><aff id="I3"><sup>3</sup>Department of Electrical and Computer Engineering, Rowan University, Glassboro, NJ 08028, USA</aff><aff id="I4"><sup>4</sup>School of Biomedical Engineering, Science &#x00026; Health Systems, Drexel University, Philadelphia, PA 19130, USA</aff><author-notes><corresp id="cor1">*Gail Rosen: <email>gailr@ece.drexel.edu</email></corresp><fn fn-type="other"><p>Recommended by Rita Casadio</p></fn></author-notes><pub-date pub-type="ppub"><year>2008</year></pub-date><pub-date pub-type="epub"><day>16</day><month>11</month><year>2008</year></pub-date><volume>2008</volume><elocation-id>205969</elocation-id><history><date date-type="received"><day>5</day><month>6</month><year>2008</year></date><date date-type="rev-recd"><day>19</day><month>9</month><year>2008</year></date><date date-type="accepted"><day>30</day><month>9</month><year>2008</year></date></history><permissions><copyright-statement>Copyright &#x000a9; 2008 Gail Rosen et al.</copyright-statement><copyright-year>2008</copyright-year><license license-type="open-access"><license-p>This is an open access article distributed under the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions><abstract><p>
+A vast amount of microbial sequencing data is being generated through large-scale projects in ecology, agriculture, and human health. Efficient high-throughput methods are needed to analyze the mass amounts of metagenomic data, all DNA present in an environmental sample. A major obstacle in metagenomics is the inability to obtain accuracy using technology that yields short reads. We construct the unique <italic>N</italic>-mer frequency profiles of 635 microbial genomes publicly available as of February 2008. These profiles are used to train a naive Bayes classifier (NBC) that can be used to identify the genome of any fragment. We show that our method is comparable to BLAST for small 25 bp fragments but does not have the ambiguity of BLAST's tied top scores. We demonstrate that this approach is scalable to identify any fragment from hundreds of genomes. It also performs quite well at the strain, species, and genera levels and achieves strain resolution despite classifying ubiquitous genomic fragments (gene and nongene regions). Cross-validation analysis demonstrates that species-accuracy achieves 90% for highly-represented species containing an average of 8 strains. We demonstrate that such a tool can be used on the Sargasso Sea dataset, and our analysis shows that NBC can be further enhanced. 
+</p></abstract></article-meta></front><body><sec id="sec1"><title>1. Introduction</title><p> While pattern recognition methods have been used in
+intron/exon identification 
+[<xref rid="B1" ref-type="bibr">1</xref>], motif-finding 
+[<xref rid="B2" ref-type="bibr">2</xref>], and microRNA prediction 
+[<xref rid="B3" ref-type="bibr">3</xref>], these methods have not been
+applied to whole-genome identification and taxonomical relationships until
+recently. Now, there are a rapidly growing number and diversity of sequenced
+genomes across the evolutionary spectrum enabling a systematic study. This
+makes it possible to use these methods combined with biological insight to
+identify meaningful features and patterns to reveal relationships among DNA
+sequences that are not just limited to specific 16S rRNA genes but to any
+random fragment. A direct parallel between text classification and DNA
+classification can be made and seen in <xref ref-type="fig" rid="fig1">Figure 
+1</xref>. Until recently, bioinformatics approaches to metagenomics
+have been limited due to their lack of available data. Because of the lack of
+knowledge about genome diversity, most phylogenetic studies of metagenomic
+samples examine 16S ribosomal RNA genes for diversity 
+[<xref rid="B4" ref-type="bibr">4</xref>]. This is because 16S rRNA
+sequences produce the fundamental protein needed for transcription, and
+therefore they are highly conserved across all species of life. Also, they
+contain insertion and deletion variation that makes their information content
+unique to various genera and species [<xref rid="B4" ref-type="bibr">4</xref>]. 
+However, it has been shown that organisms that are
+identical or cluster tightly under 16S criterion cannot be concluded to share
+all or, in some cases, essential physiological similarities 
+[<xref rid="B5" ref-type="bibr">5</xref>]. Thus, definition of species
+on this basis is not adequate for assessing the functional diversity of prokaryotic
+communities. In fact, it has been noted that the hot-spring microbes have
+ecologically important differences that have less than 1% 16S rRNA sequence
+divergence [<xref rid="B5" ref-type="bibr">5</xref>]. This
+has led scientists to consider new ways to identify the species/strain content
+of a clinical or environmental sample.</p><p>Unfortunately, in a less than ideal metagenomic
+sample, scientists do not always have the luxury of extracting these 16S genes. 
+If blind methods existed to assess the taxonomical content of the sample from
+these random fragments, it would yield a high-throughput analysis especially
+when combined with short-read next-generation sequencing technology. 
+Next-generation sequencing promises extremely high throughput, but at a price,
+it yields short reads. Currently, many metagenomic tools use BLAST as a first
+step to identify a sample's content 
+[<xref rid="B6" ref-type="bibr">6</xref>&#x02013;<xref rid="B8" ref-type="bibr">8</xref>]. But BLAST's 
+[<xref rid="B9" ref-type="bibr">9</xref>] ability to assign short
+reads to strains in the database yields many ambiguous results, and it has been
+recently reported that BLAST breaks down when going from long 600&#x02013;900 bp reads
+to short 100&#x02013;200 bp reads for metagenomics data [<xref rid="B7" ref-type="bibr">7</xref>]. Huson et al. suggest that a
+&#x0201c;sweet&#x0201d; spot may exist around the 200 bp threshold for accuracy rates
+[<xref rid="B6" ref-type="bibr">6</xref>]. Wang et al. 
+verify that with 16s rRNA sequences, one can get 83.2% accuracy 
+(200 bp fragments) and 51.5% (50 bp) on the genus level via a leave-one-out
+cross-validation test set [<xref rid="B10" ref-type="bibr">10</xref>]. Krause et al. 
+suggest that with 80&#x02013;120 bp reads, the
+superkingdom can be classified with 81% accuracy and the order can be
+classified with 64% accuracy [<xref rid="B11" ref-type="bibr">11</xref>]. Of course, most of these techniques use different
+sets of corpora and therefore the methods are difficult to compare
+although the main goal in identification is to gain
+as good of accuracy rates as possible. In general, researchers have deduced
+that fragments longer than 200 bp are needed in metagenomic applications. Yet,
+newer and faster sequencing technologies yield 20&#x02013;35 bp reads in order to
+parallel the process, and scientists are questioning whether the technology is
+worth it due to the short reads [<xref rid="B7" ref-type="bibr">7</xref>]. Therefore, the holy grail of high throughput
+metagenomics is short-read DNA classification with reasonable accuracy.</p><p>In this paper, we construct the unique 
+<italic>N</italic>-mer frequency profiles of 635 microbial
+genomes (including 470 unique species and 260 unique genera), publicly available
+as of February 2008. These profiles are used to train a naive Bayes classifier
+(NBC) that can be used to identify the genome from which a fragment may have
+been sequenced as part of a metagenomic data set. In <xref ref-type="sec" rid="sec3">Section 
+3</xref>, the
+methodology for naive Bayes classifier is presented, an example is given, the
+word frequency computations are discussed, and the methodology to obtain the
+confidence of our classifier validation is presented. In <xref ref-type="sec" rid="sec4">Section 
+4</xref>, NBC for
+the small (25 bp) fragment case is compared to the most widely used
+identification method, BLAST. We then assess the method's cross-validation
+performance (unseen-strains) for species-level classification. Finally, we test
+the NBC on the Sargasso Sea set and compare the results to MEGAN, a BLAST-based
+taxonomy presentation. The preliminary results show that an <italic>N</italic>-mer-count global perspective can yield a
+reasonable classification of metagenomic sequences that does not produce
+ambiguity. In <xref ref-type="sec" rid="sec5">Section 5</xref>, a discussion of the advantages and disadvantages of
+the method is shown. With further enhancements, this approach can yield a
+promising way to solve the strain resolution that BLAST has no chance to
+resolve with sequence identity scoring.</p></sec><sec id="sec2"><title>2. Background</title><p>Sequence classification methods have traditionally
+aligned two sequences (usually homologous genes) to compare their similarity. 
+The progress has been slow due to lack of demand, with the Needleman-Wunsch
+[<xref rid="B12" ref-type="bibr">12</xref>] algorithm
+introduced in 1970 and the Smith-Waterman algorithm [<xref rid="B13" ref-type="bibr">13</xref>] following over a decade
+later. Multiple-sequence alignment is an extremely important tool for phylogeny
+but did not have viable tools until the late 80s [<xref rid="B14" ref-type="bibr">14</xref>] due to the lack of sequenced genomes. 
+Counting on BLAST to find homologous genes and sequence phylogenies is feasible, 
+but it would be simpler to identify characteristic features unique to a group, such as
+a genotype signature representing all pathogenic E. coli, independent of
+encoded genes. In fact, most comparative techniques focus on the comparison of
+genes because they signify conserved regions and
+functions related to a phenotype 
+[<xref rid="B15" ref-type="bibr">15</xref>]. Also, they conveniently
+ignore horizontal transfer which can insert locally anomalous characteristics
+[<xref rid="B16" ref-type="bibr">16</xref>]. In bacteria,
+this is especially true and phylogenetic footprinting uses gene homologs
+although there has been mounting evidence of use of noncoding RNAs [<xref rid="B17" ref-type="bibr">17</xref>]. Also, standard methods
+that ignore horizontal gene transfer cannot analyze the complete evolution of a
+microbial community or identify characteristic markers that may exist. 
+Therefore, we seek a framework that represents the entire DNA in a sample
+without prior knowledge of the genes, promoters, and so forth. in the DNA
+sequences. We propose such approach that uses the naive Bayes classifier, which
+is able to identify significant features in a blind and high-throughput manner.</p><p>Existing methods to identify metagenomic sample
+content involves profiling clones with microarrays that identify previously
+unknown genes in environmental samples [<xref rid="B18" ref-type="bibr">18</xref>], subtractive hybridization to eliminate all sequences
+that hybridize with another environment, or subtractive hybridization to
+identify differentially expressed genes [<xref rid="B19" ref-type="bibr">19</xref>], and genomic signature tags [<xref rid="B20" ref-type="bibr">20</xref>]. The latter method is a way
+to extract particular 21-22 bp tag sequences that can be used to examine
+intraspecific genomic variation and, if genome information is available,
+provide immediate species identity. Further, it pinpoints areas of a genome
+that might have undergone changes which add or delete restriction sites.</p><p>Our approach is to use <italic>N</italic>-mer frequencies, or words, of sequences as
+features to classify genomic fragments. Using DNA words as genomic features for
+discrimination and phylogenetic measures has previously been explored. For
+example, when faced with a contig that originated from an unknown, and
+never-to-be-recovered bacterial cell, Gl&#x000f6;ckner described how multivariate
+analyses of small-scale DNA architecture (e.g., comparing tetra-nucleotide
+usage) revealed a reasonable measure of fragment
+relatedness [<xref rid="B21" ref-type="bibr">21</xref>]. 
+For tetra-nucleotides, it has even been demonstrated
+that their frequencies carry an innate but weak phylogenetic signal [<xref rid="B22" ref-type="bibr">22</xref>]. Other researchers have
+explored observing the patterns in oligonucleotide frequencies and unusual
+features [<xref rid="B23" ref-type="bibr">23</xref>&#x02013;<xref rid="B25" ref-type="bibr">25</xref>]. A recent notable work is to construct a phylogenetic
+tree via variable-length segments and their frequency occurrence 
+[<xref rid="B26" ref-type="bibr">26</xref>].</p></sec><sec id="sec3"><title>3. Methods</title><sec sec-type="subsection" id="subsec3.1"><title>3.1. Naive Bayes Classifier</title><p>The term &#x0201c;classifier&#x0201d; is used in the sense of a statistical tool, 
+trained using the full genomic data, to discriminate between &#x0201c;classes.&#x0201d; 
+Each &#x0201c;class&#x0201d; is a strain, species, family, and so forth, which depends on the
+particular class label definitions. In our work, we examine the cases where the
+classes are strains, species, and genera. The classification method will
+provide us with a way to predict class labels from fragment features, and the
+results are assessed for varying length of features and fragment sizes.</p><p>A naive Bayes classifier (NBC) is based on applying Bayes's theorem assuming 
+that each feature in the classification is independent
+of each other. This strong independence assumption is the naivity of the
+algorithm, but the NBC has been shown to perform well in complex situations
+[<xref rid="B27" ref-type="bibr">27</xref>].</p><p>In this case, our features are composed of DNA words 
+(<italic>N</italic>-mers). <italic>N</italic>-mers are <italic>N</italic>-length words of DNA that may or may not be
+overlapping. The foundation of our analysis is correlating the frequencies of
+these <italic>N</italic>-mers in a sequence to its overall identity. 
+It is analogous to predicting the genre of a book from its word content. For
+example, a book about law is more likely to contain high frequencies 
+of &#x0201c;law,&#x0201d; &#x0201c;court,&#x0201d; and &#x0201c;ruling&#x0201d; than this article which contains
+high frequencies of &#x0201c;genome,&#x0201d; 
+<italic>N</italic>-mer,&#x0201d; and &#x0201c;fragment.&#x0201d;</p><p>Let <bold>w</bold> = [<italic>w</italic><sub>1</sub>, <italic>w</italic><sub>2</sub>, <italic>w</italic><sub>3</sub>,&#x02026;<italic>w</italic><sub><italic>K</italic></sub>]<sup><italic>T</italic></sup> be the feature vector, composed of a set of
+words (or <italic>N</italic>-mers) in an 
+<italic>L</italic>-length fragment, <bold>f</bold>. 
+To label <bold>w</bold> in one of the <italic>M</italic> genome classes, <italic>C</italic><sub>1</sub>, <italic>C</italic><sub>2</sub>,&#x02026;<italic>C</italic><sub><italic>M</italic></sub>,
+the posterior probability of a particular class, <italic>C</italic><sub><italic>i</italic></sub>,
+given the feature vector, <bold>w</bold>,
+is <italic>P</italic>(<italic>C</italic><sub><italic>i</italic></sub> | <bold>w</bold>). 
+The Bayes classifier chooses the predicted class, <inline-formula><mml:math id="M1"><mml:mrow><mml:mover accent="true"><mml:mi>C</mml:mi><mml:mo>^</mml:mo></mml:mover></mml:mrow></mml:math></inline-formula>,
+with the largest posterior probability given that <bold>w</bold> is observed 
+<disp-formula id="eq1"><label>(1)</label><mml:math id="M2"><mml:mrow><mml:mover accent="true"><mml:mrow><mml:mi>C</mml:mi></mml:mrow><mml:mrow><mml:mo>^</mml:mo></mml:mrow></mml:mover><mml:mo>=</mml:mo><mml:munder><mml:mrow><mml:mtext>argmax</mml:mtext></mml:mrow><mml:mrow><mml:mi>i</mml:mi></mml:mrow></mml:munder><mml:mo>&#x02009;</mml:mo><mml:mtext>&#x02009;</mml:mtext><mml:mi>P</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:msub><mml:mrow><mml:mi>C</mml:mi></mml:mrow><mml:mrow><mml:mi>i</mml:mi></mml:mrow></mml:msub><mml:mtext>&#x02009;</mml:mtext><mml:mo stretchy="false">|</mml:mo><mml:mtext>&#x02009;</mml:mtext><mml:mstyle mathsize="normal"><mml:mrow><mml:mi mathvariant="bold">w</mml:mi></mml:mrow></mml:mstyle><mml:mo stretchy="false">)</mml:mo><mml:mo>.</mml:mo></mml:mrow></mml:math></disp-formula>This expression guarantees
+minimum error across the whole space spanned by the <italic>K</italic> features in <bold>w</bold>.</p><p>The posterior probability, <italic>P</italic>(<italic>C</italic><sub><italic>i</italic></sub> | <bold>w</bold>),
+can be calculated by using the Bayes rule: <disp-formula id="eq2"><label>(2)</label><mml:math id="M3"><mml:mrow><mml:mi>P</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:msub><mml:mi>C</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mtext>&#x02009;</mml:mtext><mml:mo stretchy="false">|</mml:mo><mml:mtext>&#x02009;</mml:mtext><mml:mstyle mathsize="normal"><mml:mi mathvariant="bold">w</mml:mi></mml:mstyle><mml:mo stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:mi>P</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mstyle mathsize="normal"><mml:mi mathvariant="bold">w</mml:mi></mml:mstyle><mml:mtext>&#x02009;</mml:mtext><mml:mo stretchy="false">|</mml:mo><mml:mtext>&#x02009;</mml:mtext><mml:msub><mml:mi>C</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo stretchy="false">)</mml:mo><mml:mo>&#x022c5;</mml:mo><mml:mi>P</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:msub><mml:mi>C</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mrow><mml:mi>P</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mstyle mathsize="normal"><mml:mi mathvariant="bold">w</mml:mi></mml:mstyle><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mfrac><mml:mn>.</mml:mn></mml:mrow></mml:math></disp-formula> In other words, the probability, 
+<italic>P</italic>(<italic>C</italic><sub><italic>i</italic></sub> | <bold>w</bold>), of the genome class given the word features is equal to the 
+probability, <italic>P</italic>(<bold>w</bold> | <italic>C</italic><sub><italic>i</italic></sub>), of the words given the class times the prior probability of 
+observing that genome class, 
+<italic>P</italic>(<italic>C</italic><sub><italic>i</italic></sub>), divided by the unconditional probability of observing the words, 
+<italic>P</italic>(<bold>w</bold>), that compose a fragment, 
+<bold>f</bold>. The <italic>P</italic>(<bold>w</bold>) is constant given a particular fragment.</p><p>The naive Bayes classifier assumes conditional
+independence between the <italic>N</italic>-mer features and calculates the
+class-conditional probability as a product of 
+<italic>K</italic> individual probabilities: 
+<disp-formula id="eqx"><label>(3)</label><mml:math id="M4"><mml:mrow><mml:mi>P</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mstyle mathsize="normal"><mml:mi mathvariant="bold">w</mml:mi></mml:mstyle><mml:mtext>&#x02009;</mml:mtext><mml:mo stretchy="false">|</mml:mo><mml:mtext>&#x02009;</mml:mtext><mml:msub><mml:mi>C</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:mstyle><mml:munderover><mml:mo>&#x0220f;</mml:mo><mml:mrow><mml:mi>j</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mi>K</mml:mi></mml:munderover></mml:mstyle><mml:mi>P</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:msub><mml:mi>w</mml:mi><mml:mi>j</mml:mi></mml:msub><mml:mtext>&#x02009;</mml:mtext><mml:mo stretchy="false">|</mml:mo><mml:mtext>&#x02009;</mml:mtext><mml:msub><mml:mi>C</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo stretchy="false">)</mml:mo><mml:mo>,</mml:mo></mml:mrow></mml:math></disp-formula> where <italic>K</italic> = <italic>L</italic> &#x02212; (<italic>N</italic> &#x02212; 1) is the number of overlapping 
+<italic>N</italic>-mers in the fragment, 
+<bold>f</bold>.</p><p>The individual conditional probabilities, 
+<italic>P</italic>(<italic>w</italic><sub><italic>j</italic></sub> | <italic>C</italic><sub><italic>i</italic></sub>), are obtained by dividing the number of each fragment <italic>N</italic>-mer in the genome, 
+<italic>f</italic><sub><italic>N</italic></sub>(<italic>w</italic><sub><italic>j</italic></sub> | <italic>C</italic><sub><italic>i</italic></sub>), by the total number of <italic>N</italic>-mers in that genome <italic>P</italic>(<italic>w</italic><sub><italic>j</italic></sub> | <italic>C</italic><sub><italic>i</italic></sub>) = <italic>f</italic><sub><italic>N</italic></sub>(<italic>w</italic><sub><italic>j</italic></sub> | <italic>C</italic><sub><italic>i</italic></sub>)/(|<italic>C</italic><sub><italic>i</italic></sub>|), where |<italic>C</italic><sub><italic>i</italic></sub>| is the length of <italic>C</italic><sub><italic>i</italic></sub>.</p><p>In (<xref ref-type="disp-formula" rid="eq2">2</xref>), the prior probability of the 
+genome, <italic>P</italic>(<italic>C</italic><sub><italic>i</italic></sub>),
+is assumed to be in our hypothetical environmental
+sample. We make the assumption that our sample is uniform, or each genome is
+equally likely. In this case, our sample content is unknown, and in the absence
+of such prior knowledge, equal priors are typically used. With prior knowledge
+about the environment, a better estimate can be obtained. We also do not know
+the probability of obtaining a fragment with a set of words, <italic>P</italic>(<bold>w</bold>), but this unconditional probability will be constant 
+across the scoring function in (<xref ref-type="disp-formula" rid="eq1">1</xref>), so it 
+can be omitted. Therefore, we omit both 
+<italic>P</italic>(<bold>w</bold>) and <italic>P</italic>(<italic>C</italic><sub><italic>i</italic></sub>) components in (<xref ref-type="disp-formula" rid="eq1">1</xref>) and use the 
+following scoring function for our work: 
+<disp-formula id="eq3"><label>(4)</label><mml:math id="M5"><mml:mrow><mml:mover accent="true"><mml:mrow><mml:mi>C</mml:mi></mml:mrow><mml:mrow><mml:mo>^</mml:mo></mml:mrow></mml:mover><mml:mo>=</mml:mo><mml:munder><mml:mrow><mml:mtext>argmax</mml:mtext></mml:mrow><mml:mrow><mml:mi>i</mml:mi></mml:mrow></mml:munder><mml:mstyle><mml:mrow><mml:munderover><mml:mrow><mml:mtext>&#x02009;</mml:mtext><mml:mo>&#x0220f;</mml:mo></mml:mrow><mml:mrow><mml:mi>j</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:mi>K</mml:mi></mml:mrow></mml:munderover></mml:mrow></mml:mstyle><mml:mi>P</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:msub><mml:mrow><mml:mi>w</mml:mi></mml:mrow><mml:mrow><mml:mi>j</mml:mi></mml:mrow></mml:msub><mml:mtext>&#x02009;</mml:mtext><mml:mo stretchy="false">|</mml:mo><mml:mtext>&#x02009;</mml:mtext><mml:msub><mml:mrow><mml:mi>C</mml:mi></mml:mrow><mml:mrow><mml:mi>i</mml:mi></mml:mrow></mml:msub><mml:mo stretchy="false">)</mml:mo><mml:mo>.</mml:mo></mml:mrow></mml:math></disp-formula></p><p>As <italic>K</italic> increases, the score, &#x0220f;<sub><italic>j</italic> = 1</sub><sup><italic>K</italic></sup><italic>P</italic>(<italic>w</italic><sub><italic>j</italic></sub> | <italic>C</italic><sub><italic>i</italic></sub>),
+can become very small and introduce precision errors into the computation. Due
+to numerical precision errors, we take the log probability to obtain our final
+scoring function <disp-formula id="eq4"><label>(5)</label><mml:math id="M6"><mml:mrow><mml:mover accent="true"><mml:mrow><mml:mi>C</mml:mi></mml:mrow><mml:mrow><mml:mo>^</mml:mo></mml:mrow></mml:mover><mml:mo>=</mml:mo><mml:munder><mml:mrow><mml:mtext>argmax</mml:mtext></mml:mrow><mml:mrow><mml:mi>i</mml:mi></mml:mrow></mml:munder><mml:mstyle><mml:mrow><mml:munderover><mml:mrow><mml:mo>&#x02211;</mml:mo></mml:mrow><mml:mrow><mml:mi>j</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:mi>K</mml:mi></mml:mrow></mml:munderover></mml:mrow></mml:mstyle><mml:mtext>log</mml:mtext><mml:mo stretchy="false">(</mml:mo><mml:mi>P</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:msub><mml:mrow><mml:mi>w</mml:mi></mml:mrow><mml:mrow><mml:mi>j</mml:mi></mml:mrow></mml:msub><mml:mtext>&#x02009;</mml:mtext><mml:mo stretchy="false">|</mml:mo><mml:mtext>&#x02009;</mml:mtext><mml:msub><mml:mrow><mml:mi>C</mml:mi></mml:mrow><mml:mrow><mml:mi>i</mml:mi></mml:mrow></mml:msub><mml:mo stretchy="false">)</mml:mo><mml:mo>.</mml:mo></mml:mrow></mml:math></disp-formula></p></sec><sec sec-type="subsection" id="subsec3.2"><title>3.2. Calculation of <italic>N</italic>-mer&#x02014;Frequencies, <italic>f</italic><sub><italic>N</italic></sub>(<bold>Nmer</bold> | <italic>C</italic><sub><italic>i</italic></sub>)</title><p>Since we need to know the oligo words (or 
+<italic>N</italic>-mers) as genomic features in the naive Bayes
+algorithm, an efficient implementation is devised to compute the frequencies of
+all <italic>N</italic>-mers. We denote their frequencies as 
+<italic>f</italic><sub><italic>N</italic></sub>(<bold>w</bold> | <italic>C</italic><sub><italic>i</italic></sub>) for each genome. We have implemented two such
+methods, one optimized for short words and the other optimized for long ones.</p><p>The first one is a general method that works for any
+sequence length, which generates all possible <italic>N</italic>-mers that overlap by <italic>N</italic> &#x02212; 1 nucleotides. 
+Once all possible <italic>N</italic>-mers are generated, they are sorted and then
+the cardinalities of recurring <italic>N</italic>-mers are computed. An illustration of this
+method is seen in <xref ref-type="fig" rid="fig2">Figure 2</xref>.</p><p>An optimized count mechanism is used when 
+<italic>N</italic> is &#x0201c;small&#x0201d; (defined as 
+<italic>N</italic> = 20 or less). By storing a finite bit counter for
+each <italic>N</italic>-mer in memory for <italic>N</italic> &#x02264; 20, time and memory can be saved because the algorithm does not have to 
+store each word in memory like the first method. We generate a list
+of the size of all possible 
+4<sup><italic>N</italic></sup> combinations of 
+<italic>N</italic>-mers. Each entry in the table stores
+an <italic>M</italic>-bit counter for each alphabetically-sorted 
+<italic>N</italic>-mers. <italic>M</italic> is heuristically determined by examining the
+sequence length and the 4<sup><italic>N</italic></sup> possible 
+<italic>N</italic>-mers&#x02014;if the sequence length is much less
+than 4<sup><italic>N</italic></sup>, then <italic>M</italic> is low, otherwise, 
+<italic>M</italic> is increased accordingly. Then incrementing
+down the sequence with an <italic>N</italic>-length window, the counter that corresponds
+to each <italic>N</italic>-mer in the table is incremented. If a counter
+overflows, another <italic>M</italic>-bit counter is mapped from the first counter
+to account for the extra counts. While this slows the algorithm down, it is
+unlikely to occur. This phenomenon is related to Zipf's law 
+[<xref rid="B28" ref-type="bibr">28</xref>] which is a power law that
+states that the frequency of any word is inversely proportional to its rank, <italic>f</italic>(<italic>k</italic>) = 1/<italic>k</italic>, where <italic>k</italic> is the rank of the word, in the frequency
+table. Therefore, only a few <italic>N</italic>-mers will have high frequencies that need
+additional counters. The algorithm is summarized in <xref ref-type="fig" rid="fig3">Figure 
+3</xref>.</p><p>To further illustrate Zipf's law, we illustrate the 12-mer frequencies of 3 different strains of E. 
+coli in <xref ref-type="fig" rid="fig4">Figure 4</xref>. A trend close to Zipf's law (the inverse 
+rank-frequency relationship). Zipf's law curve can be modeled with an exponent as 
+<disp-formula id="eqy"><label>(6)</label><mml:math id="M7"><mml:mrow><mml:mtable width="auto" columnalign="left"><mml:mtr><mml:mtd><mml:mi/></mml:mtd><mml:mtd><mml:mtext>Zipf</mml:mtext><mml:mo>_</mml:mo><mml:mtext>freq</mml:mtext><mml:mo stretchy="false">(</mml:mo><mml:mi>N</mml:mi><mml:mtext>mer</mml:mtext><mml:mo>_</mml:mo><mml:mtext>rank</mml:mtext><mml:mn>,</mml:mn><mml:mi>s</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>/</mml:mo><mml:mn>4</mml:mn><mml:mo>,</mml:mo><mml:mi>N</mml:mi><mml:mo>=</mml:mo><mml:mn>12</mml:mn><mml:mo stretchy="false">)</mml:mo></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mi/></mml:mtd><mml:mtd><mml:mi>&#x02003;</mml:mi><mml:mi>&#x02003;</mml:mi><mml:mo>=</mml:mo><mml:mn>1000</mml:mn><mml:mo>*</mml:mo><mml:mfrac><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mo stretchy="false">(</mml:mo><mml:mn>1</mml:mn><mml:mo>/</mml:mo><mml:mi>N</mml:mi><mml:mtext>mer</mml:mtext><mml:mo>_</mml:mo><mml:mtext>rank</mml:mtext><mml:msup><mml:mrow><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mrow><mml:mn>1</mml:mn><mml:mo>/</mml:mo><mml:mn>4</mml:mn></mml:mrow></mml:msup><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mrow><mml:mstyle><mml:mrow><mml:msubsup><mml:mrow><mml:mo>&#x02211;</mml:mo></mml:mrow><mml:mrow><mml:mi>n</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:mi>N</mml:mi><mml:mo>=</mml:mo><mml:mn>12</mml:mn></mml:mrow></mml:msubsup><mml:mrow><mml:msup><mml:mrow><mml:mi>n</mml:mi></mml:mrow><mml:mrow><mml:mn>1</mml:mn><mml:mo>/</mml:mo><mml:mn>4</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mrow></mml:mstyle></mml:mrow></mml:mfrac><mml:mn>,</mml:mn></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:math></disp-formula>where <italic>s</italic> is the exponent order, <italic>N</italic> is <italic>N</italic>-mer length, and the <italic>N</italic>-mer_rank is the order of the frequency rank
+on the <italic>x</italic>-axis. We can see that the log-log E. coli curves tend to follow this
+law.</p><p>A comparison of the algorithm run times for 
+<italic>N</italic> = 10 and <italic>N</italic> = 100 for various genomes can be seen in <xref ref-type="table" rid="tab1">Table 
+1</xref>. 
+The optimized run times are similar to those seen in other computational
+methods for frequencies [<xref rid="B29" ref-type="bibr">29</xref>],
+but other methods rarely calculate <italic>N</italic>-mers larger than 20-mers [<xref rid="B30" ref-type="bibr">30</xref>]. We can compute any size,
+and one of the parameters we will be looking for is the optimum <italic>N</italic>-mer size for separability among the data
+sets.</p></sec><sec sec-type="subsection" id="subsec3.3"><title>3.3. Confidence Intervals for Accuracy Calculations</title><p>To validate our model, we choose 100 random fragments
+from each training-set genome, totaling 63 500 fragments tested. Once we
+receive the result of the scoring algorithm, the genome that scores the highest
+is marked as correct or incorrect using prior knowledge of the true genome. 
+This enables us to average the binomial distribution of correct(1)/incorrect(0)
+labels to produce an average accuracy per genome (as seen in <xref ref-type="fig" rid="fig5">Figure 
+5</xref>). The
+confidence of our average accuracy over 100 random fragments can be computed by
+using the formula for computing the confidence interval for a binomial
+distribution. The binomial distribution is approximated by a normal
+distribution. It has been shown that for over 30 trials, a binomial
+distribution obeys the normal distribution due to the central limit theorem. 
+The true accuracy with its confidence interval is defined as 
+<disp-formula id="eq5"><label>(7)</label><mml:math id="M8"><mml:mrow><mml:mtext>True &#x02009;Accuracy</mml:mtext><mml:mo>=</mml:mo><mml:mover accent="true"><mml:mrow><mml:mi>p</mml:mi></mml:mrow><mml:mrow><mml:mo>^</mml:mo></mml:mrow></mml:mover><mml:mo>&#x000b1;</mml:mo><mml:msub><mml:mrow><mml:mi>z</mml:mi></mml:mrow><mml:mrow><mml:mi>&#x003b1;</mml:mi><mml:mo>/</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msub><mml:msqrt><mml:mrow><mml:mfrac><mml:mrow><mml:mover accent="true"><mml:mrow><mml:mi>p</mml:mi></mml:mrow><mml:mrow><mml:mo>^</mml:mo></mml:mrow></mml:mover><mml:mrow><mml:mo minsize="0.75em" maxsize="0.75em">(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>&#x02212;</mml:mo><mml:mover accent="true"><mml:mrow><mml:mi>p</mml:mi></mml:mrow><mml:mrow><mml:mo>^</mml:mo></mml:mrow></mml:mover></mml:mrow><mml:mo minsize="0.75em" maxsize="0.75em">)</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:mfrac></mml:mrow></mml:msqrt><mml:mn>,</mml:mn></mml:mrow></mml:math></disp-formula>where <inline-formula><mml:math id="M9"><mml:mrow><mml:mover accent="true"><mml:mi>p</mml:mi><mml:mo>^</mml:mo></mml:mover></mml:mrow></mml:math></inline-formula> is the estimated average accuracy, <italic>z</italic><sub><italic>&#x003b1;</italic>/2</sub> is the critical value corresponding to the <italic>&#x003b1;</italic>/2 percentile of the standard normal
+distribution, <italic>n</italic> is the sample size, and <inline-formula><mml:math id="M10"><mml:mrow><mml:msqrt><mml:mrow><mml:mover accent="true"><mml:mrow><mml:mi>p</mml:mi></mml:mrow><mml:mrow><mml:mo>^</mml:mo></mml:mrow></mml:mover><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>&#x02212;</mml:mo><mml:mover accent="true"><mml:mrow><mml:mi>p</mml:mi></mml:mrow><mml:mrow><mml:mo>^</mml:mo></mml:mrow></mml:mover></mml:mrow><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo>/</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msqrt></mml:mrow></mml:math></inline-formula> is the standard deviation of the binomial
+distribution.</p></sec></sec><sec id="sec4"><title>4. Results</title><p>The naive Bayes classification is performed on all
+completed microbial sequences in the NCBI Genbank as of February 2008, which
+totaled 635 distinct microbial strains. The 635 microbes belong to 470 distinct
+species and 260 distinct genera in this data set. 404 strains are the sole
+member of their species class while 171 strains are the sole member of their
+genus in the data set. This shows that some knowledge will be lacking when it
+comes to species- and genus-class diversity. While 66 species contain more
+than one strain, 89 genera contain more than one strain. The microbial strains
+genome lengths range from 160&#x02009; K(bp) for Candidatus Carsonella to 13&#x02009; Mil(bp) for Sorangium Cellulosum.</p><sec sec-type="subsection" id="subsec4.1"><title>4.1. The Naive Bayes Classification of the
+635-Strain Genome Data Set</title><sec sec-type="subsubsection" id="subsubsec4.1.1"><title>4.1.1. Matching to the Nearest Strain</title><p>To evaluate the performance of our classifier's ability to classify a given 
+fragment in our database, we test over varying 
+<italic>N</italic> and fragment lengths used in the scoring
+function (<xref ref-type="disp-formula" rid="eq4">5</xref>). These two parameters are 
+varied and the scoring function is calculated for all 635 microbial genomes. 
+The fragment length is chosen as 500 bp, 100 bp, and 25 bp to simulate long and 
+short reads. The <italic>N</italic>-mer lengths is varied for 3-, 6-, 9-, 10-, 11-, 12-, 13-, 14-, and, 15-mers to test performance improvement over these
+lengths.</p><p>To validate our model, we choose 100 random fragments
+from each training-set genome, totaling 63 500 fragments tested. The 100
+fragments are averaged to obtain a strain accuracy per genome. <xref ref-type="fig" rid="fig5">Figure 5 </xref>demonstrates how increasing 
+<italic>N</italic> changes the individual strain accuracy rates. 
+For <italic>N</italic> = 9, most strains have a very poor 0&#x02013;5% classification rate, and 
+interestingly various strains have performance across the board with 12 mers.</p><p>For a 95% confidence interval, the critical value is
+1.96. Therefore, for the strains that have 50% average accuracy, we are 95%
+confident that they are between 
+40% and 60% using (<xref ref-type="disp-formula" rid="eq5">7</xref>), 
+with 1 &#x02212; <italic>&#x003b1;</italic>/2 = 0.95, <italic>z</italic><sub><italic>&#x003b1;</italic>/2</sub> = 1.96, <italic>n</italic> = 100,
+and <inline-formula><mml:math id="M11"><mml:mrow><mml:mover accent="true"><mml:mi>p</mml:mi><mml:mo>^</mml:mo></mml:mover><mml:mo>=</mml:mo><mml:mn>0.5</mml:mn><mml:mtext>&#x02009;</mml:mtext><mml:mo stretchy="false">(</mml:mo><mml:mn>50</mml:mn><mml:mi>%</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math></inline-formula>. The &#x000b1;9.8 interval is an upper bound. The interval has a
+quadratic drop-off as the binomial estimates tend towards 0% or 100%.</p><p>The accuracy per genome is then averaged and produces
+a composite &#x0201c;overall&#x0201d; accuracy for the genome strains in our data set. 
+This overall accuracy is computed for each fragment and 
+<italic>N</italic>-mer length. The accuracy of each strain
+classification can be seen in <xref ref-type="fig" rid="fig6">Figure 6</xref>. The strain average accuracies are then
+averaged together to form an overall average of the 63,500 fragments. The upper
+bound on the confidence interval for the overall accuracy is &#x000b1;0.4 %. To calculate this bound, the same
+parameters for (<xref ref-type="disp-formula" rid="eq5">7</xref>) are used except 
+<italic>n</italic> = 100&#x02217;635. The accuracy seems to level off for 
+12 mers for 500 bp and 100 bp fragments while 
+25 bp fragments do the best with 
+15-mer calculations (and probably beyond).</p><p>Because Sandberg et al. [<xref rid="B31" ref-type="bibr">31</xref>] never ventured past 
+<italic>N</italic> = 9 for the <italic>N</italic>-mer size, the result of a jump in performance
+is never discovered. Again, we believe this is due to the fact that <italic>N</italic>-mer sparsity begins at around 
+<italic>N</italic> = 9 because that is when the number of possible
+combinations surpasses the lengths of the microbial genomes.</p></sec><sec sec-type="subsubsection" id="subsubsec4.1.2"><title>4.1.2. Classification to Higher-Level Classes: Examples of
+Species and Genera</title><p>One of the reasons for misclassification of fragments is the sequence 
+overlap between different strains within the same species, 
+and possibly within species belonging to the same genus. 
+In particular, for the case of strains, different strains may be characterized by 
+the loss of genes, addition of genes, or possibly the addition of extrachromosomal genes 
+through the addition of a plasmid. In those cases, there may be only random single base changes in the
+remainder of their genome, if any. Thus, fragments taken from them using our
+procedure described above may identically appear in multiple organism
+sequences. Moreover, if only one base differs, the <italic>N</italic>-mer frequency profiles may
+be sufficiently similar for the NBC to misclassify the fragment. To study this
+issue, we consider the performance of fragment identification by pooling the
+results based on species and genus identity. In doing so, we define genus,
+species, and strain identifies based on the conventional NCBI taxonomy. For
+example, Yersinia pestis CO-92 and Yersinia pestis KIM-9 are two strains of the
+same species; Yersinia pestis and Yersinia pseudotuberculosis are two species
+of the same genus.</p><p>Therefore, the classification with pooling is
+performed for &#x0201c;species&#x0201d; and &#x0201c;genus&#x0201d; classes instead of individual
+strain classes. In other words, as long as the genome is classified to a genome
+within the same species or genera, it is considered correct for that classification. 
+A comparison of the strains, species, and genera classifications can be seen
+for 500 bp fragments in <xref ref-type="fig" rid="fig7">Figure 7</xref>, 100 bp fragments 
+in <xref ref-type="fig" rid="fig8">Figure 8</xref>, and 25 bp fragments in <xref ref-type="fig" rid="fig9">Figure 
+9</xref>, respectively. The accuracy for genera is 
+better as expected but follows the general trends for increasing <italic>N</italic>. 
+For genera, the accuracy levels off at 99.8% for 500 bp, 99.3% for 100 bp, and
+97.5% 25 bp fragments, respectively, and shows the potential power of the
+method.</p></sec></sec><sec sec-type="subsection" id="subsec4.2"><title>4.2. Comparison Against BLAST Results for
+25 bp Fragments for the 635 Genome Data Set</title><p>BLAST [<xref rid="B9" ref-type="bibr">9</xref>] is expected to do very well
+for long fragment lengths. In this section, a direct comparison of how the
+naive Bayes classifier compares to BLAST is shown. It has been reported that
+BLAST does not yield sufficient results for 25 bp because of ambiguity
+[<xref rid="B6" ref-type="bibr">6</xref>]. It looks for
+local and global alignments of sequences to score a particular fragment's
+identity. But there are a slew of parameters controlling the significance of
+this score, and when a scientist is looking for the closest matching genome to
+a particular sequence, we will see that in some rare cases, it is incorrect or
+does not provide an answer. In many cases, it provides too many of the same top
+scores, yielding ambiguous results. To conduct the comparison, we took all 63
+500 fragments (100 fragments per database genome), and BLASTed them against our
+635 genome database. The results were compared to the <italic>N</italic> = 15 NBC case.</p><p>BLAST finds the significance of alignment via an
+<italic>E</italic>-value, which is the number of highest scoring pairs (HSPs) expected by
+chance. Therefore, the higher the <italic>E</italic>-value, the lower the significance. In our
+tests, we desired BLAST to give all tied HSPs despite the score; therefore, we
+desire an infinite <italic>E</italic>-value. But too many hits were produced by the local BLAST
+program for an <italic>E</italic>-value above 3000 causing memory errors. This limited us to use
+an <italic>E</italic>-value of 3000, but because this means that 3000 HSPs may occur by chance, it
+is a reasonable <italic>E</italic>-value to use in BLAST since it is likely to cause BLAST to
+produce insignificant scores and hits. More on the <italic>E</italic>-value and BLAST is
+discussed in [<xref rid="B9" ref-type="bibr">9</xref>].</p><p>Despite the high <italic>E</italic>-value, 287 or 0.5% of the fragments
+scored &#x0201c;No Hit&#x0201d; which can be interpreted that all matches in the database
+were insignificant. One must remember that all fragments BLASTed are from the
+database, so this is an unexpected result from BLAST. Many of these fragments
+are only found one time in one genome across the database. Because of this
+uniqueness, NBC is able to classify the correct genome that produced it, 71% of
+the time. There is also the issue of multiple top-scoring hits because BLAST
+only gave 66% of the fragments a unique top-scoring hit and is correct for all
+of them. Comparably, the naive Bayes classifier classifies 99% of those as
+well. Out of the multiple top-scoring hits, BLAST completely missed 13 of them,
+meaning that there are multiple top-hits but the correct one is not in that
+list. The remaining ones have the correct classification embedded in a list
+that could range from 2 to 200 top-scoring hits. If one 
+&#x0201c;flips a coin&#x0201d; whenever multiple ambiguous choices occur for a top hit, the 
+correct genome can be guessed 29% of the time overall. The NBC chooses the 
+correct genome 31% of the time out of this set. 
+A comparison between the (a) unique BLAST hits, (b)
+multiple top-hits, and (c) no hits cases can be seen in <xref ref-type="table" rid="tab2">Table 
+2</xref>.</p><p>To summarize, BLAST is able to find the correct genome
+(even if ambiguous) in 63200 of the reads but can only resolve 41641 uniquely. 
+With the top hits and flipping a coin for the ambiguous multihits, BLAST would
+get 47889 (75.4%) correct. The NBC scored 48118 (75.8%) correct which is shown
+in <xref ref-type="fig" rid="fig6">Figure 6</xref>. If <italic>N</italic> is increased, the NBC can potentially get
+better strain resolution.</p><p>The primary issue with BLAST concerning small
+fragments is that the probability of a unique score becomes lower. Due to NBC's
+spatial independence, the algorithm can classify correctly 31% of the fragments
+that are ambiguous in BLAST. The NBC algorithm can be extended to exploit its
+top multiple scores to obtain better accuracy. With an intelligent examination
+of the scores, it may be able to get better performance than just predicting
+the genome with the maximum score. While BLAST gives the same score to multiple
+organisms, NBC ranks the organisms by score. Surprisingly, NBC never has a tied
+score for any of the 63 500 fragments. This means that each fragment combination
+yields a unique probability for the top-ranking genome. This outcome opens up
+further work in how to exploit the histogram of the genomes' NB
+prior and posterior probability scores to gain
+better accuracy. In any case, for 25 bp
+fragments, it is shown that NBC performs at least as well as BLAST with no
+augmentations.</p></sec><sec sec-type="subsection" id="subsec4.3"><title>4.3. Cross-Validation Performance of NBC
+Versus BLAST (Using a 9-Species Subset)</title><p>In order to fully assess the performance of both methods, we propose to leave some of the
+data set out for testing. When carefully partitioning the data so that each
+test set contains a unique subset, this is known as cross-validation and
+particularly <italic>K</italic>-fold cross-validation for <italic>K</italic> partitions. A major obstacle in conducting
+cross-validation for our data set is choosing the <italic>K</italic>. We treat each genome as a single strain, training only on full genomes, and do
+not train on parts of genomes. Thus, for cross-validation, we wish to train on
+a subset of the example strains in a species and then classify test-strain
+fragments to the closest training-set species. If strains classify to a strain
+within their same species, it is marked as correct. As reported before, 66
+species contain more than one strain, and many classes contain 2 example
+strains.</p><p>Cross-validation involves 
+<italic>K</italic> partitions. In many cases, the rule of thumb
+for cross-validation is to use 
+10 training/test sets 
+[<xref rid="B32" ref-type="bibr">32</xref>]. One of the many reasons
+for <italic>K</italic> = 10 is to uniformly train on 90% of the data at a
+time in order to obtain a better estimate. This poses a difficulty for our
+sparse data set because only 4 species have 10 or more strains. 9 species have
+5 or more example strains, and therefore we determine 5-fold cross-validation
+to be sufficient for this small data set. The 9 species classes, containing 77
+strains, are selected. For each 5-fold cross-validation set, about 62 strains
+are trained on while about 15 strains are left out (approximately 1/5 of each
+class).</p><sec sec-type="subsubsection" id="subsubsec4.3.1"><title>4.3.1. The NBC Species Cross-Validation Results</title><p>In <xref ref-type="fig" rid="fig10">Figure 10</xref>, the performance of the 
+classifier using 5-fold cross-validation is shown. Each fragment size can be 
+classified to over 90% accuracy. An interesting note is that while the maximum 
+performance is for 15 mers for 500 bp and 100 bp fragments, 14 mers yield the 
+maximum performance for the 25 bp fragments. The accuracy and standard deviation, 
+respectively, for each fragment size is 97.3 &#x000b1; 1.0% for 500 bp fragments, 95.3% &#x000b1; 1.3% for 100 bp fragments, and 90.2% &#x000b1; 1.2% for 25 bp fragments.</p></sec><sec sec-type="subsubsection" id="subsubsec4.3.2"><title>4.3.2. Comparison Against 25 bp BLAST Cross-Validation</title><p>A BLAST database is built using each &#x0223c;60-strain training set, and the &#x0223c;15 strains are left out at a time to form a
+validation set. 25 bp validation fragments are BLASTed, and if the top matches
+contain only those strains belonging to fragment's species, the results are
+considered correct. We generate a list of the size of all possible 4<sup><italic>N</italic></sup> combinations of <italic>N</italic>-mers. On the other
+hand, if the top-scoring correct species is tied with an incorrect species, the
+classification is marked as incorrect. Both no hits cases and purely incorrect
+hits are marked as incorrect as well. 25 bp fragments are scored with an
+accuracy of 89.2% &#x000b1; 1.9%, which is comparable performance to NBC's
+90.2% &#x000b1; 1.2%. There is also slightly less variance for
+NBC showing that it has the potential to be more stable classifier for species
+classification. As shown in the strain-level BLAST comparison, NBC performs at
+least as well as BLAST with no augmentations, and this holds true for
+species-level accuracy using never seen before strains in cross-validation.</p></sec></sec><sec sec-type="subsection" id="subsec4.4"><title>4.4. 10 K Reads from the Sargasso Sea Set</title><p>The Sargasso Sea data set was published in 2004
+[<xref rid="B33" ref-type="bibr">33</xref>] by Venter et al. 
+Four geographic sampling sites' microbial cells were shotgun sequenced yielding &#x0223c;1.66 million reads of average length 818 bp. 
+For our analysis, we selected the first 10 000 reads from Sample 1 for analysis
+which Huson et al. have also analyzed in their MEGAN analysis [<xref rid="B6" ref-type="bibr">6</xref>]. In this 
+section, we wish to
+show how our classifier can be used to analyze this data and compare it to
+Huson's results which uses BLAST and the NCBI taxonomy database. In metagenomic
+applications, scientists seek the overall taxonomic content, or the
+evolutionary relationship of all the microorganisms in the sample. The first
+step is to identify different strains, or just to identify what phyla/genera an
+organism is from. In our results, we do an exact strain-matching test on the
+set (where species/genera can be inferred, such as the example of Yersinia
+pestis/pseudotuberculosis in <xref ref-type="sec" rid="subsubsec4.1.2">Section 4.1.2</xref>. We evaluate the 10 K
+fragments through our classifier for <italic>N</italic> = 9 mers and <italic>N</italic> = 15 mers to see how different <italic>N</italic> performed for strain recognition to our
+database and compared it with MEGAN's BLAST-based results.</p><p>A comparison of the results can be seen in <xref ref-type="table" rid="tab3">Table 
+3</xref>. Venter's analysis of the Burkholderia 
+genera in the Sargasso Sea sample 1 is around 38.5%. With the exact same 
+first 10 K reads of sample 1, MEGAN found
+Burkholderia to be 25.2% of the sample. In our top 10 analysis, we find
+Burkholderia is 21% for 9 mers and 24.6% for 15 mers). Venter et al. estimated
+14.4% for the Shewanella genera in Sample 1. MEGAN specifically finds 17.4% In
+our top 10 analysis, Shewanella composes 11.4% with 9 mers, and 17.4% with 15
+mers.</p><p>As explained above, the NBC is able to find the
+classification rate comparable to BLAST methods of a genera within the top 10
+content of the sample for 15-mer analysis. This leads us to a question: do
+higher <italic>N</italic>-mer models overfit the unknown data? for
+example, Burkholderia 383 is shown to have a substantially greater percentage
+in the sample in the 15-mer set (20.4%) over the 9-mer set (6.93%). The same
+phenomenon occurs with Shewanella ANA-3.</p></sec></sec><sec id="sec5"><title>5. Discussion</title><p>While the
+naive Bayes classifier works well on our training data set, is comparable to
+BLAST, and is able to classify some genomes in an environmental sample, it
+needs further refinement. For example, in <xref ref-type="fig" rid="fig5">Figure 5</xref>, one can see that the 9 mers have consistently poor accuracy for 25 bp
+fragments, but for 15 mers, the accuracy performs well. Although,
+one can see that the 15 mer histogram is approaching a binomial
+distribution, because most strains perform near 100% but some strains never
+able to resolve and perform poorly near 10%. These fragments should be
+investigated further.</p><p>We compare our work to that of Sandberg et al. 
+[<xref rid="B31" ref-type="bibr">31</xref>]. Sandberg used
+parts of 28 eubacterial and archaeal genomes to train a naive Bayes classifier
+that would classify segments into 25 species classes. The performance worked
+quite well and obtained &#x0003e;85% accuracy for more fragment sizes of more
+than 400 bp, and a promising result is that 35 bp reached 35% accuracy. An
+unintuitive result in the work of Sandberg et al. was that there seemed to be
+an upper threshold on how much the <italic>N</italic>-mer (motif in the paper's terminology) size
+could help in the naive Bayes computation. In our computations, we show that
+for a large data set, the optimal <italic>N</italic>-mer size increases as the length of the
+fragment decreases. Also, the <italic>N</italic>mer length needed is larger than what Sandberg
+et al. needed due to the larger size of our database. On the training data, we
+show we can achieve 89% strain accuracy and 99.8% genus accuracy for 
+500 bp fragments. And a great result is that the NBC can resolve training data 
+25 bp fragments with 76% accuracy for strains and 98% for genera. Training on
+multistrain species, we show that this method can obtain over 90% for all
+fragment sizes on unseen strains, and we obtain comparable results to BLAST. In
+fact, there has been little analysis on the performance of BLAST for general
+organism recognition, and this paper opens the opportunity for further study of
+BLAST to metagenomic applications. The results demonstrate great promise for
+use of this classifier in metagenomic applications.</p><p>Our results are comparable to Huson et al.'s work
+[<xref rid="B6" ref-type="bibr">6</xref>] for metagenomic
+samples, and for comparison, <xref ref-type="table" rid="tab4">Table 4 </xref>lists the top 10 of MEGAN and our
+method's side-by-side comparison. There are a few surprising differences. While
+MEGAN finds <italic>Candidatus pelagibacter</italic> as the second most abundant
+organism, the NBC finds it as a less common sequence. It has been shown in the
+literature to be a prolific organism and common in the Sargasso Sea [<xref rid="B34" ref-type="bibr">34</xref>]. However, about 20% of the
+reads that gave <italic>Candidatus pelagibacter</italic> in MEGAN correspond to <italic>Trichodesmium
+erythraeum</italic> in the naive Bayes method. While 20%, 50% (9 mers, 15 mers) of
+the <italic>pelagibacter</italic> reads end up being <italic>Clostridium beijerinckii</italic>. In
+addition, a surprising difference from MEGAN is that more reads, 533/584 (<italic>N</italic> = 9/12), are assigned to <italic>Trichodesmium erythraeum</italic> IMS101. This organism has been found in the Sargasso sea through gene
+expression studies [<xref rid="B35" ref-type="bibr">35</xref>], but MEGAN only shows 3 reads for this organism. The
+naive Bayes classifier finds this organism consistently in the top 10 organisms
+present. The NBC could signal some of these organisms that BLAST-like methods
+do not find, but further analysis should be conducted.</p><p>The differences of our Sargasso sea findings from the
+BLAST findings cause concern, especially since it has been shown that <italic>Candidatus
+pelagibacter</italic> is arguably the most abundant prokaryote in the ocean
+[<xref rid="B36" ref-type="bibr">36</xref>]. With further
+analysis, we find that the NBC gives preference to longer genomes for long
+fragments and high <italic>N</italic>. 
+Comparing Tables <xref ref-type="table" rid="tab4">4</xref> and <xref ref-type="table" rid="tab3">3</xref>, we can see that <italic>pelagibacter</italic> is the 2nd
+most common taxa found from the reads in BLAST, but the NBC does not find it in
+its top 10. Instead, genomes that have 10&#x02013;14 million bases show up high on the
+list. For example, when <italic>N</italic> = 15,
+there are 1 billion possible words, but all genome sizes are between 320 K and
+26 million nucleotides (both sides). With those genome sizes, the 15 mers that exist in them are usually singletons
+(one occurrence). Therefore, a long genome that is probabilistically more
+likely to have a 15 mers from a fragment, is more likely to get a
+&#x0201c;hit&#x0201d; and have a higher score than a small genome. This is especially the
+case when a fragment is not from a genome in the database. Therefore, the
+scoring vector needs more intelligence for classifying unknown fragments in order
+to not penalize smaller genomes.</p><p>The analysis of <italic>n</italic>-gram models may yield insight into ways to
+distribute the probability mass in a more effective manner. Overall, while the
+accuracy is quite good for fragments existing in our database, the method will
+need to be improved for unseen species and even genera, and how to assess if
+the fragment is from an unseen genome.</p></sec><sec id="sec6"><title>6. Conclusion</title><p>Our approach differs from sequence alignment-based
+methods because word composition of the sequences is taken into account instead
+of string matching and alignment. Counting the word-frequencies present in a
+genome represents global features of the genome as opposed to the local
+similarities and differences scored by alignment-based methods. More than ever,
+a method is needed to classify all fragments resulting from high-throughput
+sequencing technology. It is shown that a global classifier that utilizes <italic>N</italic>-mer frequencies is able to achieve good
+results (90% for cross-validation species-resolution accuracy) and has great
+potential to be used in metagenomic applications. In our work, we demonstrate
+that this approach is viable for any fragment and is scalable to hundreds of
+genomes. It also performs well for strain and higher-class identifications. It
+also has the advantage of resolution despite classifying ubiquitous genomic
+fragments.</p><p>In conclusion, global <italic>N</italic>-mer frequency-based profiling
+based on NBC is a general method for classifying organisms and their genomic
+content. It can be used for a broad range of applications for analyzing all
+data from a metagenomic set that will be generated through large-scale projects
+in ecology, agriculture, and human health. Given that the Human Genome Project
+is still at an early stage, these new kinds of massive data sets will require
+innovative informatics approaches for their analysis and translating them into
+useful knowledge.</p></sec></body><back><ack><title>Acknowledgment</title><p>The authors
+would like to thank Christopher Pearson for the <italic>N</italic>-mer counting code.</p></ack><ref-list><ref id="B1"><label>1</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>M&#x000fc;ller</surname><given-names>H-M</given-names></name><name><surname>Koonin</surname><given-names>SE</given-names></name></person-group><article-title>Vector space classification of DNA sequences</article-title><source><italic>Journal of Theoretical Biology</italic></source><year>2003</year><volume>223</volume><issue>2</issue><fpage>161</fpage><lpage>169</lpage><pub-id pub-id-type="pmid">12814599</pub-id></element-citation></ref><ref id="B2"><label>2</label><element-citation publication-type="confproc"><person-group person-group-type="author"><name><surname>Yeo</surname><given-names>G</given-names></name><name><surname>Burge</surname><given-names>CB</given-names></name></person-group><article-title>Maximum entropy modeling of short sequence motifs with applications to RNA splicing signals</article-title><conf-name>In: Proceedings of the 7th Annual International Conference on Computational Molecular 
+Biology (RECOMB '03)</conf-name><conf-date>April 2003</conf-date><conf-loc>Berlin, Germany</conf-loc><fpage>322</fpage><lpage>331</lpage></element-citation></ref><ref id="B3"><label>3</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Yousef</surname><given-names>M</given-names></name><name><surname>Jung</surname><given-names>S</given-names></name><name><surname>Kossenkov</surname><given-names>AV</given-names></name><name><surname>Showe</surname><given-names>LC</given-names></name><name><surname>Showe</surname><given-names>MK</given-names></name></person-group><article-title>Na&#x000ef;ve Bayes for microRNA target predictions&#x02014;machine learning for microRNA targets</article-title><source><italic>Bioinformatics</italic></source><year>2007</year><volume>23</volume><issue>22</issue><fpage>2987</fpage><lpage>2992</lpage><pub-id pub-id-type="pmid">17925304</pub-id></element-citation></ref><ref id="B4"><label>4</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Gupta</surname><given-names>RS</given-names></name><name><surname>Griffiths</surname><given-names>E</given-names></name></person-group><article-title>Critical issues in bacterial phylogeny</article-title><source><italic>Theoretical Population Biology</italic></source><year>2002</year><volume>61</volume><issue>4</issue><fpage>423</fpage><lpage>434</lpage><pub-id pub-id-type="pmid">12167362</pub-id></element-citation></ref><ref id="B5"><label>5</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Ward</surname><given-names>BB</given-names></name></person-group><article-title>How many species of prokaryotes are there?</article-title><source><italic>Proceedings of the National Academy of Sciences of the United States of America</italic></source><year>2002</year><volume>99</volume><issue>16</issue><fpage>10234</fpage><lpage>10236</lpage><pub-id pub-id-type="pmid">12149517</pub-id></element-citation></ref><ref id="B6"><label>6</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Huson</surname><given-names>DH</given-names></name><name><surname>Auch</surname><given-names>AF</given-names></name><name><surname>Qi</surname><given-names>J</given-names></name><name><surname>Schuster</surname><given-names>SC</given-names></name></person-group><article-title>MEGAN analysis of metagenomic data</article-title><source><italic>Genome Research</italic></source><year>2007</year><volume>17</volume><issue>3</issue><fpage>377</fpage><lpage>386</lpage><pub-id pub-id-type="pmid">17255551</pub-id></element-citation></ref><ref id="B7"><label>7</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Wommack</surname><given-names>KE</given-names></name><name><surname>Bhavsar</surname><given-names>J</given-names></name><name><surname>Ravel</surname><given-names>J</given-names></name></person-group><article-title>Metagenomics: read length matters</article-title><source><italic>Applied and Environmental Microbiology</italic></source><year>2008</year><volume>74</volume><issue>5</issue><fpage>1453</fpage><lpage>1463</lpage><pub-id pub-id-type="pmid">18192407</pub-id></element-citation></ref><ref id="B8"><label>8</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Manichanh</surname><given-names>C</given-names></name><name><surname>Chapple</surname><given-names>CE</given-names></name><name><surname>Frangeul</surname><given-names>L</given-names></name><name><surname>Gloux</surname><given-names>K</given-names></name><name><surname>Guigo</surname><given-names>R</given-names></name><name><surname>Dore</surname><given-names>J</given-names></name></person-group><article-title>A comparison of random sequence reads versus 16S rDNA sequences for estimating the biodiversity of a metagenomic library</article-title><source><italic>Nucleic Acids Research</italic></source><year>2008</year><volume>36</volume><issue>16</issue><fpage>5180</fpage><lpage>5188</lpage><pub-id pub-id-type="pmid">18682527</pub-id></element-citation></ref><ref id="B9"><label>9</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Altschul</surname><given-names>SF</given-names></name><name><surname>Gish</surname><given-names>W</given-names></name><name><surname>Miller</surname><given-names>W</given-names></name><name><surname>Myers</surname><given-names>EW</given-names></name><name><surname>Lipman</surname><given-names>DJ</given-names></name></person-group><article-title>Basic local alignment search tool</article-title><source><italic>Journal of Molecular Biology</italic></source><year>1990</year><volume>215</volume><issue>3</issue><fpage>403</fpage><lpage>410</lpage><pub-id pub-id-type="pmid">2231712</pub-id></element-citation></ref><ref id="B10"><label>10</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Wang</surname><given-names>Q</given-names></name><name><surname>Garrity</surname><given-names>GM</given-names></name><name><surname>Tiedje</surname><given-names>JM</given-names></name><name><surname>Cole</surname><given-names>JR</given-names></name></person-group><article-title>Na&#x000ef;ve Bayesian classifier for rapid assignment of rRNA sequences into the new bacterial taxonomy</article-title><source><italic>Applied and Environmental Microbiology</italic></source><year>2007</year><volume>73</volume><issue>16</issue><fpage>5261</fpage><lpage>5267</lpage><pub-id pub-id-type="pmid">17586664</pub-id></element-citation></ref><ref id="B11"><label>11</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Krause</surname><given-names>L</given-names></name><name><surname>Diaz</surname><given-names>NN</given-names></name><name><surname>Goesmann</surname><given-names>A</given-names></name><etal/></person-group><article-title>Phylogenetic classification of short environmental DNA fragments</article-title><source><italic>Nucleic Acids Research</italic></source><year>2008</year><volume>36</volume><issue>7</issue><fpage>2230</fpage><lpage>2239</lpage><pub-id pub-id-type="pmid">18285365</pub-id></element-citation></ref><ref id="B12"><label>12</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Needleman</surname><given-names>SB</given-names></name><name><surname>Wunsch</surname><given-names>CD</given-names></name></person-group><article-title>A general method applicable to the search for similarities in the amino acid sequence of two proteins</article-title><source><italic>Journal of Molecular Biology</italic></source><year>1970</year><volume>48</volume><issue>3</issue><fpage>443</fpage><lpage>453</lpage><pub-id pub-id-type="pmid">5420325</pub-id></element-citation></ref><ref id="B13"><label>13</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Smith</surname><given-names>TF</given-names></name><name><surname>Waterman</surname><given-names>MS</given-names></name></person-group><article-title>Identification of common molecular subsequences</article-title><source><italic>Journal of Molecular Biology</italic></source><year>1981</year><volume>147</volume><issue>1</issue><fpage>195</fpage><lpage>197</lpage><pub-id pub-id-type="pmid">7265238</pub-id></element-citation></ref><ref id="B14"><label>14</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Higgins</surname><given-names>DG</given-names></name><name><surname>Sharp</surname><given-names>PM</given-names></name></person-group><article-title>CLUSTAL: a package for performing multiple sequence alignment on a microcomputer</article-title><source><italic>Gene</italic></source><year>1988</year><volume>73</volume><issue>1</issue><fpage>237</fpage><lpage>244</lpage><pub-id pub-id-type="pmid">3243435</pub-id></element-citation></ref><ref id="B15"><label>15</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Abby</surname><given-names>S</given-names></name><name><surname>Daubin</surname><given-names>V</given-names></name></person-group><article-title>Comparative genomics and the evolution of prokaryotes</article-title><source><italic>Trends in Microbiology</italic></source><year>2007</year><volume>15</volume><issue>3</issue><fpage>135</fpage><lpage>141</lpage><pub-id pub-id-type="pmid">17289390</pub-id></element-citation></ref><ref id="B16"><label>16</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Koonin</surname><given-names>EV</given-names></name><name><surname>Makarova</surname><given-names>KS</given-names></name><name><surname>Aravind</surname><given-names>L</given-names></name></person-group><article-title>Horizontal gene transfer in prokaryotes: quantification and classification</article-title><source><italic>Annual Review of Microbiology</italic></source><year>2001</year><volume>55</volume><fpage>709</fpage><lpage>742</lpage></element-citation></ref><ref id="B17"><label>17</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Neph</surname><given-names>S</given-names></name><name><surname>Tompa</surname><given-names>M</given-names></name></person-group><article-title>MicroFootPrinter: a tool for phylogenetic footprinting in prokaryotic genomes</article-title><source><italic>Nucleic Acids Research</italic></source><year>2006</year><volume>34</volume><fpage>W366</fpage><lpage>W368</lpage><pub-id pub-id-type="pmid">16845027</pub-id></element-citation></ref><ref id="B18"><label>18</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Sebat</surname><given-names>JL</given-names></name><name><surname>Colwell</surname><given-names>FS</given-names></name><name><surname>Crawford</surname><given-names>RL</given-names></name></person-group><article-title>Metagenomic profiling: microarray analysis of an environmental genomic library</article-title><source><italic>Applied and Environmental Microbiology</italic></source><year>2003</year><volume>69</volume><issue>8</issue><fpage>4927</fpage><lpage>4934</lpage><pub-id pub-id-type="pmid">12902288</pub-id></element-citation></ref><ref id="B19"><label>19</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Galbraith</surname><given-names>EA</given-names></name><name><surname>Antonopoulos</surname><given-names>DA</given-names></name><name><surname>White</surname><given-names>BA</given-names></name></person-group><article-title>Suppressive subtractive hybridization as a tool for identifying genetic diversity in an environmental metagenome: the rumen as a model</article-title><source><italic>Environmental Microbiology</italic></source><year>2004</year><volume>6</volume><issue>9</issue><fpage>928</fpage><lpage>937</lpage><pub-id pub-id-type="pmid">15305918</pub-id></element-citation></ref><ref id="B20"><label>20</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Dunn</surname><given-names>JJ</given-names></name><name><surname>McCorkle</surname><given-names>SR</given-names></name><name><surname>Praissman</surname><given-names>LA</given-names></name><etal/></person-group><article-title>Genomic signature tags (GSTs): a system for profiling genomic DNA</article-title><source><italic>Genome Research</italic></source><year>2002</year><volume>12</volume><issue>11</issue><fpage>1756</fpage><lpage>1765</lpage><pub-id pub-id-type="pmid">12421763</pub-id></element-citation></ref><ref id="B21"><label>21</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Teeling</surname><given-names>H</given-names></name><name><surname>Waldmann</surname><given-names>J</given-names></name><name><surname>Lombardot</surname><given-names>T</given-names></name><name><surname>Bauer</surname><given-names>M</given-names></name><name><surname>Gl&#x000f6;ckner</surname><given-names>FO</given-names></name></person-group><article-title>TETRA: a web-service and a stand-alone program for the analysis and comparison of tetranucleotide usage patterns in DNA sequences</article-title><source><italic>BMC Bioinformatics</italic></source><year>2004</year><volume>5, article 163</volume><fpage>1</fpage><lpage>7</lpage><pub-id pub-id-type="pmid">14706121</pub-id></element-citation></ref><ref id="B22"><label>22</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Pride</surname><given-names>DT</given-names></name><name><surname>Meinersmann</surname><given-names>RJ</given-names></name><name><surname>Wassenaar</surname><given-names>TM</given-names></name><name><surname>Blaser</surname><given-names>MJ</given-names></name></person-group><article-title>Evolutionary implications of microbial genome tetranucleotide frequency biases</article-title><source><italic>Genome Research</italic></source><year>2003</year><volume>13</volume><issue>2</issue><fpage>145</fpage><lpage>158</lpage><pub-id pub-id-type="pmid">12566393</pub-id></element-citation></ref><ref id="B23"><label>23</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Fertil</surname><given-names>B</given-names></name><name><surname>Massin</surname><given-names>M</given-names></name><name><surname>Lespinats</surname><given-names>S</given-names></name><name><surname>Devic</surname><given-names>C</given-names></name><name><surname>Dumee</surname><given-names>P</given-names></name><name><surname>Giron</surname><given-names>A</given-names></name></person-group><article-title>GENSTYLE: exploration and analysis of DNA sequences with genomic signature</article-title><source><italic>Nucleic Acids Research</italic></source><year>2005</year><volume>33</volume><issue>supplement 2</issue><fpage>W512</fpage><lpage>W515</lpage><pub-id pub-id-type="pmid">15980524</pub-id></element-citation></ref><ref id="B24"><label>24</label><element-citation publication-type="confproc"><person-group person-group-type="author"><name><surname>Ganapathiraju</surname><given-names>M</given-names></name><name><surname>Klein-Seetharaman</surname><given-names>J</given-names></name><name><surname>Rosenfeld</surname><given-names>R</given-names></name><etal/></person-group><article-title>Comparative n-gram analysis of whole-genome sequences</article-title><conf-name>In: Proceedings of the Human Language Technologies Conference (HLT '02)</conf-name><conf-date>March 2002</conf-date><conf-loc>San Diego, Calif, USA</conf-loc></element-citation></ref><ref id="B25"><label>25</label><element-citation publication-type="confproc"><person-group person-group-type="author"><name><surname>Apostolico</surname><given-names>A</given-names></name><name><surname>Bock</surname><given-names>ME</given-names></name><name><surname>Lonardi</surname><given-names>S</given-names></name></person-group><article-title>Monotony of surprise and large-scale quest for unusual words</article-title><conf-name>In: Proceedings of the 6th Annual International Conference on Computational 
+Molecular Biology (RECOMB '02)</conf-name><conf-date>April 2002</conf-date><conf-loc>Washington, DC, USA</conf-loc><fpage>22</fpage><lpage>31</lpage></element-citation></ref><ref id="B26"><label>26</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>McHardy</surname><given-names>AC</given-names></name><name><surname>Mart&#x000ed;n</surname><given-names>HG</given-names></name><name><surname>Tsirigos</surname><given-names>A</given-names></name><name><surname>Hugenholtz</surname><given-names>P</given-names></name><name><surname>Rigoutsos</surname><given-names>I</given-names></name></person-group><article-title>Accurate phylogenetic classification of variable-length DNA fragments</article-title><source><italic>Nature Methods</italic></source><year>2007</year><volume>4</volume><issue>1</issue><fpage>63</fpage><lpage>72</lpage><pub-id pub-id-type="pmid">17179938</pub-id></element-citation></ref><ref id="B27"><label>27</label><element-citation publication-type="confproc"><person-group person-group-type="author"><name><surname>Rish</surname><given-names>I</given-names></name></person-group><article-title>An empirical study of the naive bayes classifier</article-title><conf-name>In: Proceedings of the 17th International Joint Conference on
+Artificial Intelligence (IJCAI '01)</conf-name><conf-date>August 2001</conf-date><conf-loc>Seattle, Wash, USA</conf-loc><fpage>41</fpage><lpage>46</lpage></element-citation></ref><ref id="B28"><label>28</label><element-citation publication-type="book"><person-group person-group-type="author"><name><surname>Zipf</surname><given-names>GK</given-names></name></person-group><source><italic>Human Behavior and the Principle of Least-Effort</italic></source><year>1949</year><publisher-loc>Cambridge, Mass, USA</publisher-loc><publisher-name>Addison-Wesley</publisher-name></element-citation></ref><ref id="B29"><label>29</label><element-citation publication-type="confproc"><person-group person-group-type="author"><name><surname>Hampikian</surname><given-names>G</given-names></name><name><surname>Andersen</surname><given-names>T</given-names></name></person-group><article-title>Absent sequences: nullomers and primes</article-title><conf-name>In: Proceedings of the Pacific Symposium on Biocomputing, vol. 12</conf-name><conf-date>January 2007</conf-date><conf-loc>Boise, Idaho, USA</conf-loc><fpage>355</fpage><lpage>366</lpage></element-citation></ref><ref id="B30"><label>30</label><element-citation publication-type="book"><person-group person-group-type="author"><name><surname>Fofanov</surname><given-names>VY</given-names></name><name><surname>Putonti</surname><given-names>C</given-names></name><name><surname>Chumakov</surname><given-names>S</given-names></name><name><surname>Pettitt</surname><given-names>BM</given-names></name><name><surname>Fofanov</surname><given-names>Y</given-names></name></person-group><article-title>Fast algorithm for the analysis of the presence of short oligonucleotide sequences in genomic sequences</article-title><year>May 2005</year><issue>Tech. Rep. #UH-CS-05-11</issue><publisher-loc>Houston, Tex, USA</publisher-loc><publisher-name>University of Houston</publisher-name><comment/></element-citation></ref><ref id="B31"><label>31</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Sandberg</surname><given-names>R</given-names></name><name><surname>Winberg</surname><given-names>G</given-names></name><name><surname>Br&#x000e4;nden</surname><given-names>C-I</given-names></name><name><surname>Kaske</surname><given-names>A</given-names></name><name><surname>Ernberg</surname><given-names>I</given-names></name><name><surname>C&#x000f6;ster</surname><given-names>J</given-names></name></person-group><article-title>Capturing whole-genome characteristics in short sequences using a na&#x000ef;ve Bayesian classifier</article-title><source><italic>Genome Research</italic></source><year>2001</year><volume>11</volume><issue>8</issue><fpage>1404</fpage><lpage>1409</lpage><pub-id pub-id-type="pmid">11483581</pub-id></element-citation></ref><ref id="B32"><label>32</label><element-citation publication-type="book"><person-group person-group-type="author"><name><surname>Witten</surname><given-names>IH</given-names></name><name><surname>Frank</surname><given-names>E</given-names></name></person-group><source><italic>Data Mining: Practical Machine Learning Tools and Techniques</italic></source><year>2005</year><publisher-loc>San Francisco, Calif, USA</publisher-loc><publisher-name>Morgan Kaufmann</publisher-name></element-citation></ref><ref id="B33"><label>33</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Venter</surname><given-names>JC</given-names></name><name><surname>Remington</surname><given-names>K</given-names></name><name><surname>Heidelberg</surname><given-names>JF</given-names></name><etal/></person-group><article-title>Environmental genome shotgun sequencing of the Sargasso Sea</article-title><source><italic>Science</italic></source><year>2004</year><volume>304</volume><issue>5667</issue><fpage>66</fpage><lpage>74</lpage><pub-id pub-id-type="pmid">15001713</pub-id></element-citation></ref><ref id="B34"><label>34</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Giovannoni</surname><given-names>SJ</given-names></name><name><surname>Tripp</surname><given-names>HJ</given-names></name><name><surname>Givan</surname><given-names>S</given-names></name><etal/></person-group><article-title>Genetics: genome streamlining in a cosmopolitan oceanic bacterium</article-title><source><italic>Science</italic></source><year>2005</year><volume>309</volume><issue>5738</issue><fpage>1242</fpage><lpage>1245</lpage><pub-id pub-id-type="pmid">16109880</pub-id></element-citation></ref><ref id="B35"><label>35</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Dyhrman</surname><given-names>ST</given-names></name><name><surname>Chappell</surname><given-names>PD</given-names></name><name><surname>Haley</surname><given-names>ST</given-names></name><etal/></person-group><article-title>Phosphonate utilization by the globally important marine diazotroph <italic>Trichodesmium</italic></article-title><source><italic>Nature</italic></source><year>2006</year><volume>439</volume><issue>7072</issue><fpage>68</fpage><lpage>71</lpage><pub-id pub-id-type="pmid">16397497</pub-id></element-citation></ref><ref id="B36"><label>36</label><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Sowell</surname><given-names>SM</given-names></name><name><surname>Norbeck</surname><given-names>AD</given-names></name><name><surname>Lipton</surname><given-names>MS</given-names></name><etal/></person-group><article-title>Proteomic analysis of stationary phase in the marine bacterium &#x0201c;<italic>Candidatus</italic> pelagibacter ubique&#x0201d;</article-title><source><italic>Applied and Environmental Microbiology</italic></source><year>2008</year><volume>74</volume><issue>13</issue><fpage>4091</fpage><lpage>4100</lpage><pub-id pub-id-type="pmid">18469119</pub-id></element-citation></ref></ref-list></back><floats-group><fig id="fig1" position="float"><label>Figure 1</label><caption><p>Comparison of text classification to the DNA
+classification problem.</p></caption><graphic xlink:href="ABI2008-205969.001"/></fig><fig id="fig2" position="float"><label>Figure 2</label><caption><p>Example of the general algorithm for computing <italic>N</italic>-mer frequencies.</p></caption><graphic xlink:href="ABI2008-205969.002"/></fig><fig id="fig3" position="float"><label>Figure 3</label><caption><p>Example of the frequency
+counting algorithm optimized for shorter <italic>N</italic>-mers. 2-mers are chosen for simplicity and an
+arbitrary 6-bit counter is shown.</p></caption><graphic xlink:href="ABI2008-205969.003"/></fig><fig id="fig4" position="float"><label>Figure 4</label><caption><p>A log-log plot of the <italic>N</italic>-mer frequences versus <italic>N</italic>-mers in ranked order for various E. coli
+strains (K12 is the commensal strain, O157H7 is highly pathogenic, and HS is
+the commensal isolate from the human gastrointestinal tract). E. coli has a
+characteristic curve for all strains in this domain. This curvature is then
+compared to Zipf's law which states that <italic>N</italic>-mer frequency is directly related to inverse
+rank order. While E. coli generally obeys this law, the curvature deviation
+from the straight line shows that higher ranking of words has higher normal
+frequency.</p></caption><graphic xlink:href="ABI2008-205969.004"/></fig><fig id="fig5" position="float"><label>Figure 5</label><caption><p>A histogram of
+the average strain accuracy for 25 bp fragments for <italic>N</italic> = 9, 12, 15. 
+The overall strain accuracy of the <italic>N</italic> = 9 mers is 3.5% and is apparent from the <italic>blue</italic> distribution of average accuracy (averaged over 100 fragments) per strain. For <italic>N</italic> = 12 mers, the overall average accuracy is 49.3%
+and this is reflected in <italic>green</italic> average strain accuracies; this shows
+that some strains begin to classify well with <italic>N</italic> = 12 mers while others do not. It is interesting to
+note that <italic>N</italic> = 12 mers do not yield many strains with over 95%
+accuracy. For <italic>N</italic> = 15 mers, while the overall accuracy is 75.7%, we
+can see that over 50% of the strains have over 95% accuracy. We can conclude
+that most strains perform well with the NBC using <italic>N</italic> = 15 mers, but some strains have poor accuracy and
+cannot be resolved.</p></caption><graphic xlink:href="ABI2008-205969.005"/></fig><fig id="fig6" position="float"><label>Figure 6</label><caption><p>The accuracy of the naive Bayes classifier versus <italic>N</italic>-mer length versus fragment length for strain
+classifications for the 635 completed microbial genomes. This graph clearly
+shows that accuracy improves when the longer <italic>N</italic>-mers are used in the scoring function. As
+expected, 500 bp fragments performed the best, reaching 88.8% accuracy in
+strains and 82.5% for 100 bp fragments. The 25 bp fragments surprisingly
+increased performance when using 15 mers, yielding 75.8%. There is a jump in
+accuracy at around the 9 &#x0003c; <italic>N</italic> &#x0003c; 12 range which provides insight into the order
+needed for classification.</p></caption><graphic xlink:href="ABI2008-205969.006"/></fig><fig id="fig7" position="float"><label>Figure 7</label><caption><p>A comparison of the strain, species, and genus
+classification for 500 bp fragments on the training data. Above <italic>N</italic> = 11,
+the classification accuracy cannot be improved with strain accuracy being
+around 88%, species accuracy around 97%, and genus accuracy around 99.7%. It is
+interesting to note that the increase of accuracy from <italic>N</italic> = 6 to <italic>N</italic> = 9 is dramatic.</p></caption><graphic xlink:href="ABI2008-205969.007"/></fig><fig id="fig8" position="float"><label>Figure 8</label><caption><p>A comparison of the strain, species, and genus
+classification for 100 bp fragments on the training data. Above <italic>N</italic> = 12,
+the classification accuracy cannot be improved with strain accuracy being
+around 82%, species accuracy around 95%, and genus accuracy around 99%. It is
+interesting to note that the increase of accuracy from <italic>N</italic> = 9 to <italic>N</italic> = 12 is dramatic.</p></caption><graphic xlink:href="ABI2008-205969.008"/></fig><fig id="fig9" position="float"><label>Figure 9</label><caption><p>A comparison of the strain, species, and genus
+classification for 25 bp fragments on the training data. In this case, the
+level-off point has not yet been reached, although there is a dramatic increase
+from <italic>N</italic> = 10 to <italic>N</italic> = 13. 
+By <italic>N</italic> = 15,
+strain accuracy reaches 76%, species accuracy around 91%, and genus accuracy
+around 97%. It is interesting to note that the increase of accuracy from <italic>N</italic> = 9 to <italic>N</italic> = 12 is dramatic.</p></caption><graphic xlink:href="ABI2008-205969.009"/></fig><fig id="fig10" position="float"><label>Figure 10</label><caption><p>5-fold cross-validation performance for species-accuracy on 9 species classes (77
+strains), training on &#x0223c;62 strains and testing on &#x0223c;15 strains at a time. The maximum performance
+for each fragment size is 97.3% &#x000b1; 1.0% for 500 bp, 95.3% &#x000b1; 1.3% for 100 bp, and 90.2% &#x000b1; 1.2% for 25 bp fragments, demonstrating that
+the NBC has good classification species accuracy for never seen before
+strains.</p></caption><graphic xlink:href="ABI2008-205969.010"/></fig><table-wrap id="tab1" position="float"><label>Table 1</label><caption><p>Comparison of
+run times for <italic>N</italic> = 10 (general and optimized methods) and <italic>N</italic> = 100 (general method only). Simulations are run on
+one 2 &#x000d7; 2.0 GHz Intel dual-core Xeon, 2 GB RAM, and 2 &#x000d7; 80 GB HD. Many
+temporary files are needed for the sort process and are saved to a 3 TB RAID
+drive which is connected through a cluster-head terminal machine.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left" rowspan="1" colspan="1">Name</th><th align="center" rowspan="1" colspan="1">Genome size (Mbp)</th><th align="center" rowspan="1" colspan="1">Optimized alg. <italic>N</italic> = 10 (min)</th><th align="center" rowspan="1" colspan="1">General alg. <italic>N</italic> = 10 (min)</th><th align="center" rowspan="1" colspan="1">General alg. <italic>N</italic> = 100 (min)</th></tr></thead><tbody><tr><td align="left" rowspan="1" colspan="1">Human</td><td align="center" rowspan="1" colspan="1">3142.05</td><td align="center" rowspan="1" colspan="1">2.4</td><td align="center" rowspan="1" colspan="1">212.7</td><td align="center" rowspan="1" colspan="1">1877.2</td></tr><tr><td align="left" rowspan="1" colspan="1">Zebrafish</td><td align="center" rowspan="1" colspan="1">1578.26</td><td align="center" rowspan="1" colspan="1">1.1</td><td align="center" rowspan="1" colspan="1">106.25</td><td align="center" rowspan="1" colspan="1">506.5</td></tr><tr><td align="left" rowspan="1" colspan="1">Fruitfly</td><td align="center" rowspan="1" colspan="1">135.25</td><td align="center" rowspan="1" colspan="1">0.1</td><td align="center" rowspan="1" colspan="1">6.5</td><td align="center" rowspan="1" colspan="1">26.4</td></tr><tr><td align="left" rowspan="1" colspan="1">E. coli K12</td><td align="center" rowspan="1" colspan="1">4.7</td><td align="center" rowspan="1" colspan="1">0.01</td><td align="center" rowspan="1" colspan="1">0.18</td><td align="center" rowspan="1" colspan="1">0.63</td></tr></tbody></table></table-wrap><table-wrap id="tab2" position="float"><label>Table 2</label><caption><p>63 500 25 bp fragments, 100 from each genome, are BLASTed and compared to the <italic>N</italic> = 15 NBC. BLAST gives 66% of them unique
+top-scoring hits, where all of them were correct. Almost 34% of the reads have
+ambiguous top-scoring hits, meaning that there are multiple organisms that have
+top scores and <italic>E</italic>-values. Also, even though the exact string or complement exist
+in the database, 287 fragments receive no hit from BLAST with an <italic>E</italic>-value of
+3000. NBC is able to correctly identify 71% of those. Being that the multiple
+top-scoring genomes can be randomly chosen as a top hit, we can compare
+directly, how often BLAST would get the genome correct compared to the NBC. 
+Taking this and the single top hits into consideration, NBC scored 48118
+(75.8%) fragments correct while BLAST matched 47889 (75.4%) fragments
+correct.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left" rowspan="1" colspan="1">63 500 fragments</th></tr></thead><tbody><tr><td align="left" rowspan="1" colspan="1">BLAST category</td><td align="left" rowspan="1" colspan="1">Interpretation of BLAST results</td><td align="left" rowspan="1" colspan="1">NBC's results for the BLAST category</td></tr><tr><td align="left" rowspan="1" colspan="1">No. of reads that had <italic>Unique</italic> Top-scoring hits in BLAST</td><td align="left" rowspan="1" colspan="1">No. that BLAST got correct</td><td align="left" rowspan="1" colspan="1">No. that NBC got correct</td></tr><tr><td align="left" rowspan="1" colspan="1">41641</td><td align="left" rowspan="1" colspan="1">41641</td><td align="left" rowspan="1" colspan="1">41211</td></tr><tr><td align="left" rowspan="1" colspan="1">No. of reads that had <italic>Multiple</italic> Top-scoring hits in BLAST</td><td align="left" rowspan="1" colspan="1">BLAST hits for reads where the <italic>multiple</italic> top-scoring list contained the
+correct one/no. of <italic>unique</italic> top-hits BLAST would get by
+chance from ambiguous hits</td><td align="left" rowspan="1" colspan="1">No. that NBC got a correct,
+<italic>Unique</italic> Top-hit</td></tr><tr><td align="left" rowspan="1" colspan="1">21572</td><td align="left" rowspan="1" colspan="1">21559/6248</td><td align="left" rowspan="1" colspan="1">6702</td></tr><tr><td align="left" rowspan="1" colspan="1">Reads that had <italic>No</italic> hits in BLAST (<italic>E</italic>-value of 3000)</td><td align="left" rowspan="1" colspan="1">Could not be assigned in BLAST</td><td align="left" rowspan="1" colspan="1">No. that NBC got correct</td></tr><tr><td align="left" rowspan="1" colspan="1">287</td><td align="left" rowspan="1" colspan="1">0</td><td align="left" rowspan="1" colspan="1">205</td></tr></tbody></table></table-wrap><table-wrap id="tab3" position="float"><label>Table 3</label><caption><p>Comparison of the top 10 reads from the naive Bayes analysis of the Sargasso 
+Sea set for 9 mers and 15 mers and a side-by-side comparison with MEGAN results. 
+There are 7 common strains between the naive Bayes sets substantiating their 
+presence in the sample. Not all NBC &#x0201c;best matches&#x0201d; are found in MEGAN 
+(indicated by &#x0201c;None&#x0201d;), and this can be due to &#x0201c;no hits&#x0201d; or to not having 
+that strain in the database. An interesting NBC find is that 
+<italic>Trichodesmium erythraeum</italic> has been found to compose 0.6% of the sample. It has been extensively found in
+the Sargasso Sea, but no prior methods show this presence in the Sargasso Sea
+data set.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="center" colspan="3" rowspan="1">9 mers</th><th align="center" colspan="3" rowspan="1">15 mers</th></tr><tr><th align="left" rowspan="1" colspan="1">High-strain content in sample (genome size of both sides)</th><th align="left" rowspan="1" colspan="1">No. of reads</th><th align="left" rowspan="1" colspan="1">No. of MEGAN reads</th><th align="left" rowspan="1" colspan="1">High-strain content in sample</th><th align="left" rowspan="1" colspan="1">No. of reads</th><th align="left" rowspan="1" colspan="1">No. of MEGAN reads</th></tr></thead><tbody><tr><td align="left" rowspan="1" colspan="1">Burkholderia 383 (9.3&#x02009;M)</td><td align="left" rowspan="1" colspan="1">693</td><td align="left" rowspan="1" colspan="1">514</td><td align="left" rowspan="1" colspan="1">Burkholderia 383 (9.3&#x02009;M)</td><td align="left" rowspan="1" colspan="1">2044</td><td align="left" rowspan="1" colspan="1">514</td></tr><tr><td align="left" rowspan="1" colspan="1">Burkholderia Cenocepacia AU 1054 (14.6&#x02009;M)</td><td align="left" rowspan="1" colspan="1">684</td><td align="left" rowspan="1" colspan="1">13</td><td align="left" rowspan="1" colspan="1">Clostridium Beijerinckii NCIMB 8052 (12&#x02009;M)</td><td align="left" rowspan="1" colspan="1">1698</td><td align="left" rowspan="1" colspan="1">2</td></tr><tr><td align="left" rowspan="1" colspan="1">Clostridium beijerinckii NCIMB 8052 (12&#x02009;M)</td><td align="left" rowspan="1" colspan="1">623</td><td align="left" rowspan="1" colspan="1">2</td><td align="left" rowspan="1" colspan="1">Shewanella ANA-3 (10.3&#x02009;M)</td><td align="left" rowspan="1" colspan="1">989</td><td align="left" rowspan="1" colspan="1">186</td></tr><tr><td align="left" rowspan="1" colspan="1">Shewanella ANA-3 (10.3&#x02009;M)</td><td align="left" rowspan="1" colspan="1">562</td><td align="left" rowspan="1" colspan="1">186</td><td align="left" rowspan="1" colspan="1">Trichodesmium erythraeum IMS101 (15.6&#x02009;M)</td><td align="left" rowspan="1" colspan="1">584</td><td align="left" rowspan="1" colspan="1">2</td></tr><tr><td align="left" rowspan="1" colspan="1">Trichodesmium erythraeum IMS101 (15.6&#x02009;M)</td><td align="left" rowspan="1" colspan="1">533</td><td align="left" rowspan="1" colspan="1">2</td><td align="left" rowspan="1" colspan="1">Flavobacterium johnsoniae UW101 (12.2&#x02009;M)</td><td align="left" rowspan="1" colspan="1">481</td><td align="left" rowspan="1" colspan="1">10</td></tr><tr><td align="left" rowspan="1" colspan="1">Burholderia xenovorans LB400 (19.6&#x02009;M)</td><td align="left" rowspan="1" colspan="1">404</td><td align="left" rowspan="1" colspan="1">None</td><td align="left" rowspan="1" colspan="1">Sorangium cellulosum So Ce 56 (26&#x02009;M)</td><td align="left" rowspan="1" colspan="1">309</td><td align="left" rowspan="1" colspan="1">None</td></tr><tr><td align="left" rowspan="1" colspan="1">Shewanella MR-4 (9.4&#x02009;M)</td><td align="left" rowspan="1" colspan="1">329</td><td align="left" rowspan="1" colspan="1">14</td><td align="left" rowspan="1" colspan="1">Shewanella oneidensis MR-1 (10.4&#x02009;M)</td><td align="left" rowspan="1" colspan="1">297</td><td align="left" rowspan="1" colspan="1">78</td></tr><tr><td align="left" rowspan="1" colspan="1">Burholderia ambifaria/cepacia AMMD (15&#x02009;M)</td><td align="left" rowspan="1" colspan="1">265</td><td align="left" rowspan="1" colspan="1">91</td><td align="left" rowspan="1" colspan="1">Shewanella MR-4 (9.4&#x02009;M)</td><td align="left" rowspan="1" colspan="1">245</td><td align="left" rowspan="1" colspan="1">14</td></tr><tr><td align="left" rowspan="1" colspan="1">Alkaliphilius metalliredigens QYMF (9.8&#x02009;M)</td><td align="left" rowspan="1" colspan="1">261</td><td align="left" rowspan="1" colspan="1">None</td><td align="left" rowspan="1" colspan="1">Burkholderia cenocepacia HI2424 (15.5&#x02009;M)</td><td align="left" rowspan="1" colspan="1">219</td><td align="left" rowspan="1" colspan="1">102</td></tr><tr><td align="left" rowspan="1" colspan="1">Shewanella MR-7 (9.6&#x02009;M)</td><td align="left" rowspan="1" colspan="1">250</td><td align="left" rowspan="1" colspan="1">26</td><td align="left" rowspan="1" colspan="1">Shewanella MR-7 (9.6&#x02009;M)</td><td align="left" rowspan="1" colspan="1">206</td><td align="left" rowspan="1" colspan="1">26</td></tr><tr><td align="left" rowspan="1" colspan="1">Acidobacteria bacterium Ellin345 (11.6&#x02009;M)</td><td align="left" rowspan="1" colspan="1">187</td><td align="left" rowspan="1" colspan="1">None</td><td align="left" rowspan="1" colspan="1">Burkholderia xenovorans LB400 (19.6&#x02009;M)</td><td align="left" rowspan="1" colspan="1">198</td><td align="left" rowspan="1" colspan="1">None</td></tr></tbody></table></table-wrap><table-wrap id="tab4" position="float"><label>Table 4</label><caption><p>MEGAN's
+top-ten strains for the Sargasso Sea dataset, their respective reads, and
+comparison to the NBC 9 mer and 15 mer methods. N/A means the strain is not in
+our training set (it is unfinished so it cannot be found. Burkholderia and
+Shewanella which were also found by Venter et al. 
+[<xref rid="B33" ref-type="bibr">33</xref>] also have high matches in
+the NBC. The NBC's detection of Candidatus Pelagibacter drastically changes
+from <italic>N</italic> = 9 to <italic>N</italic> = 15.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left" rowspan="1" colspan="1">High strain content in sample (genome size&#x02014;bothsides)</th><th align="center" rowspan="1" colspan="1">MEGAN # of Reads</th><th align="center" rowspan="1" colspan="1">NBC 9 mer # of reads</th><th align="center" rowspan="1" colspan="1">NBC 15 mer # of reads</th></tr></thead><tbody><tr><td align="left" rowspan="1" colspan="1">Burkholderia 383 (9.3&#x02009;M)</td><td align="center" rowspan="1" colspan="1">514</td><td align="center" rowspan="1" colspan="1">693</td><td align="center" rowspan="1" colspan="1">2044</td></tr><tr><td align="left" rowspan="1" colspan="1">Candidatus
+Pelagibacter ubique HTCC1062 (2.6&#x02009;M)</td><td align="center" rowspan="1" colspan="1">323</td><td align="center" rowspan="1" colspan="1">13</td><td align="center" rowspan="1" colspan="1">111</td></tr><tr><td align="left" rowspan="1" colspan="1">Shewanella
+ANA-3 (10.3&#x02009;M)</td><td align="center" rowspan="1" colspan="1">186</td><td align="center" rowspan="1" colspan="1">484</td><td align="center" rowspan="1" colspan="1">989</td></tr><tr><td align="left" rowspan="1" colspan="1">Procholorococcus
+marinus MIT 9312 (3.4&#x02009;M)</td><td align="center" rowspan="1" colspan="1">125</td><td align="center" rowspan="1" colspan="1">28</td><td align="center" rowspan="1" colspan="1">24</td></tr><tr><td align="left" rowspan="1" colspan="1">Psychroflexus
+torquis ATCC 700755 (8.6&#x02009;M)</td><td align="center" rowspan="1" colspan="1">119</td><td align="center" rowspan="1" colspan="1">N/A</td><td align="center" rowspan="1" colspan="1">N/A</td></tr><tr><td align="left" rowspan="1" colspan="1">Burkholderia
+cenoecapacia HI2424 (15.52&#x02009;M)</td><td align="center" rowspan="1" colspan="1">102</td><td align="center" rowspan="1" colspan="1">106</td><td align="center" rowspan="1" colspan="1">219</td></tr><tr><td align="left" rowspan="1" colspan="1">Burholderia
+vietanamiensis G4 (16.8&#x02009;M)</td><td align="center" rowspan="1" colspan="1">101</td><td align="center" rowspan="1" colspan="1">93</td><td align="center" rowspan="1" colspan="1">92</td></tr><tr><td align="left" rowspan="1" colspan="1">Burkholderia
+ambifaria/cepacia AMMD (15.06&#x02009;M)</td><td align="center" rowspan="1" colspan="1">91</td><td align="center" rowspan="1" colspan="1">265</td><td align="center" rowspan="1" colspan="1">127</td></tr><tr><td align="left" rowspan="1" colspan="1">Shewanella
+oneidensis MR-1 (10.32&#x02009;M)</td><td align="center" rowspan="1" colspan="1">78</td><td align="center" rowspan="1" colspan="1">79</td><td align="center" rowspan="1" colspan="1">297</td></tr><tr><td align="left" rowspan="1" colspan="1">Synechoccus
+sp. WH8102 (4.86&#x02009;M)</td><td align="center" rowspan="1" colspan="1">75</td><td align="center" rowspan="1" colspan="1">68</td><td align="center" rowspan="1" colspan="1">82</td></tr></tbody></table></table-wrap></floats-group></article>

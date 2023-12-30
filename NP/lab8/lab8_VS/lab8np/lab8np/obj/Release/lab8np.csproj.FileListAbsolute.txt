@@ -1,0 +1,3 @@
+/home/sergey/MAI/maga/network_progr/lab8/res_lab8/lab8np/lab8np/bin/Release/lab8np.dll
+/home/sergey/MAI/maga/network_progr/lab8/res_lab8/lab8np/lab8np/obj/Release/lab8np.csproj.CoreCompileInputs.cache
+/home/sergey/MAI/maga/network_progr/lab8/res_lab8/lab8np/lab8np/obj/Release/lab8np.dll
